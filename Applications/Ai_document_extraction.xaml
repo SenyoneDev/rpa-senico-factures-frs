@@ -203,7 +203,7 @@
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("NumeroCommande")]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("InvoceNumber")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
                       <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.InvoiceNumber.Value.ToString]</InArgument>
