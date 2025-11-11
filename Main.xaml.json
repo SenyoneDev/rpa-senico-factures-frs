@@ -1,0 +1,129 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_str_OrchestratorQueueName",
+      "DisplayName": "in_str_OrchestratorQueueName",
+      "Category": null,
+      "Tooltip": "Orchestrator Queue Name for the process, option to rewrite config value",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_str_SEEmailReciever",
+      "DisplayName": "in_str_SEEmailReciever",
+      "Category": null,
+      "Tooltip": "Systeme exception email reciever, option to rewrite config",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_str_BREMailReciever",
+      "DisplayName": "in_str_BREMailReciever",
+      "Category": null,
+      "Tooltip": "Business Rule exception email reciever",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_str_SREmailReciever",
+      "DisplayName": "in_str_SREmailReciever",
+      "Category": null,
+      "Tooltip": "System exception email receiver ",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_bool_TestMode",
+      "DisplayName": "in_bool_TestMode",
+      "Category": null,
+      "Tooltip": "Flag indicating whether the process must be executed on Test mode or not",
+      "Placeholder": "False",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_bool_DevMode",
+      "DisplayName": "in_bool_DevMode",
+      "Category": null,
+      "Tooltip": "Flag indicating whether the process must be executed on Dev mode or not",
+      "Placeholder": "True",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_int_MaxTransactionsProcessed",
+      "DisplayName": "in_int_MaxTransactionsProcessed",
+      "Category": null,
+      "Tooltip": "Use 0 for no max limit for the processed transactions",
+      "Placeholder": "0",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_str_ConfigPath",
+      "DisplayName": "in_str_ConfigPath",
+      "Category": null,
+      "Tooltip": "Contains the full path to the config file. By default will be assigned \"Accelerated\\Config_AR.xlsx\"",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_di_folders",
+      "DisplayName": "in_di_folders",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_el_listEmail",
+      "DisplayName": "in_el_listEmail",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}
