@@ -1,9 +1,9 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Find_direction_basic" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umae="clr-namespace:UiPath.MicrosoftOffice365.Activities.Excel;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_o365m_mailMessage" Type="InArgument(umm:Office365Message)" />
     <x:Property Name="out_str_direction" Type="OutArgument(x:String)" />
     <x:Property Name="in_di_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_dt_listAnnuaire" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_o365m_mailItem" Type="InArgument(umm:Office365Message)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -133,14 +133,14 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,2414" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,2349" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Find direction basic&quot;]" />
-    <Sequence DisplayName="Seq | Find Direction" sap:VirtualizedContainerService.HintSize="656,2054" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Seq | Find Direction" sap:VirtualizedContainerService.HintSize="656,1989" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="di_annuaireFile" />
         <Variable x:TypeArguments="x:String" Name="str_fullName" />
@@ -171,7 +171,7 @@
                 <OutArgument x:TypeArguments="x:String">[str_fullName]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[in_o365m_mailMessage.SenderDisplayName]</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_o365m_mailItem.SenderDisplayName]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -195,7 +195,7 @@
                 <OutArgument x:TypeArguments="x:String">[str_adressMail]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[in_o365m_mailMessage.SenderAddress]</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_o365m_mailItem.SenderAddress]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
@@ -249,13 +249,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each currentDataRow" sap:VirtualizedContainerService.HintSize="622,1633" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_dt_listAnnuaire.Rows]">
+      <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each currentDataRow" sap:VirtualizedContainerService.HintSize="622,1568" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_dt_listAnnuaire.Rows]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="588,1496" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="588,1431" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="str:MatchCollection" Name="str_regexResult" />
                 <Variable x:TypeArguments="x:String" Name="str_domainName" />
@@ -266,13 +266,13 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Found Applicant in the Active Directory " sap:VirtualizedContainerService.HintSize="554,591" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Found Applicant in the Active Directory " sap:VirtualizedContainerService.HintSize="554,526" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[currentDataRow(&quot;Email&quot;).ToString.Equals(str_adressMail)]" DisplayName="If | Found Aplicant in the Active Directory" sap:VirtualizedContainerService.HintSize="502,499" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[currentDataRow(&quot;Email&quot;).ToString.Equals(str_adressMail)]" DisplayName="If | Found Aplicant in the Active Directory" sap:VirtualizedContainerService.HintSize="502,434" sap2010:WorkflowViewState.IdRef="If_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -297,13 +297,30 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Throw DisplayName="Throw | mail not in the Active Directory" Exception="[New BusinessRuleException(&quot;Le mail ne figure pas dans la base de donnée de l'annuaire&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Throw DisplayName="Throw | mail not in the Active Directory" Exception="[New BusinessRuleException(&quot;Le mail ne figure pas dans la base de donnée de l'annuaire&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CommentOut>
                     </Sequence>
                   </If.Else>
                 </If>
@@ -331,7 +348,7 @@
                           <OutArgument x:TypeArguments="x:String">[str_bodyMail]</OutArgument>
                         </ui:AssignOperation.To>
                         <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:String">[in_o365m_mailMessage.Body]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[in_o365m_mailItem.Body]</InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -371,7 +388,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[in_o365m_mailMessage.CCAddressList.Contains(currentDataRow(&quot;Email&quot;).ToString()) OrElse&#xA;in_o365m_mailMessage.BccAddressList.Contains(currentDataRow(&quot;Email&quot;).ToString()) OrElse&#xA;str_regexResult.Cast(Of System.Text.RegularExpressions.Match)().Select(Function(m) m.Value).ToList().Contains(currentDataRow(&quot;Email&quot;).ToString())]" sap:VirtualizedContainerService.HintSize="502,499" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If Condition="[in_o365m_mailItem.CCAddressList.Contains(currentDataRow(&quot;Email&quot;).ToString()) OrElse&#xA;in_o365m_mailItem.BccAddressList.Contains(currentDataRow(&quot;Email&quot;).ToString()) OrElse&#xA;str_regexResult.Cast(Of System.Text.RegularExpressions.Match)().Select(Function(m) m.Value).ToList().Contains(currentDataRow(&quot;Email&quot;).ToString())]" sap:VirtualizedContainerService.HintSize="502,499" sap2010:WorkflowViewState.IdRef="If_3">
                         <If.Then>
                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>

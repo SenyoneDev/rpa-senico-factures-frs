@@ -162,7 +162,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID5}" sap2010:Annotation.AnnotationText="189_HR_Workday_Casiers_Judiciaires&#xA;Onborading new employee - criminal record document checks&#xA;&#xA;Author: Adriana López &#xA;Email: adriana.lopez@roboyo.es&#xA; &#xA;Applications involved: Email (SMTP), Workday&#xA;&#xA;Mark with x the used disaptcher style:&#xA;Dispatcher integrated in Performer  []&#xA;Separate Dispatcher - Performer  [x] " DisplayName="Main" sap:VirtualizedContainerService.HintSize="907,523.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID5}" sap2010:Annotation.AnnotationText="189_HR_Workday_Casiers_Judiciaires&#xA;Onborading new employee - criminal record document checks&#xA;&#xA;Author: Adriana López &#xA;Email: adriana.lopez@roboyo.es&#xA; &#xA;Applications involved: Email (SMTP), Workday&#xA;&#xA;Mark with x the used disaptcher style:&#xA;Dispatcher integrated in Performer  []&#xA;Separate Dispatcher - Performer  [x] " DisplayName="Main" sap:VirtualizedContainerService.HintSize="907,498.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,7 +173,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="654,2423" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="229,107" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
         <Sequence sap2010:Annotation.AnnotationText="Data retrieval mechanism. The TransactionNumber variable holds the current transaction number. Incrementing this number means getting the next transaction. For a robot retry, the number is not increased, in case of application exception, until the max retry number.&#xA;TransactionItem type needs to be changed accordingly." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="608,1964" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
@@ -384,7 +384,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <umam:MoveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID2}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID3}" ManualEntryFolder="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="SENICO" BrowserFolderId="AAMkAGFlYjNhZWY1LTAyNGUtNDJmNy05MTMyLWYzYjg1YTkwM2RhZAAuAAAAAACKD13cdb_aQKNt1i-dTX8JAQBrwROwUuthQafO2xmnzUsSAADsJP3oAAA=" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Move Email Message in Traitement Folder" Email="[o365m_emailItem]" sap:VirtualizedContainerService.HintSize="434,272" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_1" Result="[o365m_emailItemInProcess]" SelectionMode="Browse" UseConnectionService="True" UseSharedMailbox="False">
+                      <umam:MoveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID2}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID3}" ManualEntryFolder="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="SENICO" BrowserFolderId="AAMkAGFlYjNhZWY1LTAyNGUtNDJmNy05MTMyLWYzYjg1YTkwM2RhZAAuAAAAAACKD13cdb_aQKNt1i-dTX8JAQBrwROwUuthQafO2xmnzUsSAADsJP3oAAA=" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Move Email Message in Traitement Folder" Email="[o365m_emailItem]" sap:VirtualizedContainerService.HintSize="434,272" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_1" Result="[o365m_mailItem]" SelectionMode="Browse" UseConnectionService="True" UseSharedMailbox="False">
                         <umam:MoveEmailConnections.MailFolderArgument>
                           <umamm:MailFolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolder="{x:Null}" BrowserFolder="SENICO" BrowserFolderId="AAMkAGFlYjNhZWY1LTAyNGUtNDJmNy05MTMyLWYzYjg1YTkwM2RhZAAuAAAAAACKD13cdb_aQKNt1i-dTX8JAQBrwROwUuthQafO2xmnzUsSAADsJP3oAAA=" ConnectionKey="777d96cf-3847-4e26-8cd4-50c8821ba953" SelectionMode="Browse">
                             <umamm:MailFolderArgument.Backup>
@@ -482,7 +482,7 @@
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process workflow" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Process.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_Config">[dict_Config]</InArgument>
-                          <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[o365m_emailItemInProcess]</InArgument>
+                          <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[o365m_mailItem]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -1741,7 +1741,7 @@
       <Variable x:TypeArguments="x:String" Name="str_CandidateName" />
       <Variable x:TypeArguments="umm:Office365Message" Name="o365m_emailItem" />
       <Variable x:TypeArguments="scg:List(umm:Office365Message)" Name="o365m_listMails" />
-      <Variable x:TypeArguments="umm:Office365Message" Name="o365m_emailItemInProcess" />
+      <Variable x:TypeArguments="umm:Office365Message" Name="o365m_mailItem" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

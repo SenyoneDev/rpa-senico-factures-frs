@@ -161,7 +161,7 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,2483" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,2501" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uisad:DocumentData" Name="cd_documentType" />
     </Sequence.Variables>
@@ -171,7 +171,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start AIDocument Classification &quot;]" />
-    <Sequence DisplayName="Seq | Classifiy Document" sap:VirtualizedContainerService.HintSize="518,2123" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Seq | Classifiy Document" sap:VirtualizedContainerService.HintSize="518,2141" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_useNameSage" />
         <Variable x:TypeArguments="ss:SecureString" Name="str_passwordSecureSage" />
@@ -215,26 +215,43 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConnectToSage - Invoke Workflow File (SageFlow\ConnectToSage.xaml)" sap:VirtualizedContainerService.HintSize="484,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SageFlow\ConnectToSage.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_str_userName">[str_useNameSage]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_str_password">[str_passwordSage]</InArgument>
-          <InArgument x:TypeArguments="ui:UiElement" x:Key="out_ui_sageBrowser" />
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
-      <Sequence DisplayName="Seq | navigation" sap:VirtualizedContainerService.HintSize="484,1474" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConnectToSage - Invoke Workflow File (SageFlow\ConnectToSage.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SageFlow\ConnectToSage.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_str_userName">[str_useNameSage]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_str_password">[str_passwordSage]</InArgument>
+                <InArgument x:TypeArguments="ui:UiElement" x:Key="out_ui_sageBrowser" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <Sequence DisplayName="Seq | navigation" sap:VirtualizedContainerService.HintSize="484,1612" sap2010:WorkflowViewState.IdRef="Sequence_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: {$title} (Administrateur des Ventes Export) (X3V12 / SENICO)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="450,1391" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: {$title} (Administrateur des Ventes Export) (X3V12 / SENICO)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="450,1529" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1186" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1324" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="str_invoiceNumber">
                     <Variable.Default>
@@ -262,16 +279,27 @@
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="34e7221f-566a-466b-b2f8-d808ea255f2a" DesignTimeRectangle="620, 463, 83, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='Commandes' class='s_sitemap_menu_link' href='?url=%2Ftrans%2Fx3%2Ferp%2FX3V12_SENICO%2F%24sessions%3Ff%3DGESPOH%252F2%252F%252FM%252F' tag='A' /&gt;" Guid="2b3a5d76-6a5b-4180-85d0-a067b92065ab" InformativeScreenshot="e34e9c2a97eeb2ecdc850a73cc748316.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'STD Standard'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,240" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
-                  <uix:NTypeInto.Target>
-                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="ef09a886-209d-4cb9-90ea-b9f39e174b77" DesignTimeRectangle="498, 337, 303, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='s-grid-table-body' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='DIV' /&gt;" Guid="c9902796-5404-4ad2-92a9-cdddd85a8576" InformativeScreenshot="8813c1e6012bd351dc5d642bb08f18a8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-                  </uix:NTypeInto.Target>
-                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="f5c0e058-9d38-4c7c-98db-da76bbf6303b" DesignTimeRectangle="818, 445, 68, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='OK' tag='A' /&gt;" Guid="abaf71b5-e135-416a-87ab-aefb6a073e07" InformativeScreenshot="3bf25dd09d542bd80bea1e25d926ad08.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CVScreenId="f5c0e058-9d38-4c7c-98db-da76bbf6303b" DesignTimeRectangle="870, 236, 16, 16" FullSelectorArgument="&lt;webctrl aaname='close' parentid='s_app_over' tag='I' /&gt;" Guid="4e986645-5e67-4f3d-93c2-aab8bc842e7e" SearchSteps="Selector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'STD Standard'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="8b342812-5548-457e-ae03-e35d2ecd4f2e" DesignTimeRectangle="498, 337, 303, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='s-grid-table-body' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='DIV' /&gt;" Guid="75b99552-e75f-4575-b1bf-3ec5b8bebfd3" InformativeScreenshot="8813c1e6012bd351dc5d642bb08f18a8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SENFI2509POH00000004'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="19df6644-8a24-4647-97bc-0b50b32ada30" DesignTimeRectangle="116, 314, 167, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl class='s-grid-table-body' tag='TABLE' /&gt;&lt;webctrl class='s-inplace-value-read' tableRow='1' tag='DIV' innertext='{0}' /&gt;&quot;, in_str_invoceNumber)]" Guid="414c23cc-4e92-4107-94ef-5c641178d6af" InformativeScreenshot="3f6de424c0ef55359b5cb0d2761c7d82.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                           <uix:Target CVScreenId="19df6644-8a24-4647-97bc-0b50b32ada30" DesignTimeRectangle="112, 261, 163, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='No commande' tableRow='1' tag='DIV' /&gt;" Guid="686381cc-6d92-483b-8a35-eec9144cb286" SearchSteps="Selector" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
