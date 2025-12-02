@@ -140,7 +140,7 @@
       <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Surveillance_emails" sap:VirtualizedContainerService.HintSize="890,2939" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Surveillance_emails" sap:VirtualizedContainerService.HintSize="890,2766" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="bool_mailFound" />
       <Variable x:TypeArguments="scg:List(umm:Office365Message)" Name="el_listEmail" />
@@ -155,14 +155,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="683,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;## Start to Control mail &quot;]" />
-    <Sequence DisplayName="Control Mail and Attachments" sap:VirtualizedContainerService.HintSize="683,2579" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Control Mail and Attachments" sap:VirtualizedContainerService.HintSize="683,2406" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[in_o365m_mailItem.From.Address.Contains(in_di_dictConfig(&quot;DomainName&quot;).ToString)]" DisplayName="If | Mail domain belong ?" sap:VirtualizedContainerService.HintSize="649,2487" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[in_o365m_mailItem.From.Address.Contains(in_di_dictConfig(&quot;DomainName&quot;).ToString)]" DisplayName="If | Mail domain belong ?" sap:VirtualizedContainerService.HintSize="649,2314" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,7 +170,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="615,2153" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="615,1980" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="di_attachement" />
             </Sequence.Variables>
@@ -180,7 +180,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <umam:DownloadEmailAttachments ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FilterByFileNames="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConflictResolution="[UiPath.MicrosoftOffice365.Enums.ConflictBehavior.Replace]" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DestinationPath="[in_di_dictConfig(&quot;PathDownloadAttachements&quot;).ToString]" DisplayName="Download Email Attachments" Email="[in_o365m_mailItem]" ExcludeInlineAttachments="False" sap:VirtualizedContainerService.HintSize="581,235" sap2010:WorkflowViewState.IdRef="DownloadEmailAttachments_3" NewResult="[out_o365m_mailAttachements]" SearchMode="UseSimple" UseConnectionService="True" />
-            <Sequence DisplayName="Sequence | Verification du format" sap:VirtualizedContainerService.HintSize="581,1858" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Sequence | Verification du format" sap:VirtualizedContainerService.HintSize="581,1685" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -209,7 +209,7 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
-              <ui:ForEachFileX DisplayName="For Each attachement file" Folder="[in_di_dictConfig(&quot;PathDownloadAttachements&quot;).ToString]" sap:VirtualizedContainerService.HintSize="547,1596" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+              <ui:ForEachFileX DisplayName="For Each attachement file" Folder="[in_di_dictConfig(&quot;PathDownloadAttachements&quot;).ToString]" sap:VirtualizedContainerService.HintSize="547,1423" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
                 <ui:ForEachFileX.Body>
                   <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                     <ActivityAction.Argument1>
@@ -218,7 +218,7 @@
                     <ActivityAction.Argument2>
                       <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                     </ActivityAction.Argument2>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="513,1313" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="513,1140" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -246,7 +246,7 @@
                           </scg:List>
                         </ui:MultipleAssign.AssignOperations>
                       </ui:MultipleAssign>
-                      <If Condition="[Not arr_allowedExtensions.Contains(str_extension) OrElse db_FileSize &gt; db_maxFileSizeAllow]" DisplayName="If | File attachement match to params" sap:VirtualizedContainerService.HintSize="479,1074" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If Condition="[Not arr_allowedExtensions.Contains(str_extension) OrElse db_FileSize &gt; db_maxFileSizeAllow]" DisplayName="If | File attachement match to params" sap:VirtualizedContainerService.HintSize="479,901" sap2010:WorkflowViewState.IdRef="If_2">
                         <If.Then>
                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
@@ -258,15 +258,14 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,740" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,567" sap2010:WorkflowViewState.IdRef="Sequence_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;File parameter is correct&quot;]" />
-                            <umam:SetEmailCategoriesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SpecificCategoriesToRemove="{x:Null}" AuthScopesInvalid="False" CategoriesToAssign="[new System.String() {&quot;Traitement RPA&quot;}]" CategoriesToRemove="All" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Set Email Categories" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382,286" sap2010:WorkflowViewState.IdRef="SetEmailCategoriesConnections_1" UseConnectionService="True" />
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;here&quot;]" />
+                            <umam:SetEmailCategoriesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SpecificCategoriesToRemove="{x:Null}" AuthScopesInvalid="False" CategoriesToAssign="[new System.String() {&quot;Traitement RPA&quot;}]" CategoriesToRemove="All" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Set Email Categories" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382,286" sap2010:WorkflowViewState.IdRef="SetEmailCategoriesConnections_3" UseConnectionService="True" />
                             <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                               <ui:CommentOut.Body>
                                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,235" sap2010:WorkflowViewState.IdRef="Sequence_14">
@@ -275,7 +274,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <umam:ArchiveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="e6bebec3-52c1-42b2-a089-08e849687242" DisplayName="Archive Email" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="ArchiveEmailConnections_1" UseConnectionService="True" />
+                                  <umam:ArchiveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Archive Email" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="ArchiveEmailConnections_1" UseConnectionService="True" />
                                 </Sequence>
                               </ui:CommentOut.Body>
                               <sap:WorkflowViewStateService.ViewState>

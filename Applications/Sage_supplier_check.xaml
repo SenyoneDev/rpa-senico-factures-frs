@@ -3,7 +3,7 @@
     <x:Property Name="in_dict_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_dict_invoiceInformation" Type="InArgument(scg:Dictionary(x:String, s:String[]))" />
     <x:Property Name="in_o365m_mailItem" Type="InArgument(umm:Office365Message)" />
-    <x:Property Name="out_str_fournissuerId" Type="InArgument(x:String)" />
+    <x:Property Name="out_str_fournissuerId" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -171,14 +171,10 @@
       <AssemblyReference>UiPath.MLServices.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,2781" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,2821" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uisad:DocumentData" Name="cd_documentType" />
-      <Variable x:TypeArguments="x:String" Name="str_nomFounisseur">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">SOMICOA</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="SOMICOA" Name="str_nomFounisseur" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -186,7 +182,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage fetch Supplier &quot;]" />
-    <Sequence DisplayName="Seq | Check supplier" sap:VirtualizedContainerService.HintSize="620,2421" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Seq | Check supplier" sap:VirtualizedContainerService.HintSize="620,2461" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_useNameSage" />
         <Variable x:TypeArguments="ss:SecureString" Name="str_passwordSecureSage" />
@@ -285,14 +281,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <Sequence DisplayName="Seq -2 | navigation" sap:VirtualizedContainerService.HintSize="586,2272" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence DisplayName="Seq -2 | navigation" sap:VirtualizedContainerService.HintSize="586,2312" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,276" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,316" sap2010:WorkflowViewState.IdRef="CommentOut_1">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <sap:WorkflowViewStateService.ViewState>
@@ -384,7 +380,7 @@
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="e28217c8-8c9a-4e6b-8ce8-4507d2610b7a" DesignTimeRectangle="122, 346, 268, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl class='s-grid-table-body' tag='TABLE' /&gt;&lt;webctrl aaname='SOMICOA' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' tag='DIV' matching:tag='fuzzy' fuzzylevel:tag='0.0' innertext='{0}' matching:innertext='fuzzy' fuzzylevel:innertext='0.0' idx='131' /&gt;&quot;, str_nomFounisseur)]" Guid="b2c690aa-78ce-4b25-a4c5-a3063c88f279" InformativeScreenshot="b11cbd98b49aee70b3fa42a68f741541.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                           <uix:Target CVScreenId="e28217c8-8c9a-4e6b-8ce8-4507d2610b7a" DesignTimeRectangle="114, 289, 18, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='A' /&gt;" Guid="cfc2b28a-d472-4911-b849-1d55261107c2" SearchSteps="Selector" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
@@ -395,7 +391,7 @@
                   <uix:NGetText.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="43ab3f84-31cb-466b-a9e2-7ec6ac94638e" DesignTimeRectangle="621, 363, 170, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-6-83' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='INPUT' matching:tag='fuzzy' fuzzylevel:tag='0.0' type='text' matching:type='fuzzy' fuzzylevel:type='0.0' idx='558' /&gt;" Guid="a0efa350-2969-489c-a2e3-5cf563618c95" InformativeScreenshot="da6edc78150660bd63d0d761ff572dd0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                           <uix:Target CVScreenId="43ab3f84-31cb-466b-a9e2-7ec6ac94638e" DesignTimeRectangle="791, 363, 20, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='layout-slot-6-83' tag='A' /&gt;" Guid="31021936-2ae7-444c-95fa-993371f06b92" SearchSteps="Selector" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>

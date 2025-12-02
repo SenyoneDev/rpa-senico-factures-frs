@@ -175,11 +175,7 @@
         <Variable x:TypeArguments="x:String" Name="str_useNameSage" />
         <Variable x:TypeArguments="ss:SecureString" Name="str_passwordSecureSage" />
         <Variable x:TypeArguments="x:String" Name="str_passwordSage" />
-        <Variable x:TypeArguments="x:String" Name="str_invoiceNumber">
-          <Variable.Default>
-            <Literal x:TypeArguments="x:String">SENFI2509POH00000002</Literal>
-          </Variable.Default>
-        </Variable>
+        <Variable x:TypeArguments="x:String" Default="SENFI2509POH00000002" Name="str_invoiceNumber" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -257,7 +253,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: {$title} (Administrateur des Ventes Export) (X3V12 / SENICO)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,1988" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: *(X3V12 / SENICO)*" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,1988" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -333,7 +329,7 @@
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="e69b456c-9c4e-4f2f-a38a-3962a8b08fc9" DesignTimeRectangle="116, 360, 167, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl class='s-grid-table-body' tag='TABLE' /&gt;&lt;webctrl class='s-inplace-value-read' tag='DIV' innertext='{0}' aaname='{0}' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' colName='' matching:colName='fuzzy' fuzzylevel:colName='0.0' /&gt;&quot;, str_invoiceNumber)]" Guid="f83224cd-931f-4e20-8efe-35d2b7911f2b" InformativeScreenshot="f21133a810e795098f7da50464c15ab1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                           <uix:Target CVScreenId="e69b456c-9c4e-4f2f-a38a-3962a8b08fc9" DesignTimeRectangle="108, 289, 18, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='' tableCol='2' tableRow='2' tag='A' /&gt;" Guid="56b8fab9-37ef-4a7f-b4a7-f4a328e2b41d" SearchSteps="Selector" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
