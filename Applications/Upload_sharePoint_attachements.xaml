@@ -180,13 +180,13 @@
                   <InArgument x:TypeArguments="x:String" x:Key="in_str_direction">[in_str_direction]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_str_filePath">[str_filePath]</InArgument>
                   <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem" x:Key="in_emailAttachement">[currentO365AttachmentLocalItem]</InArgument>
-                  <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="out_di_file">[di_file]</InArgument>
+                  <OutArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="out_di_file">[di_file]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_metaData - Invoke Workflow File (Applications\Add_metaData.xaml)" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Applications\Add_metaData.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem" x:Key="in_emailAttachement">[currentO365AttachmentLocalItem]</InArgument>
                   <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_file]</InArgument>
+                  <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>

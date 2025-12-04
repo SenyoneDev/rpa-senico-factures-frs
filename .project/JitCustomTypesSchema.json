@@ -263,6 +263,48 @@
         "hash": "LTEzMDI3MTAwNDg",
         "assemblyName": "ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj"
       }
+    },
+    {
+      "providerName": "TypedDataTable",
+      "typedDataTableDto": {
+        "id": 1,
+        "idRef": "UpdateFileFolderMetadataConnections`1_2",
+        "hash": "UpdateFileFolderMetadataConnections`1_2|DataRow|KHMAX54zdGZhjuoss5XSxKdecONsctow6hcEUv1i6M",
+        "dataType": "System.Data.DataRow, System.Data.Common",
+        "columns": [
+          {
+            "columnName": "MediaServiceImageTags",
+            "dataType": "System.Object, System.Private.CoreLib",
+            "name": "Balises d’images",
+            "category": "Simplified"
+          },
+          {
+            "columnName": "Title",
+            "dataType": "System.String, System.Private.CoreLib",
+            "name": "Titre",
+            "category": "Simplified"
+          },
+          {
+            "columnName": "Traite",
+            "dataType": "System.Boolean, System.Private.CoreLib",
+            "name": "Traite",
+            "category": "Simplified"
+          },
+          {
+            "columnName": "ID",
+            "dataType": "System.Object, System.Private.CoreLib",
+            "name": "ID",
+            "category": "Simplified"
+          }
+        ],
+        "rowExtensionProperties": [],
+        "nestedRowExtensionProperties": []
+      },
+      "entityAssemblyKey": {
+        "name": "Studio.Generated.TypedDataRow1",
+        "hash": "UpdateFileFolderMetadataConnections`1_2|DataRow|0m3yWXTA0KWjj9v1ORkwDYfnPRGwXcIpNNDG5d58",
+        "assemblyName": "Studio.Generated.TypedDataRow1"
+      }
     }
   ]
 }

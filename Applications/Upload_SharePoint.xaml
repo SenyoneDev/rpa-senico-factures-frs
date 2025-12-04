@@ -5,11 +5,8 @@
     <x:Property Name="in_str_direction" Type="InArgument(x:String)" />
     <x:Property Name="in_str_filePath" Type="InArgument(x:String)" />
     <x:Property Name="in_emailAttachement" Type="InArgument(ummm:O365AttachmentLocalItem)" />
-    <x:Property Name="out_di_file" Type="InArgument(umfm:O365DriveRemoteItem)" />
+    <x:Property Name="out_di_file" Type="OutArgument(umfm:O365DriveRemoteItem)" />
   </x:Members>
-  <this:Find_direction_basic.out_di_file>
-    <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" />
-  </this:Find_direction_basic.out_di_file>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>

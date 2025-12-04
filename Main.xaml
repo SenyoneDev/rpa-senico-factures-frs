@@ -160,9 +160,10 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataRow1</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID5}" sap2010:Annotation.AnnotationText="189_HR_Workday_Casiers_Judiciaires&#xA;Onborading new employee - criminal record document checks&#xA;&#xA;Author: Adriana López &#xA;Email: adriana.lopez@roboyo.es&#xA; &#xA;Applications involved: Email (SMTP), Workday&#xA;&#xA;Mark with x the used disaptcher style:&#xA;Dispatcher integrated in Performer  []&#xA;Separate Dispatcher - Performer  [x] " DisplayName="Main" sap:VirtualizedContainerService.HintSize="907,498.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID5}" sap2010:Annotation.AnnotationText="189_HR_Workday_Casiers_Judiciaires&#xA;Onborading new employee - criminal record document checks&#xA;&#xA;Author: Adriana López &#xA;Email: adriana.lopez@roboyo.es&#xA; &#xA;Applications involved: Email (SMTP), Workday&#xA;&#xA;Mark with x the used disaptcher style:&#xA;Dispatcher integrated in Performer  []&#xA;Separate Dispatcher - Performer  [x] " DisplayName="Main" sap:VirtualizedContainerService.HintSize="907,523.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,7 +174,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="654,2383" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="654,2423" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
         <Sequence sap2010:Annotation.AnnotationText="Data retrieval mechanism. The TransactionNumber variable holds the current transaction number. Incrementing this number means getting the next transaction. For a robot retry, the number is not increased, in case of application exception, until the max retry number.&#xA;TransactionItem type needs to be changed accordingly." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="608,1964" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
@@ -457,7 +458,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried.&#xA;&#xA;All the BusinessRule Exception and System exceptions are counted, If the system exception reaches the threshold defined in Config, the process will be aborted" DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="209,302" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried.&#xA;&#xA;All the BusinessRule Exception and System exceptions are counted, If the system exception reaches the threshold defined in Config, the process will be aborted" DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="552,1136" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try Catch | Process" sap:VirtualizedContainerService.HintSize="506,592" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                   <sap:WorkflowViewStateService.ViewState>

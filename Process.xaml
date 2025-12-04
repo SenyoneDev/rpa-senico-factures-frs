@@ -190,9 +190,10 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataRow1</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence.&#xA;&#xA;After each transaction a row with transaction information will be added to the StatusReport.xlsx by the UpdateStatusReport_AR workflow, which is invoked in the SetTransactionStatus_AR workflow." DisplayName="Process" sap:VirtualizedContainerService.HintSize="890,4212" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence.&#xA;&#xA;After each transaction a row with transaction information will be added to the StatusReport.xlsx by the UpdateStatusReport_AR workflow, which is invoked in the SetTransactionStatus_AR workflow." DisplayName="Process" sap:VirtualizedContainerService.HintSize="890,4092" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ummm:O365AttachmentLocalItem[]" Name="o365m_mailAttachements" />
       <Variable x:TypeArguments="x:String" Name="str_direction" />
@@ -211,7 +212,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message | Reference" sap:VirtualizedContainerService.HintSize="654,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;## Start Process Message item with Reference: &quot;]" />
-    <Sequence DisplayName="Integration GED" sap:VirtualizedContainerService.HintSize="654,902" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="Integration GED" sap:VirtualizedContainerService.HintSize="654,782" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -255,20 +256,37 @@
           </umafm:DriveItemArgument>
         </umae:ReadRangeConnections.TemplateArgument>
       </umae:ReadRangeConnections>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find Direction - Invoke Workflow File (Applications\Find Direction.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Applications\Find Direction.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_str_direction">[str_direction]</OutArgument>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_Config]</InArgument>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_listAnnuaire">[dt_listAnnuaire]</InArgument>
-          <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem[]" x:Key="in_o365m_mailAttachements">[o365m_mailAttachements]</InArgument>
-          <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_32">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find Direction - Invoke Workflow File (Applications\Find Direction.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Applications\Find Direction.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_str_direction">[str_direction]</OutArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_Config]</InArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_listAnnuaire">[dt_listAnnuaire]</InArgument>
+                <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem[]" x:Key="in_o365m_mailAttachements">[o365m_mailAttachements]</InArgument>
+                <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Upload_sharePoint_attachements - Invoke Workflow File (Applications\Upload_sharePoint_attachements.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Applications\Upload_sharePoint_attachements.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_Config]</InArgument>
           <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem[]" x:Key="in_o365m_mailAttachements">[o365m_mailAttachements]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_str_direction">[str_direction]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_str_direction">ACHAT</InArgument>
           <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
@@ -351,7 +369,7 @@ kvp.Value(0).ToString.Trim &lt;&gt; "" AndAlso
 CDbl(kvp.Value(1)) &gt; CDbl(in_dict_Config("Document_confidence").ToString))]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <If Condition="[bool_isValidExtract = False]" sap:VirtualizedContainerService.HintSize="484,487" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If Condition="[bool_isValidExtract = False]" sap:VirtualizedContainerService.HintSize="484,487" sap2010:WorkflowViewState.IdRef="If_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -396,7 +414,7 @@ CDbl(kvp.Value(1)) &gt; CDbl(in_dict_Config("Document_confidence").ToString))]</
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_Config">[in_dict_Config]</InArgument>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="in_dict_invoiceInformation">[dict_invoceInformation]</InArgument>
                           <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="out_str_fournissuerId">[str_supplierID]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_fournissuerId">[str_supplierID]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <If Condition="[str_supplierID is Nothing]" sap:VirtualizedContainerService.HintSize="450,587" sap2010:WorkflowViewState.IdRef="If_5">
