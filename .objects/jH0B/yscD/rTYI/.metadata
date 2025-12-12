@@ -1,0 +1,16 @@
+﻿{
+  "Name": "LoginPage",
+  "Type": "Screen",
+  "Id": "rTYI1-6pHkGNA9AKHU76jg",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/rTYI1-6pHkGNA9AKHU76jg",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/yscDq7DspkWqvutAkwmmVQ",
+  "Created": "2025-12-12T15:11:46.2638128Z",
+  "Updated": "2025-12-12T15:11:57.6291419Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

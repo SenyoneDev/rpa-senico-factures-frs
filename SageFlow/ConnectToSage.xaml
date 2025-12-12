@@ -1,12 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ConnectToSage" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ConnectToSage" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_str_userName" Type="InArgument(x:String)" />
-    <x:Property Name="in_str_password" Type="InArgument(x:String)" />
-    <x:Property Name="out_ui_sageBrowser" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="out_ui_sageBrowser" Type="OutArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="Config Dictionary containing all needed configurable information" Name="in_dict_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <this:ConnectToSage.out_ui_sageBrowser>
-    <InArgument x:TypeArguments="ui:UiElement" />
-  </this:ConnectToSage.out_ui_sageBrowser>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -117,161 +113,147 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ConnectToSage" sap:VirtualizedContainerService.HintSize="890,1318" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ConnectToSage" sap:VirtualizedContainerService.HintSize="1132,1465.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="secstr_sage_pw" />
+      <Variable x:TypeArguments="x:String" Name="str_sage_userName" />
+      <Variable x:TypeArguments="x:String" Name="str_sage_URL" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_16">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Connection" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_14">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Sage X3" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,503" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" OutUiElement="[out_ui_sageBrowser]" ScopeGuid="b19c75f0-efe5-4dc7-b4b2-1be25f0e0212" Version="V2">
-              <uix:NApplicationCard.Body>
-                <ActivityAction x:TypeArguments="x:Object">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,289" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NUITask AgentType="GPT5" DisplayName="ScreenPlay" sap:VirtualizedContainerService.HintSize="382,229" sap2010:WorkflowViewState.IdRef="NUITask_1" InteractionMode="SameAsCard" ScopeIdentifier="b19c75f0-efe5-4dc7-b4b2-1be25f0e0212" Task="Dans le champ Identifiant, saisis la valeur de la variable in_str_username.&#xA;Dans le champ Mot de passe, saisis la valeur de la variable in_str_password.&#xA;Clique sur le bouton Connexion." Version="V5" />
-                  </Sequence>
-                </ActivityAction>
-              </uix:NApplicationCard.Body>
-              <uix:NApplicationCard.OCREngine>
-                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
-                  <ActivityFunc.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
-                  </ActivityFunc.Argument>
-                </ActivityFunc>
-              </uix:NApplicationCard.OCREngine>
-              <uix:NApplicationCard.TargetApp>
-                <uix:TargetApp Area="-8, -8, 1296, 768" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVDhPpZGxSgNBEIa/RoliI6QQSRpB0mkZxCLgC9gEG8FeS9uk9glsFGMrtuYNJKWFCAHNzF4QRUGwsVFi4OSW47zsZpHD4i/2m5mPnV3iOOY/8UDReCArPLKIsINhnwF1nphze6YKiFhD6aGMUeJckvMlQiUo4IYZlNd04BnhHMMxyjXKp60ZVsMCYSMdHqFUJ2pKlYhanvmCB8oo31YidBAaDFhhSMkdnCqwQDl1dk/yhXKBsuX1u8BCoZmKegjvE7KI9T8FbrhnGeUulZwEBfSZRehiOEp+JOMvzCPcWoHhLCwQDnPX/bArGK5Q3jIubAcFFhh2vb1/H7Ll9bvAwj4LKJsIByhtlD2GLLl9QUGReKBofgByX3aZ66j3iQAAAABJRU5ErkJggg==" InformativeScreenshot="5d1ddf9e1dff93c12f416e3750a194c1.jpg" Selector="&lt;html app='chrome.exe' title='Sage X3' /&gt;" Url="http://192.168.6.12:8124/auth/login/page" Version="V2">
-                  <uix:TargetApp.Arguments>
-                    <InArgument x:TypeArguments="x:String" />
-                  </uix:TargetApp.Arguments>
-                  <uix:TargetApp.WorkingDirectory>
-                    <InArgument x:TypeArguments="x:String" />
-                  </uix:TargetApp.WorkingDirectory>
-                </uix:TargetApp>
-              </uix:NApplicationCard.TargetApp>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </uix:NApplicationCard>
-            <uix:NCheckState DisplayName="Check App State 'A ?representation=home.…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="484,684" sap2010:WorkflowViewState.IdRef="NCheckState_2" Version="V5">
-              <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Connect to Sage Succesfully&quot;]" />
-                </Sequence>
-              </uix:NCheckState.IfExists>
-              <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Throw Exception="[New BusinessRuleException(&quot;Connection Failed&quot;)]" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
-                </Sequence>
-              </uix:NCheckState.IfNotExists>
-              <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="f22c7b7a-e550-4377-81fa-b14bf5fee66b" DesignTimeRectangle="8, 159, 82, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" Guid="8b381dea-3c41-4bf4-804d-baac27b4f2fb" InformativeScreenshot="5de90d62e7b763312ec33d58718c3373.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-              </uix:NCheckState.Target>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </uix:NCheckState>
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
+    <ui:LogMessage DisplayName="LogM | Starting" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;ConnectToSage | Starting...&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <Sequence DisplayName="Seq | Connect with into" sap:VirtualizedContainerService.HintSize="484,1074" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    </ui:LogMessage>
+    <Sequence DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="512,408" sap2010:WorkflowViewState.IdRef="Sequence_18">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_dict_Config(&quot;SageUserCredential&quot;).tostring]" CacheStrategy="None" DisplayName="Get Sage Credential" FolderPath="[in_dict_Config(&quot;OrchestratorAssetFolder&quot;).tostring]" sap:VirtualizedContainerService.HintSize="478.4,175.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstr_sage_pw]" Username="[str_sage_userName]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetRobotCredential>
+      <ui:MultipleAssign DisplayName="Multiple Assign | Init Sage" sap:VirtualizedContainerService.HintSize="478.4,140.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[str_Sage_URL]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_dict_Config("Sage_UI_HomepageURL").tostring]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+    </Sequence>
+    <Sequence DisplayName="Seq | Connect with into" sap:VirtualizedContainerService.HintSize="512,929.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Sage X3" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="450,982" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" OutUiElement="[out_ui_sageBrowser]" ScopeGuid="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Sage X3" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="417.6,837.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OutUiElement="[out_ui_sageBrowser]" ScopeGuid="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,777" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,648" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT login'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,240" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" Text="[in_str_userName]" Version="V5">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT login'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382.4,241.6" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" Text="[str_sage_userName]" Version="V5">
                 <uix:NTypeInto.Target>
-                  <uix:TargetAnchorable BrowserURL="192.168.6.12/auth/login/page" CVScreenId="1531adff-02d7-4b51-86a5-5bc8a6c4b2e3" DesignTimeRectangle="100, 276, 235, 33" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='login' tag='INPUT' /&gt;" Guid="8e021e72-466e-4f93-8f55-bdbbf59f82e6" InformativeScreenshot="9357eb887b08de45e99cf3f007086919.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sage X3' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  <uix:TargetAnchorable BrowserURL="192.168.6.12/auth/login/page" CVScreenId="1531adff-02d7-4b51-86a5-5bc8a6c4b2e3" ContentHash="UfbJZ1Vk9keGTPQ-sKYoEA" DesignTimeRectangle="100, 276, 235, 33" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='login' tag='INPUT' /&gt;" Guid="8e021e72-466e-4f93-8f55-bdbbf59f82e6" InformativeScreenshot="9357eb887b08de45e99cf3f007086919.png" Reference="EhPK3qwwJUmaJOdGcl1hvg/yVecFaJtNEqYZasHBm1_zw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sage X3' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.Single]" ClipboardMode="Never" DisplayName="Type Into 'INPUT password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,240" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" Text="[in_str_userName]" Version="V5">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.Single]" ClipboardMode="Never" DisplayName="Type Into 'INPUT password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382.4,241.6" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" SecureText="[secstr_sage_pw]" Version="V5">
                 <uix:NTypeInto.Target>
-                  <uix:TargetAnchorable BrowserURL="192.168.6.12/auth/login/page" CVScreenId="e79f870e-d621-4d90-91ab-232715633432" DesignTimeRectangle="100, 322, 235, 33" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" Guid="e4a801a4-1cea-44d9-9bf8-d88808b1c522" InformativeScreenshot="eadd43ba289c41bb7543e39860c05a67.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sage X3' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  <uix:TargetAnchorable BrowserURL="192.168.6.12/auth/login/page" CVScreenId="e79f870e-d621-4d90-91ab-232715633432" ContentHash="gH2StElOlkS2lUWFbf52gg" DesignTimeRectangle="100, 322, 235, 33" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" Guid="e4a801a4-1cea-44d9-9bf8-d88808b1c522" InformativeScreenshot="eadd43ba289c41bb7543e39860c05a67.png" Reference="EhPK3qwwJUmaJOdGcl1hvg/W51RrqhSHUWWj86IamE3Ww" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sage X3' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Connexion'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V5">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Connexion'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V5">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="192.168.6.12/auth/login/page" CVScreenId="c24176ef-7e7d-43a4-ad34-356921ea6f03" DesignTimeRectangle="103, 408, 229, 37" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='go-basic' tag='INPUT' /&gt;" Guid="2a54f1a6-28ce-43bc-98a5-0f1ed2b56975" InformativeScreenshot="e63ac324bacc0224cc36a371741aab33.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sage X3' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  <uix:TargetAnchorable BrowserURL="192.168.6.12/auth/login/page" CVScreenId="c24176ef-7e7d-43a4-ad34-356921ea6f03" ContentHash="EfeVbzmqZkWlNdD_7-CewQ" DesignTimeRectangle="103, 408, 229, 37" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='go-basic' tag='INPUT' /&gt;" Guid="2a54f1a6-28ce-43bc-98a5-0f1ed2b56975" InformativeScreenshot="e63ac324bacc0224cc36a371741aab33.png" Reference="EhPK3qwwJUmaJOdGcl1hvg/ZKXd2266jke45fhGDOE-8A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sage X3' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <uix:NCheckState DisplayName="Check App State 'A ?representation=home.…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V5">
+              <uix:NCheckState DisplayName="Check App State | Connected" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V5">
                 <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Connect to Sage Succesfully&quot;]" />
+                    <ui:LogMessage DisplayName="LogM | Connected" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ConnectToSage | Connect to Sage Succesfully&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
                   </Sequence>
                 </uix:NCheckState.IfExists>
                 <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,173.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Throw Exception="[New BusinessRuleException(&quot;Connection Failed&quot;)]" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    <Throw DisplayName="Throw SE - Connection Failed" Exception="[New SystemException(&quot;ConnectToSage | Connection Failed&quot;)]" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Throw_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Throw>
                   </Sequence>
                 </uix:NCheckState.IfNotExists>
                 <uix:NCheckState.Target>
@@ -295,10 +277,24 @@
           </ActivityFunc>
         </uix:NApplicationCard.OCREngine>
         <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="-8, -8, 1296, 768" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVDhPpZGxSgNBEIa/RoliI6QQSRpB0mkZxCLgC9gEG8FeS9uk9glsFGMrtuYNJKWFCAHNzF4QRUGwsVFi4OSW47zsZpHD4i/2m5mPnV3iOOY/8UDReCArPLKIsINhnwF1nphze6YKiFhD6aGMUeJckvMlQiUo4IYZlNd04BnhHMMxyjXKp60ZVsMCYSMdHqFUJ2pKlYhanvmCB8oo31YidBAaDFhhSMkdnCqwQDl1dk/yhXKBsuX1u8BCoZmKegjvE7KI9T8FbrhnGeUulZwEBfSZRehiOEp+JOMvzCPcWoHhLCwQDnPX/bArGK5Q3jIubAcFFhh2vb1/H7Ll9bvAwj4LKJsIByhtlD2GLLl9QUGReKBofgByX3aZ66j3iQAAAABJRU5ErkJggg==" InformativeScreenshot="b54189dc1795c7dfdc2f542ef41243d1.jpg" Selector="&lt;html app='chrome.exe' title='Sage X3' /&gt;" Url="http://192.168.6.12:8124/auth/login/page" Version="V2" />
+          <uix:TargetApp Area="-8, -8, 1296, 768" BrowserType="Chrome" ContentHash="K74WeNHpDEiqP2coxSaGgg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVDhPpZGxSgNBEIa/RoliI6QQSRpB0mkZxCLgC9gEG8FeS9uk9glsFGMrtuYNJKWFCAHNzF4QRUGwsVFi4OSW47zsZpHD4i/2m5mPnV3iOOY/8UDReCArPLKIsINhnwF1nphze6YKiFhD6aGMUeJckvMlQiUo4IYZlNd04BnhHMMxyjXKp60ZVsMCYSMdHqFUJ2pKlYhanvmCB8oo31YidBAaDFhhSMkdnCqwQDl1dk/yhXKBsuX1u8BCoZmKegjvE7KI9T8FbrhnGeUulZwEBfSZRehiOEp+JOMvzCPcWoHhLCwQDnPX/bArGK5Q3jIubAcFFhh2vb1/H7Ll9bvAwj4LKJsIByhtlD2GLLl9QUGReKBofgByX3aZ66j3iQAAAABJRU5ErkJggg==" InformativeScreenshot="b54189dc1795c7dfdc2f542ef41243d1.jpg" Reference="EhPK3qwwJUmaJOdGcl1hvg/rTYI1-6pHkGNA9AKHU76jg" Selector="&lt;html app='chrome.exe' title='Sage X3' /&gt;" Url="[str_sage_URL]" Version="V2">
+            <uix:TargetApp.Arguments>
+              <InArgument x:TypeArguments="x:String" />
+            </uix:TargetApp.Arguments>
+            <uix:TargetApp.WorkingDirectory>
+              <InArgument x:TypeArguments="x:String" />
+            </uix:TargetApp.WorkingDirectory>
+          </uix:TargetApp>
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;end to connect&quot;]" />
+    <ui:LogMessage DisplayName="LogM | Finished" sap:VirtualizedContainerService.HintSize="512,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;ConnectToSage | Connection end...&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
   </Sequence>
 </Activity>

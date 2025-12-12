@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UfbJZ1Vk9keGTPQ-sKYoEA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/auth/login/page" CVScreenId="1531adff-02d7-4b51-86a5-5bc8a6c4b2e3" DesignTimeRectangle="100, 276, 235, 33" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='login' tag='INPUT' /&gt;" Guid="8e021e72-466e-4f93-8f55-bdbbf59f82e6" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sage X3' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="9357eb887b08de45e99cf3f007086919.png" xmlns="">0Zu3dMbV-YUOd4GIB5422Ow</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

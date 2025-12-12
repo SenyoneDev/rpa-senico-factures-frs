@@ -1,0 +1,14 @@
+﻿{
+  "Name": "INPUT login",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "yVecFaJtNEqYZasHBm1_zw",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/yVecFaJtNEqYZasHBm1_zw",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/rTYI1-6pHkGNA9AKHU76jg",
+  "Created": "2025-12-12T15:12:10.266339Z",
+  "Updated": "2025-12-12T15:12:10.266339Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

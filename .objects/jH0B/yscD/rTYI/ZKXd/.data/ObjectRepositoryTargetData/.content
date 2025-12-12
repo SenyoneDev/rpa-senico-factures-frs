@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="EfeVbzmqZkWlNdD_7-CewQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/auth/login/page" CVScreenId="c24176ef-7e7d-43a4-ad34-356921ea6f03" DesignTimeRectangle="103, 408, 229, 37" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='go-basic' tag='INPUT' /&gt;" Guid="2a54f1a6-28ce-43bc-98a5-0f1ed2b56975" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sage X3' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="e63ac324bacc0224cc36a371741aab33.png" xmlns="">00nmEH33PME2DsYebYbr2cA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
