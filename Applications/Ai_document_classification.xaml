@@ -144,7 +144,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,1467" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,1461" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uisad:DocumentData" Name="cd_documentType" />
     </Sequence.Variables>
@@ -296,13 +296,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence DisplayName="Seq | Classifiy Document" sap:VirtualizedContainerService.HintSize="536,1050" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Seq | Classifiy Document" sap:VirtualizedContainerService.HintSize="536,1044" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <p:ClassifyDocument ApiKey="{x:Null}" ClassifierResult="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" DocumentTypes="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" ProjectTag="{x:Null}" ProjectVersionNumber="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ClassificationResults="[cd_documentType]" ClassifierId="ml-classification" DisplayName="Classify Document" Endpoint="https://cloud.uipath.com/700fff6f-4a22-4e56-89d3-1c43999b391f/23ad295f-e32c-408a-bb8b-fc563bc95dce/du_/api/framework/projects/00000000-0000-0000-0000-000000000000/classifiers/ml-classification/classification/start?api-version=1.1" FileInput="[LocalResource.FromPath(in_str_localPath)]" sap:VirtualizedContainerService.HintSize="502,345" sap2010:WorkflowViewState.IdRef="ClassifyDocument_1" MinimumConfidence="50" ProjectId="00000000-0000-0000-0000-000000000000" TimeoutInSeconds="3600">
+      <p:ClassifyDocument ApiKey="{x:Null}" ClassifierResult="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" DocumentTypes="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" ProjectTag="{x:Null}" ProjectVersionNumber="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ClassificationResults="[cd_documentType]" ClassifierId="ml-classification" DisplayName="Classify Document" Endpoint="https://cloud.uipath.com/dd9d1863-f4b7-4889-8d82-581a84efcc48/c0258b1a-a952-43fa-a27b-439abdcdf937/du_/api/framework/projects/00000000-0000-0000-0000-000000000000/classifiers/ml-classification/classification/start?api-version=1.1" FileInput="[LocalResource.FromPath(in_str_localPath)]" sap:VirtualizedContainerService.HintSize="502,339" sap2010:WorkflowViewState.IdRef="ClassifyDocument_1" MinimumConfidence="50" ProjectId="00000000-0000-0000-0000-000000000000" TimeoutInSeconds="3600">
         <p:ClassifyDocument.GptPromptWithVariables>
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </p:ClassifyDocument.GptPromptWithVariables>

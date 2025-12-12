@@ -160,7 +160,7 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,3553" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,4043" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uisad:DocumentData" Name="cd_documentType" />
     </Sequence.Variables>
@@ -170,27 +170,50 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Fetch Order in Sage &quot;]" />
-    <Sequence DisplayName="Seq | Classifiy Document" sap:VirtualizedContainerService.HintSize="620,3193" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Seq | Classifiy Document" sap:VirtualizedContainerService.HintSize="620,3683" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_useNameSage" />
         <Variable x:TypeArguments="ss:SecureString" Name="str_passwordSecureSage" />
         <Variable x:TypeArguments="x:String" Name="str_passwordSage" />
-        <Variable x:TypeArguments="x:String" Default="SENFI2509POH00000002" Name="str_invoiceNumber" />
+        <Variable x:TypeArguments="x:String" Default="DMP022309POH00000002" Name="str_invoiceNumber" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,337" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,691" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="513,580" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_dict_Config(&quot;SageUserCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential | SageUser" FolderPath="[in_dict_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_passwordSecureSage]" Username="[str_useNameSage]" />
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_dict_Config(&quot;SageUserCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential | SageUser" FolderPath="[in_dict_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="479,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_passwordSecureSage]" Username="[str_useNameSage]" />
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="SageCredentials" CacheStrategy="None" DisplayName="Get Credential | SageUser" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="479,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[str_passwordSecureSage]" Username="[str_useNameSage]" />
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[str_passwordSage]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[System.Runtime.InteropServices.Marshal.PtrToStringBSTR(System.Runtime.InteropServices.Marshal.SecureStringToBSTR(str_passwordSecureSage))]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[str_invoiceNumber]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[in_str_invoceNumber]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
           </Sequence>
         </ui:CommentOut.Body>
         <sap:WorkflowViewStateService.ViewState>
@@ -200,29 +223,6 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="SageCredentials" CacheStrategy="None" DisplayName="Get Credential | SageUser" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="586,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[str_passwordSecureSage]" Username="[str_useNameSage]" />
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="586,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-        <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[str_passwordSage]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[System.Runtime.InteropServices.Marshal.PtrToStringBSTR(System.Runtime.InteropServices.Marshal.SecureStringToBSTR(str_passwordSecureSage))]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[str_invoiceNumber]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[in_str_invoceNumber]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-          </scg:List>
-        </ui:MultipleAssign.AssignOperations>
-      </ui:MultipleAssign>
       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,339" sap2010:WorkflowViewState.IdRef="CommentOut_2">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_11">
@@ -247,19 +247,19 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <Sequence DisplayName="Seq | navigation" sap:VirtualizedContainerService.HintSize="586,2071" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <Sequence DisplayName="Seq | navigation" sap:VirtualizedContainerService.HintSize="586,2561" sap2010:WorkflowViewState.IdRef="Sequence_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: *(X3V12 / SENICO)*" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,1988" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: *(X3V12 / SENICO)*" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,2478" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1783" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,2273" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -320,7 +320,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NCheckState>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'STD Standard'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'STD Standard'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="8b342812-5548-457e-ae03-e35d2ecd4f2e" DesignTimeRectangle="498, 337, 303, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='s-grid-table-body' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='DIV' /&gt;" Guid="75b99552-e75f-4575-b1bf-3ec5b8bebfd3" InformativeScreenshot="8813c1e6012bd351dc5d642bb08f18a8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                   </uix:NClick.Target>
@@ -336,9 +336,48 @@
                     </uix:TargetAnchorable>
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NGetText DisplayName="Get Text 'MAMADOU MOUSTAPHA NDOUR'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,130" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" TextString="[out_str_requester]" Version="V5">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,301" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NGetText DisplayName="Get Text 'MAMADOU MOUSTAPHA NDOUR'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,130" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" TextString="[out_str_requester]" Version="V5">
+                        <uix:NGetText.Target>
+                          <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="026004f2-fdbf-4466-8e6f-8050fbb70a6f" DesignTimeRectangle="341, 493, 285, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-17-72' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='INPUT' type='text' idx='12' class='s-field-input s-readonly' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="63ed0c05-9ea0-4b6c-896b-f1e35e49844d" InformativeScreenshot="eadff42f492e5a6b1124f6d2d7351379.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                        </uix:NGetText.Target>
+                      </uix:NGetText>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'arrow_right'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="d7238e28-6940-46cc-8ba7-a42874244d9e" DesignTimeRectangle="341, 505, 28, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='arrow_right' parentid='layout-slot-3-92' tag='A' type='' class='s-field-edit-picker s-btn-tunnel' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='arrow_right' /&gt;" Guid="6990383f-5911-49fe-aff8-e7b7ef4eee0a" InformativeScreenshot="5623320fadf08a4f37bf1a0baa68d876.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="7c6253ff-30fa-4d96-aa40-3b5cc9458788" DesignTimeRectangle="340, 481, 135, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-5-92' tag='LABEL' type='' class='s-field-title  s-tunnel-link s-floating' aaname='Acheteur' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Acheteur' /&gt;" Guid="0edc8485-9f2b-4ce8-929d-afdc7ecec770" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NGetText DelayBefore="2" DisplayName="Get | Requester" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,130" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" TextString="[out_str_requester]" Version="V5">
                   <uix:NGetText.Target>
-                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="026004f2-fdbf-4466-8e6f-8050fbb70a6f" DesignTimeRectangle="341, 493, 285, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-17-72' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='INPUT' type='text' idx='12' class='s-field-input s-readonly' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="63ed0c05-9ea0-4b6c-896b-f1e35e49844d" InformativeScreenshot="eadff42f492e5a6b1124f6d2d7351379.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="80f2ad72-a51c-401d-9657-d69596e3343c" DesignTimeRectangle="485, 363, 265, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-8-48' tag='INPUT' type='text' class='s-field-input' aaname='Nom' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="f0604965-9158-4320-860e-1e3662eaf5a2" InformativeScreenshot="2209b3e35e5cfc20cdf404891cf66a7b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="80f2ad72-a51c-401d-9657-d69596e3343c" DesignTimeRectangle="484, 339, 285, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-8-48' tag='LABEL' type='' class='s-field-title  s-floating' aaname='Nom' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Nom' /&gt;" Guid="c3d5279f-83e4-4246-b943-af5d0b180bdd" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
                   </uix:NGetText.Target>
                 </uix:NGetText>
               </Sequence>

@@ -10,5 +10,6 @@
   "UiPath.CV.Activities.GenericCV.ScrollTimeoutMS": "90000",
   "UiPath.CV.Activities.GenericCV.DelayScreenshotAfterScroll": "250",
   "UiPath.CV.Activities.RobotLogging.TableScrollLog": "False",
-  "UiPath.CV.Activities.GenericCV.EnableRTLOutput": "False"
+  "UiPath.CV.Activities.GenericCV.EnableRTLOutput": "False",
+  "UiPath.CV.Activities.RobotLogging.LogRetention": "7"
 }

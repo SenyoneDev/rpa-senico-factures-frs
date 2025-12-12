@@ -171,10 +171,14 @@
       <AssemblyReference>UiPath.MLServices.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,2821" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,2781" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uisad:DocumentData" Name="cd_documentType" />
-      <Variable x:TypeArguments="x:String" Default="SOMICOA" Name="str_nomFounisseur" />
+      <Variable x:TypeArguments="x:String" Name="str_nomFounisseur">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">ROCHETTE</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -182,7 +186,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage fetch Supplier &quot;]" />
-    <Sequence DisplayName="Seq | Check supplier" sap:VirtualizedContainerService.HintSize="620,2461" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Seq | Check supplier" sap:VirtualizedContainerService.HintSize="620,2421" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_useNameSage" />
         <Variable x:TypeArguments="ss:SecureString" Name="str_passwordSecureSage" />
@@ -197,6 +201,7 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
@@ -281,38 +286,44 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <Sequence DisplayName="Seq -2 | navigation" sap:VirtualizedContainerService.HintSize="586,2312" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence DisplayName="Seq -2 | navigation" sap:VirtualizedContainerService.HintSize="586,2272" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,316" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,276" sap2010:WorkflowViewState.IdRef="CommentOut_3">
           <ui:CommentOut.Body>
-            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_16">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[str_nomFounisseur]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[in_dict_invoiceInformation("Nom Fournisseur")(0)]</InArgument>
+                  <InArgument x:TypeArguments="x:String">GETMA</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
           </ui:CommentOut.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <Assign sap:VirtualizedContainerService.HintSize="552,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign sap:VirtualizedContainerService.HintSize="552,114" sap2010:WorkflowViewState.IdRef="Assign_4">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[str_nomFounisseur]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">["SENELEC"]</InArgument>
+            <InArgument x:TypeArguments="x:String">[in_dict_invoiceInformation("Nom fournisseur")(0)]</InArgument>
           </Assign.Value>
         </Assign>
         <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Chrome: *(X3V12 / SENICO)*" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,1799" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
@@ -322,6 +333,9 @@
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
               <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1594" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="str_om" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -376,12 +390,12 @@
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="98cb795d-ff30-486c-beb6-80a2aa823d3a" DesignTimeRectangle="818, 445, 68, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='OK' tag='A' /&gt;" Guid="40719243-1dac-4423-ae91-739967b931db" InformativeScreenshot="49e58a7cd1a434c9652f29bbe3450881.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                   </uix:NCheckState.Target>
                 </uix:NCheckState>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SOMICOA'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ROCHETTE'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="e28217c8-8c9a-4e6b-8ce8-4507d2610b7a" DesignTimeRectangle="122, 346, 268, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl class='s-grid-table-body' tag='TABLE' /&gt;&lt;webctrl aaname='SOMICOA' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' tag='DIV' matching:tag='fuzzy' fuzzylevel:tag='0.0' innertext='{0}' matching:innertext='fuzzy' fuzzylevel:innertext='0.0' idx='131' /&gt;&quot;, str_nomFounisseur)]" Guid="b2c690aa-78ce-4b25-a4c5-a3063c88f279" InformativeScreenshot="b11cbd98b49aee70b3fa42a68f741541.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="0c8f50d8-1e7b-41ad-b864-2a4bf007866d" DesignTimeRectangle="122, 360, 268, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='s-grid-table-body' tag='TABLE' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;&lt;webctrl aaname='{0}' type='' tag='DIV' class='s-inplace-value-read' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='{0}' /&gt;&quot;, str_nomFounisseur)]" Guid="f4b2c9a1-0949-4457-97bc-298fe4b79989" InformativeScreenshot="941864b2c810c5c9d6219b8ba10dc758.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                          <uix:Target CVScreenId="e28217c8-8c9a-4e6b-8ce8-4507d2610b7a" DesignTimeRectangle="114, 289, 18, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='A' /&gt;" Guid="cfc2b28a-d472-4911-b849-1d55261107c2" SearchSteps="Selector" />
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CVScreenId="0c8f50d8-1e7b-41ad-b864-2a4bf007866d" DesignTimeRectangle="118, 261, 264, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Raison sociale' type='' tag='DIV' class='s-grid-title-cell-label' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Raison sociale' /&gt;" Guid="05c98ff3-20c9-49b9-a8ec-9f219a6ab622" SearchSteps="FuzzySelector" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
                     </uix:TargetAnchorable>
@@ -389,10 +403,10 @@
                 </uix:NClick>
                 <uix:NGetText DisplayName="Get Text 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,130" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" TextString="[out_str_fournissuerId]" Version="V5">
                   <uix:NGetText.Target>
-                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="43ab3f84-31cb-466b-a9e2-7ec6ac94638e" DesignTimeRectangle="621, 363, 170, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-6-83' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='INPUT' matching:tag='fuzzy' fuzzylevel:tag='0.0' type='text' matching:type='fuzzy' fuzzylevel:type='0.0' idx='558' /&gt;" Guid="a0efa350-2969-489c-a2e3-5cf563618c95" InformativeScreenshot="da6edc78150660bd63d0d761ff572dd0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="e2c666d0-fb94-43b7-85e0-aeddae5a0d49" DesignTimeRectangle="621, 363, 170, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-7-83' tag='INPUT' type='text' class='s-field-input' aaname='Fournisseur' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="12dfd64c-094a-4b52-8f8b-905817b7d5eb" InformativeScreenshot="181fdc48378f1f6927a75bd56ee21922.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                       <uix:TargetAnchorable.Anchors>
                         <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                          <uix:Target CVScreenId="43ab3f84-31cb-466b-a9e2-7ec6ac94638e" DesignTimeRectangle="791, 363, 20, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='layout-slot-6-83' tag='A' /&gt;" Guid="31021936-2ae7-444c-95fa-993371f06b92" SearchSteps="Selector" />
+                          <uix:Target CVScreenId="e2c666d0-fb94-43b7-85e0-aeddae5a0d49" DesignTimeRectangle="620, 339, 210, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-7-83' tag='LABEL' type='' class='s-field-title  s-floating' aaname='Fournisseur' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Fournisseur' /&gt;" Guid="f40021ac-a72b-4745-b541-75b5cd1f4a54" SearchSteps="FuzzySelector" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
                     </uix:TargetAnchorable>

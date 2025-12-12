@@ -1,9 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Find_direction_basic" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uisad="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisad1="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisaseib="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.Invoices.Bundle;assembly=ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Filters;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Find_direction_basic" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uisad="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisad1="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisaseib="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.Invoices.Bundle;assembly=ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Filters;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:upad="clr-namespace:UiPath.Persistence.Activities.Delay;assembly=UiPath.Persistence.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_di_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_o365m_mailAttachements" Type="InArgument(ummm:O365AttachmentLocalItem[])" />
     <x:Property Name="in_idd_ExtractedData" Type="InArgument(uisad:IDocumentData(uisaseib:Invoices))" />
     <x:Property Name="io_dict_invoiceInformation" Type="InOutArgument(scg:Dictionary(x:String, s:String[]))" />
+    <x:Property Name="out_isValid" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -92,6 +93,8 @@
       <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
       <x:String>UiPath.DocumentProcessing.Contracts</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Persistence.Activities.Delay</x:String>
+      <x:String>UiPath.Persistence.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -172,16 +175,17 @@
       <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
       <AssemblyReference>ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,1579" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,1326" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="581,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Invocie Validator&quot;]" />
-    <Sequence DisplayName="Seq| Action Validation" sap:VirtualizedContainerService.HintSize="581,1162" sap2010:WorkflowViewState.IdRef="Sequence_20">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="876,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Invocie Validator&quot;]" />
+    <Sequence DisplayName="Seq| Action Validation" sap:VirtualizedContainerService.HintSize="876,909" sap2010:WorkflowViewState.IdRef="Sequence_20">
       <Sequence.Variables>
         <Variable x:TypeArguments="uisad1:CreatedValidationAction(uisaseib:Invoices)" Name="dd_documentValidation" />
         <Variable x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" Name="dd_extractedData" />
@@ -191,16 +195,12 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uisad1:CreateValidationAction x:TypeArguments="uisaseib:Invoices" BucketId="{x:Null}" BucketName="{x:Null}" ContainsDocument="{x:Null}" ContainsTaxonomy="{x:Null}" OrchestratorFolderId="{x:Null}" OriginalFilePath="{x:Null}" ActionCatalogue="default_du_actions" ActionPriority="Medium" ActionTitle="Complete invoice Information" AutomaticExtractionResults="[in_idd_ExtractedData]" CreatedValidationAction="[dd_documentValidation]" DisplayMode="Classic" DisplayName="Create Validation Task" EnableRTLControls="False" FieldsValidationConfidence="[CInt(in_di_config(&quot;Document_confidence&quot;))]" sap:VirtualizedContainerService.HintSize="547,175" sap2010:WorkflowViewState.IdRef="CreateValidationAction`1_1" OrchestratorBucketName="du_storage_bucket" OrchestratorFolderName="fallou@senyone.sn's workspace" />
-      <Assign sap:VirtualizedContainerService.HintSize="547,114" sap2010:WorkflowViewState.IdRef="Assign_5">
-        <Assign.To>
-          <OutArgument x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)">[dd_extractedData]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)">[dd_documentValidation.DocumentData]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="547,781" sap2010:WorkflowViewState.IdRef="If_2">
+      <uisad1:CreateValidationAction x:TypeArguments="uisaseib:Invoices" BucketId="{x:Null}" BucketName="{x:Null}" ContainsDocument="{x:Null}" ContainsTaxonomy="{x:Null}" OrchestratorFolderId="{x:Null}" OriginalFilePath="{x:Null}" ActionCatalogue="default_du_actions" ActionPriority="Medium" ActionTitle="Complete invoice Information" AutomaticExtractionResults="[in_idd_ExtractedData]" CreatedValidationAction="[dd_documentValidation]" DisplayMode="Classic" DisplayName="Create Validation Task" EnableRTLControls="False" FieldsValidationConfidence="[CInt(in_di_config(&quot;Document_confidence&quot;))]" sap:VirtualizedContainerService.HintSize="842,175" sap2010:WorkflowViewState.IdRef="CreateValidationAction`1_1" OrchestratorBucketName="du_storage_bucket" OrchestratorFolderName="fallou@senyone.sn's workspace" />
+      <Parallel sap:VirtualizedContainerService.HintSize="842,169" sap2010:WorkflowViewState.IdRef="Parallel_1">
+        <uisad1:WaitForValidationAction x:TypeArguments="uisaseib:Invoices" RemoveDataAfterProcessing="{x:Null}" WaitItemDataObject="{x:Null}" CreatedValidationAction="[dd_documentValidation]" DisplayName="Wait for Validation Task and Resume" sap:VirtualizedContainerService.HintSize="374,90" sap2010:WorkflowViewState.IdRef="WaitForValidationAction`1_1" ValidatedExtractionResults="[dd_extractedData]" />
+        <upad:ResumeAfterDelay StatusMessage="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Resume After Delay" sap:VirtualizedContainerService.HintSize="374,90" sap2010:WorkflowViewState.IdRef="ResumeAfterDelay_1" ResumeTime="[DateTime.Now.Add(TimeSpan.FromMinutes(1))]" />
+      </Parallel>
+      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="842,473" sap2010:WorkflowViewState.IdRef="If_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -208,16 +208,147 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513,447" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_22">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Assign extracted data Value to a out Dictionary" sap:VirtualizedContainerService.HintSize="479,387" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="513,447" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Assign extracted data Value to a out Dictionary" sap:VirtualizedContainerService.HintSize="479,387" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Numéro facture")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.InvoiceNumber.Value.ToString(),
+    dd_extractedData.Data.InvoiceNumber.Confidence.ToString()
+}]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Nom fournisseur")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.VendorName.Value.ToString(),
+    dd_extractedData.Data.VendorName.Confidence.ToString()
+}]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Date facture ")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.DocumentDate.Value.ToString(),
+    dd_extractedData.Data.DocumentDate.Confidence.ToString()
+}]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("NINEA")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.SWIFTCode.Value.ToString(),
+    dd_extractedData.Data.SWIFTCode.Confidence.ToString()
+}]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Montant HT")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.NetAmount.Value.ToString(),
+    dd_extractedData.Data.NetAmount.Confidence.ToString()
+}]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Montant TVA")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.TaxAmount.Value.ToString(),
+    dd_extractedData.Data.TaxAmount.Confidence.ToString()
+}]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Montant TTC")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.TotalAmount.Value.ToString(),
+    dd_extractedData.Data.TotalAmount.Confidence.ToString()
+}]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("N° Commande")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.PurchaseOrderNumber.Value.ToString(),
+    dd_extractedData.Data.PurchaseOrderNumber.Confidence.ToString()
+}]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Devise")]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.Currency.Value.ToString(),
+    dd_extractedData.Data.Currency.Confidence.ToString()
+}]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:MultipleAssign DisplayName="Assign extracted data Value to a out Dictionary" sap:VirtualizedContainerService.HintSize="479,449" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])">[io_dict_invoiceInformation]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])">[New Dictionary(Of String, String())]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Numéro facture")]</OutArgument>
                     </ui:AssignOperation.To>
@@ -228,7 +359,7 @@
 }]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Nom fournisseur")]</OutArgument>
                     </ui:AssignOperation.To>
@@ -239,18 +370,15 @@
 }]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Date facture ")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
-    dd_extractedData.Data.DocumentDate.Value.ToString(),
-    dd_extractedData.Data.DocumentDate.Confidence.ToString()
-}]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]">[If(dd_extractedData.Data.DocumentDate IsNot Nothing, New String() {dd_extractedData.Data.DocumentDate.Value.Value.ToString(), dd_extractedData.Data.DocumentDate.Confidence.ToString()}, Nothing)]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("NINEA")]</OutArgument>
                     </ui:AssignOperation.To>
@@ -261,7 +389,7 @@
 }]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Montant HT")]</OutArgument>
                     </ui:AssignOperation.To>
@@ -272,7 +400,7 @@
 }]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Montant TVA")]</OutArgument>
                     </ui:AssignOperation.To>
@@ -283,7 +411,7 @@
 }]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Montant TTC")]</OutArgument>
                     </ui:AssignOperation.To>
@@ -294,18 +422,18 @@
 }]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("N° Commande")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[If(dd_extractedData.Data.PurchaseOrderNumber IsNot Nothing,New String() {
     dd_extractedData.Data.PurchaseOrderNumber.Value.ToString(),
     dd_extractedData.Data.PurchaseOrderNumber.Confidence.ToString()
-}]</InArgument>
+}, Nothing)]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="s:String[]">[io_dict_invoiceInformation("Devise")]</OutArgument>
                     </ui:AssignOperation.To>
@@ -316,24 +444,40 @@
 }]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[out_isValid]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_23">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,287" sap2010:WorkflowViewState.IdRef="Sequence_23">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Throw DisplayName="Throw | Not a invoice" Exception="[New BusinessRuleException(&quot;Action Validation Failed&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[out_isValid]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Throw DisplayName="Throw | Not a invoice" Exception="[New BusinessRuleException(&quot;Action Validation Failed&quot;)]" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </Sequence>
         </If.Else>
       </If>
     </Sequence>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="581,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="876,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,117" sap2010:WorkflowViewState.IdRef="Sequence_21">
           <sap:WorkflowViewStateService.ViewState>
@@ -583,6 +727,6 @@ Environment.NewLine + in_di_config("MailValidatorSignature").ToString]</InArgume
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="581,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Invocie Validator&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="876,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Invocie Validator&quot;]" />
   </Sequence>
 </Activity>

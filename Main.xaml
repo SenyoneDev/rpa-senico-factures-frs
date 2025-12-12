@@ -174,7 +174,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="654,2423" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="654,2383" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
         <Sequence sap2010:Annotation.AnnotationText="Data retrieval mechanism. The TransactionNumber variable holds the current transaction number. Incrementing this number means getting the next transaction. For a robot retry, the number is not increased, in case of application exception, until the max retry number.&#xA;TransactionItem type needs to be changed accordingly." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="608,1964" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
@@ -304,7 +304,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <umam:GetEmailListConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" FreeTextFilter="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Get All Email Message" EmailList="[o365m_listMails]" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="502,281" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" Importance="Any" IncludeSubfolders="False" ManualEntryFolder="[dict_Config(&quot;MailBox&quot;).ToString]" MarkAsRead="True" MaxResults="1" OrderByDate="NewestFirst" SelectionMode="EnterPath" UnreadOnly="True" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="True">
+                <umam:GetEmailListConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" FreeTextFilter="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="32d1fecf-6d8e-4bf9-b216-a4d370a4d082" DisplayName="Get All Email Message" EmailList="[o365m_listMails]" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="502,281" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" Importance="Any" IncludeSubfolders="False" ManualEntryFolder="[dict_Config(&quot;MailBox&quot;).ToString]" MarkAsRead="True" MaxResults="1" OrderByDate="NewestFirst" SelectionMode="EnterPath" UnreadOnly="True" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="True">
                   <umam:GetEmailListConnections.FilterSelectionBackup>
                     <usau:BackupSlot x:TypeArguments="umame:FilterMode" StoredValue="ConditionBuilder">
                       <usau:BackupSlot.BackupValues>
@@ -385,7 +385,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <umam:MoveEmailConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID2}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID3}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Move Email Message in Traitement Folder" Email="[o365m_emailItem]" sap:VirtualizedContainerService.HintSize="434,272" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_1" ManualEntryFolder="[dict_Config(&quot;MailBoxRPA&quot;).ToString]" Result="[o365m_mailItem]" SelectionMode="EnterPath" UseConnectionService="True" UseSharedMailbox="False">
+                      <umam:MoveEmailConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID2}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID3}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="32d1fecf-6d8e-4bf9-b216-a4d370a4d082" DisplayName="Move Email Message in Traitement Folder" Email="[o365m_emailItem]" sap:VirtualizedContainerService.HintSize="434,272" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_1" ManualEntryFolder="[dict_Config(&quot;MailBoxRPA&quot;).ToString]" Result="[o365m_mailItem]" SelectionMode="EnterPath" UseConnectionService="True" UseSharedMailbox="False">
                         <umam:MoveEmailConnections.MailFolderArgument>
                           <umamm:MailFolderArgument BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="777d96cf-3847-4e26-8cd4-50c8821ba953" ManualEntryFolder="[dict_Config(&quot;MailBoxRPA&quot;).ToString]" SelectionMode="EnterPath">
                             <umamm:MailFolderArgument.Backup>
@@ -458,9 +458,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried.&#xA;&#xA;All the BusinessRule Exception and System exceptions are counted, If the system exception reaches the threshold defined in Config, the process will be aborted" DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="552,1136" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried.&#xA;&#xA;All the BusinessRule Exception and System exceptions are counted, If the system exception reaches the threshold defined in Config, the process will be aborted" DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="552,1216" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <TryCatch DisplayName="Try Catch | Process" sap:VirtualizedContainerService.HintSize="506,592" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch DisplayName="Try Catch | Process" sap:VirtualizedContainerService.HintSize="506,632" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -602,7 +602,7 @@
                   <Transition.To>
                     <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="Read configuration file Test/Prod, Kill Process and initialize applications used in the process." DisplayName="Init" sap:VirtualizedContainerService.HintSize="232,117" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
-                        <TryCatch DisplayName="Try Catch | Init" sap:VirtualizedContainerService.HintSize="619,4031" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                        <TryCatch DisplayName="Try Catch | Init" sap:VirtualizedContainerService.HintSize="619,4071" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
