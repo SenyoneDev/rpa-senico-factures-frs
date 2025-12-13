@@ -8,6 +8,7 @@
     "UiPath.DocumentUnderstanding.Activities": "[2.17.0]",
     "UiPath.DocumentUnderstanding.ML.Activities": "[1.36.0]",
     "UiPath.Excel.Activities": "[3.2.1]",
+    "UiPath.IntegrationService.Activities": "[1.21.0]",
     "UiPath.IntelligentOCR.Activities": "[6.27.0]",
     "UiPath.Mail.Activities": "[2.4.10]",
     "UiPath.MicrosoftOffice365.Activities": "[3.4.12]",
@@ -63,13 +64,13 @@
         "fileName": "TestData\\TestXXX - ConnectToSage.xaml"
       },
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "eb35ae16-c9bc-4408-a914-4a1fc528d33b",
         "testCaseType": "TestCase",
         "fileName": "TestData\\TestXXX - ConnectToSharepoint.xaml"
       },
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "db95098b-72d8-4d6e-93a3-d5c381a1875b",
         "testCaseType": "TestCase",
         "fileName": "TestData\\TestXXX - ConnectToOutlook.xaml"
