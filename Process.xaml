@@ -552,7 +552,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[bool_isValid]" DisplayName="If | Information of invoice is valid" sap:VirtualizedContainerService.HintSize="636,1227.2" sap2010:WorkflowViewState.IdRef="If_8">
+      <If Condition="[bool_isValids]" DisplayName="If | Information of invoice is valid" sap:VirtualizedContainerService.HintSize="636,1227.2" sap2010:WorkflowViewState.IdRef="If_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
