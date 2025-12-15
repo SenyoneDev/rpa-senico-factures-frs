@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Surveillance_emails" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umas="clr-namespace:UiPath.MicrosoftOffice365.Activities.Sharepoint;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umsm="clr-namespace:UiPath.MicrosoftOffice365.Sharepoint.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Surveillance_emails" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_di_dictConfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_o365m_mailItem" Type="InArgument(umm:Office365Message)" />
@@ -142,7 +142,7 @@
       <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Surveillance_emails" sap:VirtualizedContainerService.HintSize="1726.4,1646.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Surveillance_emails" sap:VirtualizedContainerService.HintSize="1166.4,1344.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="bool_mailFound" />
       <Variable x:TypeArguments="scg:List(umm:Office365Message)" Name="el_listEmail" />
@@ -157,7 +157,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;## Start to Control mail &quot;]" />
-    <Sequence DisplayName="Control Mail and Attachments" sap:VirtualizedContainerService.HintSize="545.6,1400.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Control Mail and Attachments" sap:VirtualizedContainerService.HintSize="545.6,1099.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -197,14 +197,14 @@
           </Sequence>
         </If.Else>
       </If>
-      <Sequence DisplayName="Controls for File" sap:VirtualizedContainerService.HintSize="512,1208" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Controls for File" sap:VirtualizedContainerService.HintSize="512,906.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign | Extension &amp; size" sap:VirtualizedContainerService.HintSize="478.4,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign DisplayName="Multiple Assign | Extension &amp; size" sap:VirtualizedContainerService.HintSize="478.4,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -221,11 +221,6 @@
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
                   <InArgument x:TypeArguments="x:Double">[CDbl(in_di_dictConfig("MaxMB"))]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-              <ui:AssignOperation To="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_5">
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:Object">[path.get]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
             </scg:List>
@@ -259,37 +254,14 @@
             </scg:List>
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
-        <If Condition="[Not arr_allowedExtensions.Contains(str_extension) OrElse db_FileSize &gt; db_maxFileSizeAllow]" DisplayName="If | File attachement match to params" sap:VirtualizedContainerService.HintSize="478.4,732.8" sap2010:WorkflowViewState.IdRef="If_2">
+        <If Condition="[Not arr_allowedExtensions.Contains(str_extension) OrElse db_FileSize &gt; db_maxFileSizeAllow]" DisplayName="If | File attachement match to params" sap:VirtualizedContainerService.HintSize="478.4,463.2" sap2010:WorkflowViewState.IdRef="If_2">
           <If.Then>
-            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,345.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <umaf:UpdateFileFolderMetadataConnections x:TypeArguments="sd:DataRow" AllColumns="{x:Array Type=umsm:Office365SharepointListColumnSlim}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" DataRow="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" SharepointLibraryItemFriendlyName="{x:Null}" SharepointListId="{x:Null}" SharepointSiteUrl="{x:Null}" AuthScopesInvalid="False" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" DisplayName="Update File or Folder Metadata" sap:VirtualizedContainerService.HintSize="382.4,237.6" sap2010:WorkflowViewState.IdRef="UpdateFileFolderMetadataConnections`1_1" ItemSelectionMode="UseExisting" UseConnectionService="True" WorkingWithDocumentLibrary="False">
-                <umaf:UpdateFileFolderMetadataConnections.DriveItemArgument>
-                  <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="UseExisting" ParentFullPathHint="">
-                    <umafm:DriveItemArgument.ItemIdBackup>
-                      <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="UseExisting">
-                        <usau:BackupSlot.BackupValues>
-                          <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
-                            <x:Null />
-                            <x:Null />
-                            <x:Null />
-                            <x:Null />
-                            <x:Null />
-                            <x:Null />
-                          </scg:List>
-                        </usau:BackupSlot.BackupValues>
-                      </usau:BackupSlot>
-                    </umafm:DriveItemArgument.ItemIdBackup>
-                  </umafm:DriveItemArgument>
-                </umaf:UpdateFileFolderMetadataConnections.DriveItemArgument>
-                <umaf:UpdateFileFolderMetadataConnections.State>
-                  <umas:ActivityState />
-                </umaf:UpdateFileFolderMetadataConnections.State>
-              </umaf:UpdateFileFolderMetadataConnections>
               <Throw DisplayName="Throw | file attachement not matching" Exception="[New BusinessRuleException(&quot;BRE-001 : Fichier non supporté / Fichier::&quot; + path.GetFileName(in_str_filepath))]" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Throw_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
