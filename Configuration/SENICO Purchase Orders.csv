@@ -1,0 +1,52 @@
+OrderNumber;Amount;Date;SupplierName;PreparerMail;PreparerName;NumberOfLines;Description
+PO-2025-0001;45750.00;15/01/2025;Sonatel SA;amadou.diallo@senyone.com;Amadou Diallo;5;Équipements réseau et câblage
+PO-2025-0002;128300.50;18/01/2025;Orange Business Services;fatou.ndiaye@senyone.com;Fatou Ndiaye;12;Licences logicielles annuelles
+PO-2025-0003;67890.00;22/01/2025;CFAO Technologies;moussa.fall@senyone.com;Moussa Fall;8;Fournitures informatiques
+PO-2025-0004;234500.00;03/02/2025;IBM Sénégal;cheikh.ba@senyone.com;Cheikh Ba;15;Serveurs et infrastructure cloud
+PO-2025-0005;18950.75;08/02/2025;Papeterie Moderne;aissatou.sow@senyone.com;Aissatou Sow;3;Fournitures de bureau
+PO-2025-0006;89750.00;12/02/2025;Microsoft Africa;amadou.diallo@senyone.com;Amadou Diallo;7;Licences Microsoft 365
+PO-2025-0007;156000.00;19/02/2025;Dell Technologies;fatou.ndiaye@senyone.com;Fatou Ndiaye;10;Ordinateurs portables
+PO-2025-0008;42300.25;25/02/2025;Eiffage Sénégal;moussa.fall@senyone.com;Moussa Fall;4;Travaux d'aménagement bureau
+PO-2025-0009;78650.00;01/03/2025;Securicom Afrique;cheikh.ba@senyone.com;Cheikh Ba;6;Systèmes de sécurité
+PO-2025-0010;315000.00;05/03/2025;SAP Afrique;aissatou.sow@senyone.com;Aissatou Sow;18;Module ERP finance
+PO-2025-0011;23400.50;10/03/2025;Dakar Office Plus;amadou.diallo@senyone.com;Amadou Diallo;2;Mobilier de bureau
+PO-2025-0012;67500.00;14/03/2025;Free Sénégal;fatou.ndiaye@senyone.com;Fatou Ndiaye;5;Services télécom entreprise
+PO-2025-0013;145800.00;18/03/2025;HP Enterprise;moussa.fall@senyone.com;Moussa Fall;9;Imprimantes et consommables
+PO-2025-0014;52100.75;22/03/2025;Atos Sénégal;cheikh.ba@senyone.com;Cheikh Ba;4;Consulting IT
+PO-2025-0015;189500.00;28/03/2025;Cisco Systems;aissatou.sow@senyone.com;Aissatou Sow;11;Équipements réseau avancés
+PO-2025-0016;34750.00;02/04/2025;Graphic System;amadou.diallo@senyone.com;Amadou Diallo;3;Matériel signalétique
+PO-2025-0017;98200.50;08/04/2025;Oracle West Africa;fatou.ndiaye@senyone.com;Fatou Ndiaye;8;Base de données Oracle
+PO-2025-0018;276000.00;12/04/2025;Amazon Web Services;moussa.fall@senyone.com;Moussa Fall;14;Services cloud AWS
+PO-2025-0019;15680.25;16/04/2025;Senelec;cheikh.ba@senyone.com;Cheikh Ba;1;Abonnement électricité
+PO-2025-0020;83400.00;21/04/2025;UiPath Inc;aissatou.sow@senyone.com;Aissatou Sow;6;Licences RPA Studio
+PO-2025-0021;47250.00;25/04/2025;Expresso Telecom;amadou.diallo@senyone.com;Amadou Diallo;4;Forfaits data entreprise
+PO-2025-0022;192500.00;02/05/2025;Lenovo Africa;fatou.ndiaye@senyone.com;Fatou Ndiaye;13;Postes de travail
+PO-2025-0023;56890.75;08/05/2025;Climatech Dakar;moussa.fall@senyone.com;Moussa Fall;5;Climatisation data center
+PO-2025-0024;124000.00;14/05/2025;Google Cloud;cheikh.ba@senyone.com;Cheikh Ba;9;Services GCP
+PO-2025-0025;29350.00;19/05/2025;Transport Express;aissatou.sow@senyone.com;Aissatou Sow;2;Services logistiques
+PO-2025-0026;167800.50;23/05/2025;Salesforce;amadou.diallo@senyone.com;Amadou Diallo;11;CRM Enterprise
+PO-2025-0027;73500.00;28/05/2025;Senegal Airlines;fatou.ndiaye@senyone.com;Fatou Ndiaye;6;Billets d'avion mission
+PO-2025-0028;258000.00;03/06/2025;VMware Africa;moussa.fall@senyone.com;Moussa Fall;16;Virtualisation serveurs
+PO-2025-0029;41200.25;09/06/2025;Hotel Terrou-Bi;cheikh.ba@senyone.com;Cheikh Ba;3;Hébergement formation
+PO-2025-0030;95750.00;14/06/2025;Fortinet;aissatou.sow@senyone.com;Aissatou Sow;7;Pare-feu et sécurité
+PO-2025-0031;18900.00;18/06/2025;Cleaning Services Plus;amadou.diallo@senyone.com;Amadou Diallo;1;Services nettoyage annuel
+PO-2025-0032;143200.50;23/06/2025;Huawei Technologies;fatou.ndiaye@senyone.com;Fatou Ndiaye;10;Switches et routeurs
+PO-2025-0033;62400.00;28/06/2025;Formation Pro Dakar;moussa.fall@senyone.com;Moussa Fall;4;Formation certifiante équipe
+PO-2025-0034;287500.00;04/07/2025;ServiceNow;cheikh.ba@senyone.com;Cheikh Ba;17;Plateforme ITSM
+PO-2025-0035;36850.75;10/07/2025;Assurances NSIA;aissatou.sow@senyone.com;Aissatou Sow;2;Assurance multirisque
+PO-2025-0036;108600.00;15/07/2025;Adobe Systems;amadou.diallo@senyone.com;Amadou Diallo;8;Suite Creative Cloud
+PO-2025-0037;79300.00;21/07/2025;DHL Express;fatou.ndiaye@senyone.com;Fatou Ndiaye;5;Services courrier express
+PO-2025-0038;215000.50;26/07/2025;NetApp Storage;moussa.fall@senyone.com;Moussa Fall;12;Solutions stockage
+PO-2025-0039;48750.00;01/08/2025;Axa Assurances;cheikh.ba@senyone.com;Cheikh Ba;3;Assurance responsabilité civile
+PO-2025-0040;176400.00;07/08/2025;Slack Technologies;aissatou.sow@senyone.com;Aissatou Sow;9;Collaboration d'équipe
+PO-2025-0041;27600.25;12/08/2025;Garage Auto Plus;amadou.diallo@senyone.com;Amadou Diallo;2;Maintenance véhicule société
+PO-2025-0042;134500.00;18/08/2025;Zoom Communications;fatou.ndiaye@senyone.com;Fatou Ndiaye;7;Licences visioconférence
+PO-2025-0043;89100.75;24/08/2025;Bureau Veritas;moussa.fall@senyone.com;Moussa Fall;6;Certification ISO
+PO-2025-0044;312000.00;29/08/2025;Palo Alto Networks;cheikh.ba@senyone.com;Cheikh Ba;19;Cybersécurité avancée
+PO-2025-0045;53200.00;04/09/2025;Senegal Catering;aissatou.sow@senyone.com;Aissatou Sow;4;Services traiteur événement
+PO-2025-0046;198750.50;10/09/2025;Tableau Software;amadou.diallo@senyone.com;Amadou Diallo;11;Analytics et BI
+PO-2025-0047;71800.00;15/09/2025;Kinepolis Dakar;fatou.ndiaye@senyone.com;Fatou Ndiaye;5;Location salle séminaire
+PO-2025-0048;245600.00;21/09/2025;Automation Anywhere;moussa.fall@senyone.com;Moussa Fall;14;Licences automation
+PO-2025-0049;32450.25;26/09/2025;Imprimerie Nationale;cheikh.ba@senyone.com;Cheikh Ba;3;Impression documents
+PO-2025-0050;159800.00;02/10/2025;Snowflake Inc;aissatou.sow@senyone.com;Aissatou Sow;10;Data warehouse cloud
+PO-2025-0051;500000;02/10/2025;ROCHETTE SAS;aissatou.sow@senyone.com;Aissatou Sow;10;Data warehouse cloud

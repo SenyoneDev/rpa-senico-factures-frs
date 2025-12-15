@@ -1,0 +1,456 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AR_Dispatcher" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_dict_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>AR_Dispatcher_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Models</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Models</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Mail.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Filters</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.MicrosoftOffice365</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Mail.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Contracts</x:String>
+      <x:String>UiPath.Platform</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MLServices.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Cryptography.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Get the mail &#xD;&#xA;* Get their attachments.&#xD;&#xA;* Move the mail to the &quot;En cours&quot;.&#xD;&#xA;* Get the mail conversation ID after it moved.&#xD;&#xA;* Put all the metadata in UiPath" DisplayName="AR_Dispatcher" sap:VirtualizedContainerService.HintSize="1726.4,1783.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="int_numberMailProcessed" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <umam:ForEachEmailConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID5}" FreeTextFilter="{x:Null}" Mailbox="{x:Null}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" CurrentItemVariableName="ThisEmail" DisplayName="For Each Email" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="612.8,1684" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_1" Importance="Any" IncludeSubfolders="False" Length="[int_numberMailProcessed]" ManualEntryFolder="[in_dict_config(&quot;MailBoxRPA&quot;).ToString]" MarkAsRead="False" MaxResults="100" OrderByDate="NewestFirst" SelectionMode="EnterPath" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
+      <umam:ForEachEmailConnections.Body>
+        <ActivityAction x:TypeArguments="umm:Office365Message, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="umm:Office365Message" Name="ThisEmail" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
+          </ActivityAction.Argument2>
+          <Sequence DisplayName="Do | Dispatch Mail" sap:VirtualizedContainerService.HintSize="579.2,1385.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ummm:O365AttachmentLocalItem[]" Name="thisMail_attachments" />
+              <Variable x:TypeArguments="umm:Office365Message" Name="thismail_Moved" />
+              <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="di_attachmentFile" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="LogM | Mail being processed" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;--------------------------------------------------------------&quot; + Environment.NewLine+&#xD;&#xA;&quot;Dispatcher | Processing mail subject : &quot; + ThisEmail.Subject]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <If sap2010:Annotation.AnnotationText="Move to Review mailbox folder" Condition="[ThisEmail.AttachmentCount = 0]" DisplayName="If | No Attachments" sap:VirtualizedContainerService.HintSize="545.6,100.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then | Move to No process" sap:VirtualizedContainerService.HintSize="416,221.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="LogM | Mail being processed" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Dispatcher | This mail has no attachment. Moving to mail folder&quot; + in_dict_config(&quot;MailBoxToReview&quot;).ToString]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <umam:MoveEmailConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" Result="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DisplayName="Move Email &gt; a revoir" Email="[ThisEmail]" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_1" ManualEntryFolder="[in_dict_config(&quot;MailBoxToReview&quot;).ToString]" SelectionMode="EnterPath" UseConnectionService="True" UseSharedMailbox="False">
+                    <umam:MoveEmailConnections.MailFolderArgument>
+                      <umamm:MailFolderArgument BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolder="[in_dict_config(&quot;MailBoxToReview&quot;).ToString]" SelectionMode="EnterPath">
+                        <umamm:MailFolderArgument.Backup>
+                          <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" x:Name="__ReferenceID0" StoredValue="EnterPath">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
+                                <InArgument x:TypeArguments="x:String">Inbox</InArgument>
+                                <x:String>Inbox</x:String>
+                              </scg:List>
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umamm:MailFolderArgument.Backup>
+                      </umamm:MailFolderArgument>
+                    </umam:MoveEmailConnections.MailFolderArgument>
+                    <umam:MoveEmailConnections.MailboxArg>
+                      <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
+                        <umamm:MailboxArgument.Backup>
+                          <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID1" StoredValue="NoMailbox">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umamm:MailboxArgument.Backup>
+                      </umamm:MailboxArgument>
+                    </umam:MoveEmailConnections.MailboxArg>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </umam:MoveEmailConnections>
+                  <ui:Continue sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="deletefiles in download folder" DisplayName="For Each | Clean Temp folder" sap:VirtualizedContainerService.HintSize="545.6,100.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[directory.GetFiles(in_dict_config(&quot;PathDownloadAttachements&quot;).ToString)]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[currentText]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:DeleteFileX>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+            <umam:DownloadEmailAttachments ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FilterByFileNames="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Fail" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DestinationPath="[in_dict_config(&quot;PathDownloadAttachements&quot;).ToString]" DisplayName="Download Email Attachments" Email="[ThisEmail]" ExcludeInlineAttachments="False" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="DownloadEmailAttachments_1" NewResult="[thisMail_attachments]" SearchMode="UseSimple" UseConnectionService="True">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </umam:DownloadEmailAttachments>
+            <ui:LogMessage DisplayName="LogM | Num of attachments" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Dispatcher | Number of files downloaded from mail : &quot; + thisMail_attachments.Count.ToString + &quot; - Moving mail to folder : &quot; + in_dict_config(&quot;MailBoxEncours&quot;).ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <umam:MoveEmailConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID2}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID3}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DisplayName="Move Email &gt; en cours" Email="[ThisEmail]" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_2" ManualEntryFolder="[in_dict_config(&quot;MailBoxEncours&quot;).ToString]" Result="[thismail_Moved]" SelectionMode="EnterPath" UseConnectionService="True" UseSharedMailbox="False">
+              <umam:MoveEmailConnections.MailFolderArgument>
+                <umamm:MailFolderArgument BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolder="[in_dict_config(&quot;MailBoxEncours&quot;).ToString]" SelectionMode="EnterPath">
+                  <umamm:MailFolderArgument.Backup>
+                    <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" x:Name="__ReferenceID2" StoredValue="EnterPath">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
+                          <InArgument x:TypeArguments="x:String">Inbox</InArgument>
+                          <x:String>Inbox</x:String>
+                        </scg:List>
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </umamm:MailFolderArgument.Backup>
+                </umamm:MailFolderArgument>
+              </umam:MoveEmailConnections.MailFolderArgument>
+              <umam:MoveEmailConnections.MailboxArg>
+                <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
+                  <umamm:MailboxArgument.Backup>
+                    <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID3" StoredValue="NoMailbox">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </umamm:MailboxArgument.Backup>
+                </umamm:MailboxArgument>
+              </umam:MoveEmailConnections.MailboxArg>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </umam:MoveEmailConnections>
+            <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each mail attachment" sap:VirtualizedContainerService.HintSize="545.6,896.8" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[thisMail_attachments]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="ummm:O365AttachmentLocalItem">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ummm:O365AttachmentLocalItem" Name="currentO365AttachmentLocalItem" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,759.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="dict_mailMetadata" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="upload to Sharepoint and put mailMetadata" DisplayName="Upload_sharePoint_attachements - Invoke Workflow File (Applications\Upload_sharePoint_attachements.xaml)" sap:VirtualizedContainerService.HintSize="478.4,207.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Applications\Upload_sharePoint_attachements.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_config]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_str_direction" />
+                        <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[ThisEmail]</InArgument>
+                        <OutArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="out_diFile">[di_attachmentFile]</OutArgument>
+                        <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem" x:Key="in_o365m_mailAttachement">[currentO365AttachmentLocalItem]</InArgument>
+                        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_dict_mailMetadata">[dict_mailMetadata]</OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InvokeWorkflowFile>
+                    <ui:MultipleAssign DisplayName="Multiple Assign | Add Mail infos" sap:VirtualizedContainerService.HintSize="478.4,274.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Object">[dict_mailMetadata("Mail_Subject")]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Object">[thismail_Moved.Subject]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Object">[dict_mailMetadata("Mail_Body")]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Object">[thismail_Moved.Body]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Object">[dict_mailMetadata("Mail_numOfAttachments")]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Object">[thismail_Moved.AttachmentCount]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Object">[dict_mailMetadata("Mail_messageID")]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Object">[thismail_Moved.MessageId]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Object">[dict_mailMetadata("File_SharepointURL")]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Object">[di_attachmentFile.Url]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                    <ui:AddQueueItem TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="[in_dict_config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="478.4,217.6" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" ItemInformationCollection="[dict_mailMetadata]" Priority="Normal" QueueType="[in_dict_config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[currentO365AttachmentLocalItem.Name]">
+                      <ui:AddQueueItem.ItemInformation>
+                        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                      </ui:AddQueueItem.ItemInformation>
+                    </ui:AddQueueItem>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+          </Sequence>
+        </ActivityAction>
+      </umam:ForEachEmailConnections.Body>
+      <umam:ForEachEmailConnections.FilterSelectionBackup>
+        <usau:BackupSlot x:TypeArguments="umame:FilterMode" StoredValue="ConditionBuilder">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="umame:FilterMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </umam:ForEachEmailConnections.FilterSelectionBackup>
+      <umam:ForEachEmailConnections.MailFolderArgument>
+        <umamm:MailFolderArgument BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolder="[in_dict_config(&quot;MailBoxRPA&quot;).ToString]" SelectionMode="EnterPath">
+          <umamm:MailFolderArgument.Backup>
+            <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" x:Name="__ReferenceID5" StoredValue="EnterPath">
+              <usau:BackupSlot.BackupValues>
+                <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
+                  <InArgument x:TypeArguments="x:String">Inbox</InArgument>
+                  <x:String>Inbox</x:String>
+                </scg:List>
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </umamm:MailFolderArgument.Backup>
+        </umamm:MailFolderArgument>
+      </umam:ForEachEmailConnections.MailFolderArgument>
+      <umam:ForEachEmailConnections.MailboxArg>
+        <umamm:MailboxArgument Backup="{x:Reference __ReferenceID4}" SharedMailbox="{x:Null}" UseSharedMailbox="False" />
+      </umam:ForEachEmailConnections.MailboxArg>
+      <umam:ForEachEmailConnections.MailboxBackup>
+        <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID4" StoredValue="NoMailbox">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </umam:ForEachEmailConnections.MailboxBackup>
+    </umam:ForEachEmailConnections>
+  </Sequence>
+</Activity>

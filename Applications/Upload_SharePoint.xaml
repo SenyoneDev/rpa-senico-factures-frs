@@ -1,11 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Find_direction_basic" this:Find_direction_basic.in_str_direction="[Nothing]" this:Find_direction_basic.in_str_filePath="C:\Users\senyoneadmin\Documents\UiPath\SENICO\DownloadInvoce\Modele Facture.pdf" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_di_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_o365m_mailItem" Type="InArgument(umm:Office365Message)" />
     <x:Property Name="in_str_direction" Type="InArgument(x:String)" />
     <x:Property Name="in_str_filePath" Type="InArgument(x:String)" />
     <x:Property Name="in_emailAttachement" Type="InArgument(ummm:O365AttachmentLocalItem)" />
     <x:Property Name="out_di_file" Type="OutArgument(umfm:O365DriveRemoteItem)" />
+    <x:Property Name="in_dict_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -142,7 +142,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,1912" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="1726.4,1356.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_urlSharePoint" />
     </Sequence.Variables>
@@ -151,8 +151,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start upload SharePoint&quot;]" />
-    <Sequence DisplayName="Seq | Upload SharePoint" sap:VirtualizedContainerService.HintSize="536,1552" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="534.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start upload SharePoint&quot;]" />
+    <Sequence DisplayName="Seq | Upload SharePoint" sap:VirtualizedContainerService.HintSize="534.4,993.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="di_annuaireFile" />
         <Variable x:TypeArguments="x:String" Name="str_fullName" />
@@ -170,109 +170,48 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502,448" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,337" sap2010:WorkflowViewState.IdRef="Sequence_18">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <umaf:GetFileFolderConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" AuthScopesInvalid="False" ConnectionId="392fcf91-c0bc-410f-8f9f-b359dce62b17" DisplayName="Get File or Folder" sap:VirtualizedContainerService.HintSize="382,277" sap2010:WorkflowViewState.IdRef="GetFileFolderConnections_2" ItemSelectionMode="ItemId" ManualEntryDriveName="Documents" ManualEntryItemId="SENICO" ManualEntrySiteUrl="https://senyone.sharepoint.com/sites/ServicesRH" Result="[di_ParentFolder]" UseConnectionService="True">
-              <umaf:GetFileFolderConnections.DriveItemArgument>
-                <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="ItemId" ManualEntryDriveName="Documents" ManualEntryItemId="SENICO" ManualEntrySiteUrl="https://senyone.sharepoint.com/sites/ServicesRH" ParentFullPathHint="">
-                  <umafm:DriveItemArgument.ItemIdBackup>
-                    <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="ItemId">
-                      <usau:BackupSlot.BackupValues>
-                        <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                        </scg:List>
-                        <scg:List x:TypeArguments="x:Object" x:Key="RelativePath" Capacity="6">
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                        </scg:List>
-                        <scg:List x:TypeArguments="x:Object" x:Key="ItemUrl" Capacity="1">
-                          <InArgument x:TypeArguments="x:String">https://senyone.sharepoint.com/sites/ServicesRH/Shared Documents/SENICO/</InArgument>
-                        </scg:List>
-                        <scg:List x:TypeArguments="x:Object" x:Key="ItemId" Capacity="3">
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                        </scg:List>
-                      </usau:BackupSlot.BackupValues>
-                    </usau:BackupSlot>
-                  </umafm:DriveItemArgument.ItemIdBackup>
-                </umafm:DriveItemArgument>
-              </umaf:GetFileFolderConnections.DriveItemArgument>
-            </umaf:GetFileFolderConnections>
-          </Sequence>
-        </ui:CommentOut.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:CommentOut>
-      <If Condition="[in_str_direction isNot Nothing]" sap:VirtualizedContainerService.HintSize="502,614" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[in_str_direction isNot Nothing]" DisplayName="If no direction" sap:VirtualizedContainerService.HintSize="500.8,500" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="Then | assign A determiner" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_urlSharePoint]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[in_di_config("SharePointFolder_" + in_str_direction).ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_dict_config("SharePointFolder_" + in_str_direction).ToString]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,279" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <Sequence DisplayName="Else | assign direction" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_urlSharePoint]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[in_di_config("SharePointFolder_A_DETERMINER").ToString]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[str_urlSharePoint]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[in_di_config("SharePointFolder_A_DETERMINER").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_dict_config("SharePointFolder_A_DETERMINER").ToString]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
         </If.Else>
       </If>
-      <ui:PathExists Exists="{x:Null}" DisplayName="Get Local File or Folder" sap:VirtualizedContainerService.HintSize="502,172" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_str_filePath]" PathType="File" Resource="[rs_fileRessource]" />
-      <umaf:UploadFilesConnections AllResults="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID1}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" Metadata="{x:Null}" MultipleFilesToUpload="{x:Null}" SingleFileToUpload="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Replace" ConnectionId="392fcf91-c0bc-410f-8f9f-b359dce62b17" DisplayName="Upload Files" FilesInputMode="MultipleByBuilder" FirstResult="[out_di_file]" sap:VirtualizedContainerService.HintSize="502,226" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_2" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[str_urlSharePoint]" UseConnectionService="True">
+      <ui:PathExists Exists="{x:Null}" DisplayName="Get Local File or Folder" sap:VirtualizedContainerService.HintSize="500.8,173.6" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_str_filePath]" PathType="File" Resource="[rs_fileRessource]" />
+      <umaf:UploadFilesConnections AllResults="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" Metadata="{x:Null}" MultipleFilesToUpload="{x:Null}" SingleFileToUpload="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Replace" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" DisplayName="Upload Files" FilesInputMode="MultipleByBuilder" FirstResult="[out_di_file]" sap:VirtualizedContainerService.HintSize="500.8,228" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_2" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[str_urlSharePoint]" UseConnectionService="True">
         <umaf:UploadFilesConnections.DriveItemArgument>
           <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" ConnectionKey="607b4b9d-80f9-4443-a316-41286dad0a00" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[str_urlSharePoint]" ParentFullPathHint="">
             <umafm:DriveItemArgument.ItemIdBackup>
-              <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID1" StoredValue="ItemUrl">
+              <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="ItemUrl">
                 <usau:BackupSlot.BackupValues>
                   <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
                     <InArgument x:TypeArguments="x:String">01OTZ2CEF6Y2GOVW7725BZO354PWSELRRZ</InArgument>
@@ -281,6 +220,14 @@
                     <InArgument x:TypeArguments="x:String">root</InArgument>
                     <InArgument x:TypeArguments="x:String">https://senyone-my.sharepoint.com/personal/fallou_senyone_sn/Documents</InArgument>
                     <InArgument x:TypeArguments="x:String">https://senyone-my.sharepoint.com/personal/fallou_senyone_sn/Documents</InArgument>
+                  </scg:List>
+                  <scg:List x:TypeArguments="x:Object" x:Key="ItemUrl" Capacity="1">
+                    <InArgument x:TypeArguments="x:String">[str_urlSharePoint]</InArgument>
+                  </scg:List>
+                  <scg:List x:TypeArguments="x:Object" x:Key="ItemId" Capacity="3">
+                    <x:Null />
+                    <x:Null />
+                    <x:Null />
                   </scg:List>
                 </usau:BackupSlot.BackupValues>
               </usau:BackupSlot>
@@ -306,6 +253,6 @@
         </umaf:UploadFilesConnections.FilesList>
       </umaf:UploadFilesConnections>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End upload SharePoint&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="534.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End upload SharePoint&quot;]" />
   </Sequence>
 </Activity>

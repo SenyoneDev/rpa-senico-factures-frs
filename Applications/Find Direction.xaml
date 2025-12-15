@@ -137,14 +137,14 @@
       <AssemblyReference>Studio.Generated.TypedDataRow1</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,2604" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="1956.0000000000002,1128.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="808,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Find direction&quot;]" />
-    <Sequence DisplayName="Seq | Find Direction " sap:VirtualizedContainerService.HintSize="808,2244" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="516.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Find direction&quot;]" />
+    <Sequence DisplayName="Seq | Find Direction " sap:VirtualizedContainerService.HintSize="516.8,765.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_FullName" />
         <Variable x:TypeArguments="x:String" Name="str_localPath" />
@@ -161,15 +161,15 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="Une recherche basique apartir du information du mail. &#xA;ici on verifier si le mail de l'expediteurs existe dans le l'annuaire ou s'il contient une information permattant de verifier son existance sur l'annuraire" DisplayName="Seq | Basic" sap:VirtualizedContainerService.HintSize="774,114" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence sap2010:Annotation.AnnotationText="Une recherche basique apartir du information du mail. &#xA;ici on verifier si le mail de l'expediteurs existe dans le l'annuaire ou s'il contient une information permattant de verifier son existance sur l'annuraire" DisplayName="Seq | Basic" sap:VirtualizedContainerService.HintSize="483.2,319.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find_direction_basic - Invoke Workflow File (Applications\Find_direction_basic.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Applications\Find_direction_basic.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find_direction_basic - Invoke Workflow File (Applications\Find_direction_basic.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Applications\Find_direction_basic.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <OutArgument x:TypeArguments="x:String" x:Key="out_str_direction">[out_str_direction]</OutArgument>
             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_di_config]</InArgument>
@@ -178,182 +178,189 @@
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="Cas ou la direction n'est pas trouver apartir de le recherche basique.&#xA;On effection une recherche avance apartir des informations des fatures ou apartir du numero de bon de commande" DisplayName="Seq | Advanced" sap:VirtualizedContainerService.HintSize="774,2038" sap2010:WorkflowViewState.IdRef="Sequence_25">
+      <Sequence sap2010:Annotation.AnnotationText="Cas ou la direction n'est pas trouver apartir de le recherche basique.&#xA;On effection une recherche avance apartir des informations des fatures ou apartir du numero de bon de commande" DisplayName="Seq | Advanced" sap:VirtualizedContainerService.HintSize="483.2,354.4" sap2010:WorkflowViewState.IdRef="Sequence_25">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[out_str_direction is Nothing]" DisplayName="If | Direction is null" sap:VirtualizedContainerService.HintSize="740,1913" sap2010:WorkflowViewState.IdRef="If_4">
+        <If Condition="[out_str_direction is Nothing]" DisplayName="If | Direction is null" sap:VirtualizedContainerService.HintSize="449.6,211.2" sap2010:WorkflowViewState.IdRef="If_4">
           <If.Then>
-            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="706,1663" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <Sequence DisplayName="Then | Advanced Matching" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Trouver la diretion en extractant les donnees de chaque piece jointe ou facture et comparer le nom du fournissuer trouve a la liste des fournisseurs du sharepoint" DisplayName="For Each invoice | extat the supplier name" sap:VirtualizedContainerService.HintSize="672,174" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[in_o365m_mailAttachements]">
+              <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Trouver la diretion en extractant les donnees de chaque piece jointe ou facture et comparer le nom du fournissuer trouve a la liste des fournisseurs du sharepoint" DisplayName="For Each invoice | extract invoice infos" sap:VirtualizedContainerService.HintSize="670.4,576" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[in_o365m_mailAttachements]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="ummm:O365AttachmentLocalItem">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ummm:O365AttachmentLocalItem" Name="currentO365AttachmentLocalItem" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="672,1553" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <Sequence DisplayName="Body | Intelligent classification" sap:VirtualizedContainerService.HintSize="416,369.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="638,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign DisplayName="Assign | localPath" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[str_localPath]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="x:String">[currentO365AttachmentLocalItem.LocalPath]</InArgument>
                         </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ai_document_classification - Invoke Workflow File (Applications\Ai_document_classification.xaml)" sap:VirtualizedContainerService.HintSize="638,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Applications\Ai_document_classification.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Verify that this is an invoice" DisplayName="Ai_document_classification - Invoke Workflow File (Applications\Ai_document_classification.xaml)" sap:VirtualizedContainerService.HintSize="382.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Applications\Ai_document_classification.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <OutArgument x:TypeArguments="x:Boolean" x:Key="out_bool_isInvoice">[bool_invoice]</OutArgument>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_config">[in_di_config]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_str_localPath">[str_localPath]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ai_document_extraction - Invoke Workflow File (Applications\Ai_document_extraction.xaml)" sap:VirtualizedContainerService.HintSize="638,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Applications\Ai_document_extraction.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Get the supplier name, and the BdC and reception if possible" DisplayName="Ai_document_extraction - Invoke Workflow File (Applications\Ai_document_extraction.xaml)" sap:VirtualizedContainerService.HintSize="382.4,116.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Applications\Ai_document_extraction.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="in_str_localPath">[str_localPath]</InArgument>
                           <OutArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="out_dict_invoiceInformation">[dict_invoceInformation]</OutArgument>
                           <OutArgument x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" x:Key="out_dd_ExtractionData" />
                         </ui:InvokeWorkflowFile.Arguments>
-                      </ui:InvokeWorkflowFile>
-                      <Sequence DisplayName="Seq | Matching" sap:VirtualizedContainerService.HintSize="638,1025" sap2010:WorkflowViewState.IdRef="Sequence_22">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Seq | Match wit  Extracted Data" sap:VirtualizedContainerService.HintSize="604,942" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each | Supplier List" sap:VirtualizedContainerService.HintSize="570,859" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_dt_listSupplier.Rows]">
-                            <ui:ForEach.Body>
-                              <ActivityAction x:TypeArguments="sd:DataRow">
-                                <ActivityAction.Argument>
-                                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
-                                </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,722" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="502,57" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-                                    <ui:MultipleAssign.AssignOperations>
-                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                                          <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[str_supplierName]</OutArgument>
-                                          </ui:AssignOperation.To>
-                                          <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[currentDataRow("Nom").ToString]</InArgument>
-                                          </ui:AssignOperation.Value>
-                                        </ui:AssignOperation>
-                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-                                          <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[str_supplierEmail]</OutArgument>
-                                          </ui:AssignOperation.To>
-                                          <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[currentDataRow("Email").ToString]</InArgument>
-                                          </ui:AssignOperation.Value>
-                                        </ui:AssignOperation>
-                                      </scg:List>
-                                    </ui:MultipleAssign.AssignOperations>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:MultipleAssign>
-                                  <If Condition="[str_supplierName.Contains(dict_invoceInformation(&quot;Nom fournisseur&quot;)(0).ToString)]" DisplayName="If | match Supplier exist ?" sap:VirtualizedContainerService.HintSize="502,605" sap2010:WorkflowViewState.IdRef="If_5">
+                      </ui:InvokeWorkflowFile>
+                      <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each | Supplier List" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_dt_listSupplier.Rows]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="sd:DataRow">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="534.4,721.6" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="500.8,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[str_supplierName]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[currentDataRow("Nom").ToString]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[str_supplierEmail]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[currentDataRow("Email").ToString]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:MultipleAssign>
+                              <If Condition="[str_supplierName.Contains(dict_invoceInformation(&quot;Nom fournisseur&quot;)(0).ToString)]" DisplayName="If | match Supplier exist ?" sap:VirtualizedContainerService.HintSize="500.8,604.8" sap2010:WorkflowViewState.IdRef="If_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,278.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,279" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[out_str_direction]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">[currentDataRow("Direction").ToString]</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_11">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Boolean">[bool_foundDiretion]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                      </Sequence>
-                                    </If.Then>
-                                    <If.Else>
-                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_10">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Boolean">[bool_foundDiretion]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                      </Sequence>
-                                    </If.Else>
-                                  </If>
-                                </Sequence>
-                              </ActivityAction>
-                            </ui:ForEach.Body>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:ForEach>
-                        </Sequence>
-                      </Sequence>
+                                    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[out_str_direction]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[currentDataRow("Direction").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Boolean">[bool_foundDiretion]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Boolean">[bool_foundDiretion]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ForEach>
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEach.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
-              <If sap2010:Annotation.AnnotationText="cas ou la direction n'est pas trouver apartir du nom du fournisseur , &#xA;ici on navigue sur Sage , on chercher le bon de commande pour extraire le nom du demandeur et verifier s'il existe dans l'annuaire pour recuperer la diretion" Condition="[not bool_foundDiretion]" DisplayName="If direction not found ?" sap:VirtualizedContainerService.HintSize="672,1429" sap2010:WorkflowViewState.IdRef="If_7">
+              <If sap2010:Annotation.AnnotationText="cas ou la direction n'est pas trouver apartir du nom du fournisseur , &#xA;ici on navigue sur Sage , on chercher le bon de commande pour extraire le nom du demandeur et verifier s'il existe dans l'annuaire pour recuperer la diretion" Condition="[not bool_foundDiretion]" DisplayName="If direction not found ?" sap:VirtualizedContainerService.HintSize="670.4,1431.2" sap2010:WorkflowViewState.IdRef="If_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -362,20 +369,20 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="638,1122" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="636.8,1120.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Seq | match with using sage" sap:VirtualizedContainerService.HintSize="604,1062" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <Sequence DisplayName="Seq | match with using sage" sap:VirtualizedContainerService.HintSize="603.2,1060.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sage_fetch_order - Invoke Workflow File (Applications\Sage_fetch_order.xaml)" sap:VirtualizedContainerService.HintSize="570,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Applications\Sage_fetch_order.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sage_fetch_order - Invoke Workflow File (Applications\Sage_fetch_order.xaml)" sap:VirtualizedContainerService.HintSize="569.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Applications\Sage_fetch_order.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_Config">[in_di_config]</InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="out_str_requester">[str_requester]</OutArgument>
@@ -470,10 +477,11 @@
             </Sequence>
           </If.Then>
           <If.Else>
-            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_24">
+            <Sequence DisplayName="Else | Direction found" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_24">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Sequence>
@@ -481,6 +489,6 @@
         </If>
       </Sequence>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="808,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Find direction basic&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="516.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Find direction basic&quot;]" />
   </Sequence>
 </Activity>

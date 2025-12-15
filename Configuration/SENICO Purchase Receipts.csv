@@ -1,0 +1,74 @@
+ReceiptNumber;PurchaseOrderNumber;ReceiptAmount;Date;SupplierName;Description;ReceiptDate
+REC-2025-0001;PO-2025-0001;45750.00;2025-01-15;Sonatel SA;Équipements réseau et câblage;2025-01-28
+REC-2025-0002;PO-2025-0002;64150.25;2025-01-18;Orange Business Services;Licences logicielles annuelles - Partie 1;2025-02-01
+REC-2025-0003;PO-2025-0002;64150.25;2025-01-18;Orange Business Services;Licences logicielles annuelles - Partie 2;2025-02-15
+REC-2025-0004;PO-2025-0003;67890.00;2025-01-22;CFAO Technologies;Fournitures informatiques;2025-02-05
+REC-2025-0005;PO-2025-0004;117250.00;2025-02-03;IBM Sénégal;Serveurs et infrastructure cloud - Livraison 1;2025-02-20
+REC-2025-0006;PO-2025-0004;117250.00;2025-02-03;IBM Sénégal;Serveurs et infrastructure cloud - Livraison 2;2025-03-05
+REC-2025-0007;PO-2025-0005;18950.75;2025-02-08;Papeterie Moderne;Fournitures de bureau;2025-02-12
+REC-2025-0008;PO-2025-0006;89750.00;2025-02-12;Microsoft Africa;Licences Microsoft 365;2025-02-14
+REC-2025-0009;PO-2025-0007;78000.00;2025-02-19;Dell Technologies;Ordinateurs portables - Lot 1;2025-03-01
+REC-2025-0010;PO-2025-0007;78000.00;2025-02-19;Dell Technologies;Ordinateurs portables - Lot 2;2025-03-15
+REC-2025-0011;PO-2025-0008;42300.25;2025-02-25;Eiffage Sénégal;Travaux d'aménagement bureau;2025-03-20
+REC-2025-0012;PO-2025-0009;78650.00;2025-03-01;Securicom Afrique;Systèmes de sécurité;2025-03-18
+REC-2025-0013;PO-2025-0010;105000.00;2025-03-05;SAP Afrique;Module ERP finance - Phase 1;2025-03-25
+REC-2025-0014;PO-2025-0010;105000.00;2025-03-05;SAP Afrique;Module ERP finance - Phase 2;2025-04-15
+REC-2025-0015;PO-2025-0010;105000.00;2025-03-05;SAP Afrique;Module ERP finance - Phase 3;2025-05-05
+REC-2025-0016;PO-2025-0011;23400.50;2025-03-10;Dakar Office Plus;Mobilier de bureau;2025-03-25
+REC-2025-0017;PO-2025-0012;67500.00;2025-03-14;Free Sénégal;Services télécom entreprise;2025-03-16
+REC-2025-0018;PO-2025-0013;72900.00;2025-03-18;HP Enterprise;Imprimantes et consommables - Partie 1;2025-04-02
+REC-2025-0019;PO-2025-0013;72900.00;2025-03-18;HP Enterprise;Imprimantes et consommables - Partie 2;2025-04-18
+REC-2025-0020;PO-2025-0014;52100.75;2025-03-22;Atos Sénégal;Consulting IT;2025-04-22
+REC-2025-0021;PO-2025-0015;94750.00;2025-03-28;Cisco Systems;Équipements réseau avancés - Livraison 1;2025-04-12
+REC-2025-0022;PO-2025-0015;94750.00;2025-03-28;Cisco Systems;Équipements réseau avancés - Livraison 2;2025-04-28
+REC-2025-0023;PO-2025-0016;34750.00;2025-04-02;Graphic System;Matériel signalétique;2025-04-15
+REC-2025-0024;PO-2025-0017;98200.50;2025-04-08;Oracle West Africa;Base de données Oracle;2025-04-10
+REC-2025-0025;PO-2025-0018;92000.00;2025-04-12;Amazon Web Services;Services cloud AWS - Q2;2025-04-30
+REC-2025-0026;PO-2025-0018;92000.00;2025-04-12;Amazon Web Services;Services cloud AWS - Q3;2025-07-30
+REC-2025-0027;PO-2025-0018;92000.00;2025-04-12;Amazon Web Services;Services cloud AWS - Q4;2025-10-30
+REC-2025-0028;PO-2025-0019;15680.25;2025-04-16;Senelec;Abonnement électricité;2025-04-18
+REC-2025-0029;PO-2025-0020;83400.00;2025-04-21;UiPath Inc;Licences RPA Studio;2025-04-23
+REC-2025-0030;PO-2025-0021;47250.00;2025-04-25;Expresso Telecom;Forfaits data entreprise;2025-04-27
+REC-2025-0031;PO-2025-0022;96250.00;2025-05-02;Lenovo Africa;Postes de travail - Lot 1;2025-05-18
+REC-2025-0032;PO-2025-0022;96250.00;2025-05-02;Lenovo Africa;Postes de travail - Lot 2;2025-06-02
+REC-2025-0033;PO-2025-0023;56890.75;2025-05-08;Climatech Dakar;Climatisation data center;2025-05-28
+REC-2025-0034;PO-2025-0024;62000.00;2025-05-14;Google Cloud;Services GCP - Partie 1;2025-05-31
+REC-2025-0035;PO-2025-0024;62000.00;2025-05-14;Google Cloud;Services GCP - Partie 2;2025-06-30
+REC-2025-0036;PO-2025-0025;29350.00;2025-05-19;Transport Express;Services logistiques;2025-05-25
+REC-2025-0037;PO-2025-0026;83900.25;2025-05-23;Salesforce;CRM Enterprise - Licence;2025-05-25
+REC-2025-0038;PO-2025-0026;83900.25;2025-05-23;Salesforce;CRM Enterprise - Implémentation;2025-06-25
+REC-2025-0039;PO-2025-0027;73500.00;2025-05-28;Senegal Airlines;Billets d'avion mission;2025-05-30
+REC-2025-0040;PO-2025-0028;86000.00;2025-06-03;VMware Africa;Virtualisation serveurs - Phase 1;2025-06-20
+REC-2025-0041;PO-2025-0028;86000.00;2025-06-03;VMware Africa;Virtualisation serveurs - Phase 2;2025-07-10
+REC-2025-0042;PO-2025-0028;86000.00;2025-06-03;VMware Africa;Virtualisation serveurs - Phase 3;2025-07-30
+REC-2025-0043;PO-2025-0029;41200.25;2025-06-09;Hotel Terrou-Bi;Hébergement formation;2025-06-15
+REC-2025-0044;PO-2025-0030;95750.00;2025-06-14;Fortinet;Pare-feu et sécurité;2025-06-28
+REC-2025-0045;PO-2025-0031;18900.00;2025-06-18;Cleaning Services Plus;Services nettoyage annuel;2025-06-20
+REC-2025-0046;PO-2025-0032;71600.25;2025-06-23;Huawei Technologies;Switches et routeurs - Lot 1;2025-07-08
+REC-2025-0047;PO-2025-0032;71600.25;2025-06-23;Huawei Technologies;Switches et routeurs - Lot 2;2025-07-22
+REC-2025-0048;PO-2025-0033;62400.00;2025-06-28;Formation Pro Dakar;Formation certifiante équipe;2025-07-15
+REC-2025-0049;PO-2025-0034;95833.33;2025-07-04;ServiceNow;Plateforme ITSM - Module 1;2025-07-20
+REC-2025-0050;PO-2025-0034;95833.33;2025-07-04;ServiceNow;Plateforme ITSM - Module 2;2025-08-10
+REC-2025-0051;PO-2025-0034;95833.34;2025-07-04;ServiceNow;Plateforme ITSM - Module 3;2025-08-30
+REC-2025-0052;PO-2025-0035;36850.75;2025-07-10;Assurances NSIA;Assurance multirisque;2025-07-12
+REC-2025-0053;PO-2025-0036;108600.00;2025-07-15;Adobe Systems;Suite Creative Cloud;2025-07-17
+REC-2025-0054;PO-2025-0037;79300.00;2025-07-21;DHL Express;Services courrier express;2025-07-31
+REC-2025-0055;PO-2025-0038;107500.25;2025-07-26;NetApp Storage;Solutions stockage - Partie 1;2025-08-12
+REC-2025-0056;PO-2025-0038;107500.25;2025-07-26;NetApp Storage;Solutions stockage - Partie 2;2025-08-28
+REC-2025-0057;PO-2025-0039;48750.00;2025-08-01;Axa Assurances;Assurance responsabilité civile;2025-08-03
+REC-2025-0058;PO-2025-0040;176400.00;2025-08-07;Slack Technologies;Collaboration d'équipe;2025-08-09
+REC-2025-0059;PO-2025-0041;27600.25;2025-08-12;Garage Auto Plus;Maintenance véhicule société;2025-08-18
+REC-2025-0060;PO-2025-0042;134500.00;2025-08-18;Zoom Communications;Licences visioconférence;2025-08-20
+REC-2025-0061;PO-2025-0043;89100.75;2025-08-24;Bureau Veritas;Certification ISO;2025-09-15
+REC-2025-0062;PO-2025-0044;104000.00;2025-08-29;Palo Alto Networks;Cybersécurité avancée - Phase 1;2025-09-15
+REC-2025-0063;PO-2025-0044;104000.00;2025-08-29;Palo Alto Networks;Cybersécurité avancée - Phase 2;2025-10-05
+REC-2025-0064;PO-2025-0044;104000.00;2025-08-29;Palo Alto Networks;Cybersécurité avancée - Phase 3;2025-10-25
+REC-2025-0065;PO-2025-0045;53200.00;2025-09-04;Senegal Catering;Services traiteur événement;2025-09-06
+REC-2025-0066;PO-2025-0046;99375.25;2025-09-10;Tableau Software;Analytics et BI - Licence;2025-09-12
+REC-2025-0067;PO-2025-0046;99375.25;2025-09-10;Tableau Software;Analytics et BI - Formation;2025-09-28
+REC-2025-0068;PO-2025-0047;71800.00;2025-09-15;Kinepolis Dakar;Location salle séminaire;2025-09-20
+REC-2025-0069;PO-2025-0048;122800.00;2025-09-21;Automation Anywhere;Licences automation - Partie 1;2025-10-05
+REC-2025-0070;PO-2025-0048;122800.00;2025-09-21;Automation Anywhere;Licences automation - Partie 2;2025-10-20
+REC-2025-0071;PO-2025-0049;32450.25;2025-09-26;Imprimerie Nationale;Impression documents;2025-10-02
+REC-2025-0072;PO-2025-0050;79900.00;2025-10-02;Snowflake Inc;Data warehouse cloud - Semestre 1;2025-10-05
+REC-2025-0073;PO-2025-0050;79900.00;2025-10-02;Snowflake Inc;Data warehouse cloud - Semestre 2;2025-10-05

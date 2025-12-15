@@ -146,7 +146,7 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,1902" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="1956.0000000000002,1892.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" Name="dd_extractedData" />
     </Sequence.Variables>
@@ -155,14 +155,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="581,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage fetch Purshase Order &quot;]" />
-    <Sequence DisplayName="Seq | Extract Document" sap:VirtualizedContainerService.HintSize="581,1542" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <ui:LogMessage DisplayName="LogM | Start Invoice attachment extraction" sap:VirtualizedContainerService.HintSize="579.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage fetch Information from invoice attachment...&quot;]" />
+    <Sequence DisplayName="Seq | Extract Document" sap:VirtualizedContainerService.HintSize="579.2,1529.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisaseib:Invoices" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" ModernDocumentTypeId="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" ProjectVersionNumber="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyAutoValidation="False" DisplayName="Extract Document Data" DocType="invoices" ExtractionResults="[dd_extractedData]" FileInput="[LocalResource.FromPath(in_str_localPath)]" GenerateData="True" sap:VirtualizedContainerService.HintSize="547,340" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_2" ProjectId="00000000-0000-0000-0000-000000000000" TimeoutInSeconds="3600">
+      <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisaseib:Invoices" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" ModernDocumentTypeId="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" ProjectVersionNumber="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyAutoValidation="False" DisplayName="Extract Document Data" DocType="invoices" ExtractionResults="[dd_extractedData]" FileInput="[LocalResource.FromPath(in_str_localPath)]" GenerateData="True" sap:VirtualizedContainerService.HintSize="545.6,348" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_2" ProjectId="00000000-0000-0000-0000-000000000000" TimeoutInSeconds="3600">
         <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
           <InArgument x:TypeArguments="s:Nullable(x:Int32)">
             <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
@@ -177,7 +177,7 @@
           </InArgument>
         </p:ExtractDocumentDataWithDocumentData.ProjectTag>
       </p:ExtractDocumentDataWithDocumentData>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="547,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,222" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
@@ -209,7 +209,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="547,1053" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="545.6,1032.8" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -217,13 +217,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513,719" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,732" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut sap2010:Annotation.AnnotationText="ICI c'est extraction avec tous les champs demander sur le PDD&#xD;&#xA;Note (A Modifier) : tous les champs ne sont pas disponible avec la nouvelle liecense community" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,174" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+            <ui:CommentOut sap2010:Annotation.AnnotationText="ICI c'est extraction avec tous les champs demander sur le PDD&#xA;Note (A Modifier) : tous les champs ne sont pas disponible avec la nouvelle liecense community" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="478.4,180.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="513,509" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
@@ -359,7 +359,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <ui:MultipleAssign sap2010:Annotation.AnnotationText="ICI c'est les champs disponible avec lors de l'extraction&#xD;&#xA;&#xD;&#xA;Et pour la suite , j'utilise le Numero de Facture comme le bon de commade dans les test" DisplayName="Assign extracted data Value to a out Dictionary" sap:VirtualizedContainerService.HintSize="479,437" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+            <ui:MultipleAssign sap2010:Annotation.AnnotationText="ICI c'est les champs disponible avec lors de l'extraction&#xA;&#xA;Et pour la suite, j'utilise le Numero de Facture comme le bon de commade dans les test" DisplayName="Assign extracted data Value to a out Dictionary" sap:VirtualizedContainerService.HintSize="478.4,443.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
@@ -452,7 +452,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="478.4,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="513,447" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
@@ -550,17 +550,35 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,139.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Throw DisplayName="Throw | Not a invoice" Exception="[New BusinessRuleException(&quot;Verifier : Données non extraites | Document : &quot; + Path.GetFileName(in_str_localPath))]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            <ui:CommentOut sap2010:Annotation.AnnotationText="BDI no Throw" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382.4,79.2" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,173.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw DisplayName="Throw | Not a invoice" Exception="[New BusinessRuleException(&quot;Verifier : Données non extraites | Document : &quot; + Path.GetFileName(in_str_localPath))]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
           </Sequence>
         </If.Else>
       </If>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="581,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Fatal" Message="[&quot;## End AIDocument Classification &quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="579.2,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;## End AIDocument Classification &quot;]" />
   </Sequence>
 </Activity>

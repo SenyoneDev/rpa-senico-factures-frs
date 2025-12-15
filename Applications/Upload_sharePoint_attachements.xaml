@@ -1,10 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Find_direction_basic" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_di_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="in_o365m_mailAttachements" Type="InArgument(ummm:O365AttachmentLocalItem[])" />
     <x:Property Name="in_str_direction" Type="InArgument(x:String)" />
     <x:Property Name="in_o365m_mailItem" Type="InArgument(umm:Office365Message)" />
     <x:Property Name="out_diFile" Type="OutArgument(umfm:O365DriveRemoteItem)" />
+    <x:Property Name="in_o365m_mailAttachement" Type="InArgument(ummm:O365AttachmentLocalItem)" />
+    <x:Property Name="out_dict_mailMetadata" Type="OutArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -135,14 +136,18 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,1341" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="1726.4,1030.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Uplaod SharePoint Attachement&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="ICI on upload chaque facture avec les metadonnees correspondants  dans le sharepoint suivant la diretion trouver . Si la direcction n'est pas trouver ils sont telecharger dans un dossier par defaut" DisplayName="Seq | Upload SharePoint Attachements" sap:VirtualizedContainerService.HintSize="536,981" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="467.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Uplaod SharePoint Attachement&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="ICI on upload chaque facture avec les metadonnees correspondants  dans le sharepoint suivant la diretion trouver . Si la direcction n'est pas trouver ils sont telecharger dans un dossier par defaut" DisplayName="Seq | Upload SharePoint Attachements" sap:VirtualizedContainerService.HintSize="467.2,784.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_filePath" />
+        <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="di_file" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -150,70 +155,73 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each currentO365AttachmentLocalItem" sap:VirtualizedContainerService.HintSize="502,832" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_o365m_mailAttachements]">
-        <ui:ForEach.Body>
-          <ActivityAction x:TypeArguments="ummm:O365AttachmentLocalItem">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="ummm:O365AttachmentLocalItem" Name="currentO365AttachmentLocalItem" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,695" sap2010:WorkflowViewState.IdRef="Sequence_15">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="x:String" Name="str" />
-                <Variable x:TypeArguments="x:String" Name="str_filePath" />
-                <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="di_file" />
-              </Sequence.Variables>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[str_filePath]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[currentO365AttachmentLocalItem.LocalPath]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="upload sur sharepoint" DisplayName="Upload_SharePoint - Invoke Workflow File (Applications\Upload_SharePoint.xaml)" sap:VirtualizedContainerService.HintSize="434,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Applications\Upload_SharePoint.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_di_config]</InArgument>
-                  <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_str_direction">[in_str_direction]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_str_filePath">[str_filePath]</InArgument>
-                  <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem" x:Key="in_emailAttachement">[currentO365AttachmentLocalItem]</InArgument>
-                  <OutArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="out_di_file">[di_file]</OutArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:InvokeWorkflowFile>
-              <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="umfm:O365DriveRemoteItem">[out_diFile]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="umfm:O365DriveRemoteItem">[di_file]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="upload des metadonnee du fichier sur sharepoint" DisplayName="Add_metaData - Invoke Workflow File (Applications\Add_metaData.xaml)" sap:VirtualizedContainerService.HintSize="434,199" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Applications\Add_metaData.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_file]</InArgument>
-                  <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:InvokeWorkflowFile>
-            </Sequence>
-          </ActivityAction>
-        </ui:ForEach.Body>
-      </ui:ForEach>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_filePath]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[in_o365m_mailAttachement.LocalPath]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="upload sur sharepoint" DisplayName="Upload_SharePoint - Invoke Workflow File (Applications\Upload_SharePoint.xaml)" sap:VirtualizedContainerService.HintSize="433.6,207.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Applications\Upload_SharePoint.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_str_direction">[in_str_direction]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_str_filePath">[str_filePath]</InArgument>
+          <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem" x:Key="in_emailAttachement">[in_o365m_mailAttachement]</InArgument>
+          <OutArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="out_di_file">[di_file]</OutArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_config">[in_di_config]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="umfm:O365DriveRemoteItem">[out_diFile]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="umfm:O365DriveRemoteItem">[di_file]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="upload des metadonnee du fichier sur sharepoint" DisplayName="Add_metaData - Invoke Workflow File (Applications\Add_metaData.xaml)" sap:VirtualizedContainerService.HintSize="433.6,198.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Applications\Add_metaData.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_file]</InArgument>
+          <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_dict_MetaData">[out_dict_mailMetadata]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Uplaod SharePoint Attachement&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="467.2,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Uplaod SharePoint Attachement&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
   </Sequence>
 </Activity>
