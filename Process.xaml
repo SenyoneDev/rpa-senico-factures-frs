@@ -1,7 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uisad="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisaseib="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.Invoices.Bundle;assembly=ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj" xmlns:umae="clr-namespace:UiPath.MicrosoftOffice365.Activities.Excel;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uisad="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisaseib="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.Invoices.Bundle;assembly=ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Config variable to store values from Config excel" Name="in_dict_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_o365m_mailItem" Type="InArgument(umm:Office365Message)" />
+    <x:Property Name="in_qi" Type="InArgument(ui:QueueItem)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -92,6 +93,9 @@
       <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification</x:String>
       <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.Invoices.Bundle</x:String>
       <x:String>UiPath.IntelligentOCR.StudioWeb.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Models</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -192,15 +196,15 @@
       <AssemblyReference>ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj</AssemblyReference>
       <AssemblyReference>Studio.Generated.TypedDataRow1</AssemblyReference>
       <AssemblyReference>CE72972F8C1_ner_Crea.0bTJC2AXRFN1pI5CF4Pw9RU1</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence.&#xA;&#xA;After each transaction a row with transaction information will be added to the StatusReport.xlsx by the UpdateStatusReport_AR workflow, which is invoked in the SetTransactionStatus_AR workflow." DisplayName="Process" sap:VirtualizedContainerService.HintSize="1726.4,1652" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence.&#xA;&#xA;After each transaction a row with transaction information will be added to the StatusReport.xlsx by the UpdateStatusReport_AR workflow, which is invoked in the SetTransactionStatus_AR workflow." DisplayName="Process" sap:VirtualizedContainerService.HintSize="1726.4,1901.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ummm:O365AttachmentLocalItem[]" Name="o365m_mailAttachements" />
       <Variable x:TypeArguments="x:String" Name="str_direction" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, s:String[])" Name="dict_invoceInformation" />
       <Variable x:TypeArguments="x:Boolean" Name="bool_isInvoice" />
-      <Variable x:TypeArguments="x:String" Name="str_localPath" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_listAnnuaire" />
       <Variable x:TypeArguments="x:Boolean" Name="bool_isValidExtract" />
       <Variable x:TypeArguments="s:String[]" Name="arr_cater" />
@@ -208,7 +212,10 @@
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="bool_isValid" />
       <Variable x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" Name="dd_ExtractionData" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_listSupplier" />
-      <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="di_file" />
+      <Variable x:TypeArguments="umm:Office365Message" Name="thisMail" />
+      <Variable x:TypeArguments="x:String" Name="str_thisLocalFile" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="dict_metaDatas" />
+      <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="di_remote_thisFile" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -216,66 +223,43 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message | Reference" sap:VirtualizedContainerService.HintSize="534.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;## Start Process Message item with Reference: &quot;]" />
-    <Sequence DisplayName="Integration GED" sap:VirtualizedContainerService.HintSize="534.4,662.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <ui:LogMessage DisplayName="Log Message | Reference" sap:VirtualizedContainerService.HintSize="669.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;## Start Process Message item with Reference: &quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Surveillance_emails - Invoke Workflow File (Applications\Surveillance_emails.xaml)" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Applications\Surveillance_emails.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_dictConfig">[in_dict_Config]</InArgument>
-          <OutArgument x:TypeArguments="ummm:O365AttachmentLocalItem[]" x:Key="out_o365m_mailAttachements">[o365m_mailAttachements]</OutArgument>
-          <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-        </ui:InvokeWorkflowFile.Arguments>
+    </ui:LogMessage>
+    <Sequence DisplayName="Get mail and Attachment" sap:VirtualizedContainerService.HintSize="669.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_41">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <umam:GetEmailByIdConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" SharedMailbox="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DisplayName="Get Email by ID" EmailId="[in_qi.SpecificContent(&quot;messageID&quot;).ToString]" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="GetEmailByIdConnections_1" Result="[thisMail]" UseConnectionService="True" UseSharedMailbox="False">
+        <umam:GetEmailByIdConnections.MailboxArg>
+          <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
+            <umamm:MailboxArgument.Backup>
+              <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID0" StoredValue="NoMailbox">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </umamm:MailboxArgument.Backup>
+          </umamm:MailboxArgument>
+        </umam:GetEmailByIdConnections.MailboxArg>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-      </ui:InvokeWorkflowFile>
-      <umae:ReadRangeConnections x:TypeArguments="sd:DataTable" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ColumnNames="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" RangeInformation="{x:Null}" RangeMetadata="{x:Null}" TemplateBrowserDriveName="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" TemplateBrowserSiteUrl="{x:Null}" WorkbookSample="{x:Null}" AuthScopesInvalid="False" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" DisplayName="Read | User Directory" HasHeaders="True" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_2" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_dict_Config(&quot;AnnuaireFileUrl&quot;).ToString]" Range="[in_dict_Config(&quot;AnnuaireFileRange&quot;).ToString]" RangeMode="Default" ReadAs="Values" Result="[dt_listAnnuaire]" UseConnectionService="True" WorkingWithTemplateWorkbook="False">
-        <umae:ReadRangeConnections.DriveItemArgument>
-          <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_dict_Config(&quot;AnnuaireFileUrl&quot;).ToString]" ParentFullPathHint="">
-            <umafm:DriveItemArgument.ItemIdBackup>
-              <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="ItemUrl">
-                <usau:BackupSlot.BackupValues>
-                  <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
-                    <x:Null />
-                    <x:Null />
-                    <x:Null />
-                    <x:Null />
-                    <x:Null />
-                    <x:Null />
-                  </scg:List>
-                </usau:BackupSlot.BackupValues>
-              </usau:BackupSlot>
-            </umafm:DriveItemArgument.ItemIdBackup>
-          </umafm:DriveItemArgument>
-        </umae:ReadRangeConnections.DriveItemArgument>
-        <umae:ReadRangeConnections.TemplateArgument>
-          <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="Browse" ParentFullPathHint="">
-            <umafm:DriveItemArgument.ItemIdBackup>
-              <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="Browse">
-                <usau:BackupSlot.BackupValues>
-                  <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
-                </usau:BackupSlot.BackupValues>
-              </usau:BackupSlot>
-            </umafm:DriveItemArgument.ItemIdBackup>
-          </umafm:DriveItemArgument>
-        </umae:ReadRangeConnections.TemplateArgument>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </umae:ReadRangeConnections>
-      <umae:ReadRangeConnections x:TypeArguments="sd:DataTable" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ColumnNames="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID1}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" RangeInformation="{x:Null}" RangeMetadata="{x:Null}" TemplateBrowserDriveName="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" TemplateBrowserSiteUrl="{x:Null}" WorkbookSample="{x:Null}" AuthScopesInvalid="False" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" DisplayName="Read | Supplier Directory" HasHeaders="True" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_3" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_dict_Config(&quot;AnnuaireFileUrl&quot;).ToString]" Range="[in_dict_Config(&quot;AnnuaireFileRange&quot;).ToString]" RangeMode="Default" ReadAs="Values" Result="[dt_listSupplier]" UseConnectionService="True" WorkingWithTemplateWorkbook="False">
-        <umae:ReadRangeConnections.DriveItemArgument>
-          <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_dict_Config(&quot;AnnuaireFileUrl&quot;).ToString]" ParentFullPathHint="">
+      </umam:GetEmailByIdConnections>
+      <umaf:DownloadFileConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID1}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" NewResult="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Fail" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" ConvertToPdf="False" DestinationPath="[in_dict_Config(&quot;PathDownloadAttachements&quot;).ToString]" DisplayName="Download QItem File" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="DownloadFileConnections_1" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_qi.SpecificContent(&quot;File_SharepointURL&quot;).ToString]" UseConnectionService="True">
+        <umaf:DownloadFileConnections.DriveItemArgument>
+          <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_qi.SpecificContent(&quot;File_SharepointURL&quot;).ToString]" ParentFullPathHint="">
             <umafm:DriveItemArgument.ItemIdBackup>
               <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID1" StoredValue="ItemUrl">
                 <usau:BackupSlot.BackupValues>
@@ -291,175 +275,230 @@
               </usau:BackupSlot>
             </umafm:DriveItemArgument.ItemIdBackup>
           </umafm:DriveItemArgument>
-        </umae:ReadRangeConnections.DriveItemArgument>
-        <umae:ReadRangeConnections.TemplateArgument>
-          <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="Browse" ParentFullPathHint="">
+        </umaf:DownloadFileConnections.DriveItemArgument>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </umaf:DownloadFileConnections>
+      <umaf:GetFileFolderConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID2}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" sap2010:Annotation.AnnotationText="To update the file later or metadata if needed" AuthScopesInvalid="False" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" DisplayName="Get File or Folder" sap:VirtualizedContainerService.HintSize="416,100.8" sap2010:WorkflowViewState.IdRef="GetFileFolderConnections_1" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_qi.SpecificContent(&quot;File_SharepointURL&quot;).ToString]" Result="[di_remote_thisFile]" UseConnectionService="True">
+        <umaf:GetFileFolderConnections.DriveItemArgument>
+          <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_qi.SpecificContent(&quot;File_SharepointURL&quot;).ToString]" ParentFullPathHint="">
             <umafm:DriveItemArgument.ItemIdBackup>
-              <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="Browse">
+              <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID2" StoredValue="ItemUrl">
                 <usau:BackupSlot.BackupValues>
-                  <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                  <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
+                    <x:Null />
+                    <x:Null />
+                    <x:Null />
+                    <x:Null />
+                    <x:Null />
+                    <x:Null />
+                  </scg:List>
                 </usau:BackupSlot.BackupValues>
               </usau:BackupSlot>
             </umafm:DriveItemArgument.ItemIdBackup>
           </umafm:DriveItemArgument>
-        </umae:ReadRangeConnections.TemplateArgument>
+        </umaf:GetFileFolderConnections.DriveItemArgument>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </umaf:GetFileFolderConnections>
+      <Assign sap2010:Annotation.AnnotationText="Get the first file in this directory" DisplayName="Assign | thisLocalFile" sap:VirtualizedContainerService.HintSize="416,100.8" sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_thisLocalFile]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[directory.GetFiles(in_dict_Config("PathDownloadAttachements").ToString)(0)]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:MultipleAssign DisplayName="Multiple Assign | Create file Dictionary" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[dict_metaDatas]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[New Dictionary(Of String, Object)]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Object">[dict_metaDatas("Status")]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Object">[in_dict_Config("StatusRPA_InProcess").ToString]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-      </umae:ReadRangeConnections>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_5">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,227.2" sap2010:WorkflowViewState.IdRef="Sequence_40">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find Direction - Invoke Workflow File (Applications\Find Direction.xaml)" sap:VirtualizedContainerService.HintSize="382.4,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Applications\Find Direction.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_str_direction">[str_direction]</OutArgument>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_Config]</InArgument>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_listAnnuaire">[dt_listAnnuaire]</InArgument>
-                <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem[]" x:Key="in_o365m_mailAttachements">[o365m_mailAttachements]</InArgument>
-                <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_listSupplier">[dt_listSupplier]</InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-          </Sequence>
-        </ui:CommentOut.Body>
+      </ui:MultipleAssign>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update metadatas - Invoke Workflow File (Applications\Update metadatas.xaml)" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Applications\Update metadatas.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_Config">[in_dict_Config]</InArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_metaDatas">[dict_metaDatas]</InArgument>
+          <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_remote_thisFile]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-      </ui:CommentOut>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find_Direction v2 - Invoke Workflow File (Applications\Find_Direction v2.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Applications\Find_Direction v2.xaml">
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence sap2010:Annotation.AnnotationText="Control document&#xD;&#xA;Find direction" DisplayName="Controles &amp; Direction" sap:VirtualizedContainerService.HintSize="669.6,100.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Controles - Invoke Workflow File (Applications\Surveillance_emails.xaml)" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Applications\Controles.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_dictConfig">[in_dict_Config]</InArgument>
+          <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_str_filePath">[str_thisLocalFile]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find_Direction v2 - Invoke Workflow File (Applications\Find_Direction v2.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Applications\Find_Direction v2.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="x:String" x:Key="out_str_direction">[str_direction]</OutArgument>
           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_config">[in_dict_Config]</InArgument>
           <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_mail">[in_o365m_mailItem]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Upload_sharePoint_attachements - Invoke Workflow File (Applications\Upload_sharePoint_attachements.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Applications\Upload_sharePoint_attachements.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_Config]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_str_direction">[str_direction]</InArgument>
-          <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-          <OutArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="out_diFile">[di_file]</OutArgument>
-          <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem" x:Key="in_o365m_mailAttachement" />
-          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_dict_mailMetadata" />
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="Seq | Process Document" sap:VirtualizedContainerService.HintSize="534.4,627.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
+    <Sequence sap2010:Annotation.AnnotationText="Classfier, Extraire et valider les informations de la facture" DisplayName="Invoice Extraction &amp; Validation" sap:VirtualizedContainerService.HintSize="669.6,88" sap2010:WorkflowViewState.IdRef="Sequence_42">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each currentO365AttachmentLocalItem" sap:VirtualizedContainerService.HintSize="500.8,535.2" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[o365m_mailAttachements]">
-        <ui:ForEach.Body>
-          <ActivityAction x:TypeArguments="ummm:O365AttachmentLocalItem">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="ummm:O365AttachmentLocalItem" Name="currentO365AttachmentLocalItem" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,397.6" sap2010:WorkflowViewState.IdRef="Sequence_21">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ai_document_classification - Invoke Workflow File (Applications\Ai_document_classification.xaml)" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Applications\Ai_document_classification.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_bool_isInvoice">[bool_isInvoice]</OutArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_config">[in_dict_Config]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_str_localFilePath" />
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <If Condition="[bool_isInvoice = False]" DisplayName="If | not invoice - BRE" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="If_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence DisplayName="Then | Metadata &amp; BRE" sap:VirtualizedContainerService.HintSize="416,278.4" sap2010:WorkflowViewState.IdRef="Sequence_22">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign | Dict status" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[dict_metaDatas("Statut")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">[in_dict_Config("StatusRPA_KO_NotInvoice").ToString]</InArgument>
+              </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[str_localPath]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[currentO365AttachmentLocalItem.LocalPath]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ai_document_classification - Invoke Workflow File (Applications\Ai_document_classification.xaml)" sap:VirtualizedContainerService.HintSize="433.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Applications\Ai_document_classification.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_bool_isInvoice">[bool_isInvoice]</OutArgument>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_config">[in_dict_Config]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_str_localPath">[str_localPath]</InArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-              </ui:InvokeWorkflowFile>
-              <If Condition="[bool_isInvoice = False]" sap:VirtualizedContainerService.HintSize="433.6,48" sap2010:WorkflowViewState.IdRef="If_3">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <umam:SetEmailCategoriesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SpecificCategoriesToRemove="{x:Null}" AuthScopesInvalid="False" CategoriesToAssign="[new System.String() {&quot;Pas une Facture&quot;}]" CategoriesToRemove="All" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DisplayName="Set Email Categories" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382.4,290.4" sap2010:WorkflowViewState.IdRef="SetEmailCategoriesConnections_1" UseConnectionService="True" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_metaData - Invoke Workflow File (Applications\Add_metaData.xaml)" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Applications\Add_metaData.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_file]</InArgument>
-                        <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                    <ui:Break sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="Break_1" />
-                  </Sequence>
-                </If.Then>
-                <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="705.6,4426.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ai_document_extraction - Invoke Workflow File (Applications\Ai_document_extraction.xaml)" sap:VirtualizedContainerService.HintSize="672,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Applications\Ai_document_extraction.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_str_localPath">[str_localPath]</InArgument>
-                        <OutArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="out_dict_invoiceInformation">[dict_invoceInformation]</OutArgument>
-                        <OutArgument x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" x:Key="out_dd_ExtractionData">[dd_ExtractionData]</OutArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="672,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Assign | check invoce threhold" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_3">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[bool_isValidExtract]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean" xml:space="preserve">[dict_invoceInformation.All(Function(kvp) kvp.Value(0) IsNot Nothing AndAlso
-kvp.Value(0).ToString.Trim &lt;&gt; "" AndAlso
-CDbl(kvp.Value(1)) &gt; CDbl(in_dict_Config("Document_confidence").ToString))]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </Sequence>
-                      </ui:CommentOut.Body>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:CommentOut>
-                    <Assign DisplayName="Assign | check invoce threhold" sap:VirtualizedContainerService.HintSize="672,115.2" sap2010:WorkflowViewState.IdRef="Assign_4">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Boolean">[bool_isValidExtract]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Boolean" xml:space="preserve">[dict_invoceInformation.All(Function(kvp) _
+            </Assign>
+            <Assign DisplayName="Assign | Dict traite" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[dict_metaDatas("Traite")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">["Yes"]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update metadatas - Invoke Workflow File (Applications\Update metadatas.xaml)" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Applications\Update metadatas.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_Config">[in_dict_Config]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_metaDatas">[dict_metaDatas]</InArgument>
+                <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_remote_thisFile]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <Throw DisplayName="Throw BRE | Not an invoice" Exception="[new BusinessRuleException(&quot;This document is not an invoice.&quot;)]" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Throw_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Throw>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <Assign sap2010:Annotation.AnnotationText="BDI A revoir" DisplayName="Assign | check invoce threhold" sap:VirtualizedContainerService.HintSize="416,88" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[bool_isValidExtract]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean" xml:space="preserve">[dict_invoceInformation.All(Function(kvp) _
     kvp.Value IsNot Nothing AndAlso                     ' valeur non nulle
     kvp.Value.Length &gt;= 2 AndAlso                       ' tableau contient au moins 2 items
     kvp.Value(0) IsNot Nothing AndAlso                  ' texte non nul
@@ -467,50 +506,118 @@ CDbl(kvp.Value(1)) &gt; CDbl(in_dict_Config("Document_confidence").ToString))]</
     Double.TryParse(kvp.Value(1), Nothing) AndAlso      ' score convertible en double
     CDbl(kvp.Value(1)) &gt; CDbl(in_dict_Config("Document_confidence"))
 )]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <If Condition="[bool_isValidExtract = False]" sap:VirtualizedContainerService.HintSize="672,1026" sap2010:WorkflowViewState.IdRef="If_7">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ai_document_extraction - Invoke Workflow File (Applications\Ai_document_extraction.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Applications\Ai_document_extraction.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_str_localPath">[str_thisLocalFile]</InArgument>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="out_dict_invoiceInformation">[dict_invoceInformation]</OutArgument>
+          <OutArgument x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" x:Key="out_dd_ExtractionData">[dd_ExtractionData]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoce_ValidationCenter - Invoke Workflow File (Applications\Invoce_ValidationCenter.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Applications\Invoce_ValidationCenter.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_Config]</InArgument>
+          <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem[]" x:Key="in_o365m_mailAttachements">[o365m_mailAttachements]</InArgument>
+          <InArgument x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" x:Key="in_idd_ExtractedData">[dd_ExtractionData]</InArgument>
+          <InOutArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="io_dict_invoiceInformation">[dict_invoceInformation]</InOutArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isValid">[bool_isInvoice]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence sap2010:Annotation.AnnotationText="Process Sage" DisplayName="Seq | Process Sage" sap:VirtualizedContainerService.HintSize="669.6,1350.4" sap2010:WorkflowViewState.IdRef="Sequence_28">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If Condition="[bool_isValid]" DisplayName="If | Information of invoice is valid" sap:VirtualizedContainerService.HintSize="636,1227.2" sap2010:WorkflowViewState.IdRef="If_8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="602.4,976" sap2010:WorkflowViewState.IdRef="Sequence_32">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="bool_activeFullBack" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each currentDataRow" sap:VirtualizedContainerService.HintSize="568.8,811.2" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[dt_listSupplier.Rows]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="535.2,664.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[dict_invoceInformation(&quot;Nom fournisseur&quot;)(0).Replace(&quot; &quot;,&quot;&quot;).Contains(currentDataRow(&quot;Nom&quot;).ToString.Replace(&quot; &quot;,&quot;&quot;))]" DisplayName="If | Find Supplier ID in the directory" sap:VirtualizedContainerService.HintSize="501.6,604.8" sap2010:WorkflowViewState.IdRef="If_9">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,691" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,278.4" sap2010:WorkflowViewState.IdRef="Sequence_35">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <umam:SetEmailCategoriesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SpecificCategoriesToRemove="{x:Null}" AuthScopesInvalid="False" CategoriesToAssign="[new System.String() {&quot;En validation&quot;}]" CategoriesToRemove="All" ConnectionId="32d1fecf-6d8e-4bf9-b216-a4d370a4d082" DisplayName="Set Email Categories" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382,286" sap2010:WorkflowViewState.IdRef="SetEmailCategoriesConnections_4" UseConnectionService="True" />
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_metaData - Invoke Workflow File (Applications\Add_metaData.xaml)" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Applications\Add_metaData.xaml">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_file]</InArgument>
-                              <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                          </ui:InvokeWorkflowFile>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoce_ValidationCenter - Invoke Workflow File (Applications\Invoce_ValidationCenter.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Applications\Invoce_ValidationCenter.xaml">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_Config]</InArgument>
-                              <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem[]" x:Key="in_o365m_mailAttachements">[o365m_mailAttachements]</InArgument>
-                              <InArgument x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" x:Key="in_idd_ExtractedData">[dd_ExtractionData]</InArgument>
-                              <InOutArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="io_dict_invoiceInformation">[dict_invoceInformation]</InOutArgument>
-                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isValid">[bool_isInvoice]</OutArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                          </ui:InvokeWorkflowFile>
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_supplierID]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[currentDataRow("ID").ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Boolean">[bool_activeFullBack]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                            </Assign.Value>
+                          </Assign>
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_36">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="No Need Validation" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_8">
                             <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[bool_isValid]</OutArgument>
+                              <OutArgument x:TypeArguments="x:Boolean">[bool_activeFullBack]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:Boolean">True</InArgument>
@@ -519,372 +626,117 @@ CDbl(kvp.Value(1)) &gt; CDbl(in_dict_Config("Document_confidence").ToString))]</
                         </Sequence>
                       </If.Else>
                     </If>
-                    <Sequence DisplayName="Seq | Process Sage" sap:VirtualizedContainerService.HintSize="672,2993" sap2010:WorkflowViewState.IdRef="Sequence_28">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[bool_isValid]" DisplayName="If | Information of invoice is valid" sap:VirtualizedContainerService.HintSize="638,2910" sap2010:WorkflowViewState.IdRef="If_8">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <If.Then>
-                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="604,2660" sap2010:WorkflowViewState.IdRef="Sequence_32">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="x:Boolean" Name="bool_activeFullBack" />
-                            </Sequence.Variables>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each currentDataRow" sap:VirtualizedContainerService.HintSize="570,811" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[dt_listSupplier.Rows]">
-                              <ui:ForEach.Body>
-                                <ActivityAction x:TypeArguments="sd:DataRow">
-                                  <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
-                                  </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,665" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[dict_invoceInformation(&quot;Nom fournisseur&quot;)(0).Replace(&quot; &quot;,&quot;&quot;).Contains(currentDataRow(&quot;Nom&quot;).ToString.Replace(&quot; &quot;,&quot;&quot;))]" DisplayName="If | Find Supplier ID in the directory" sap:VirtualizedContainerService.HintSize="502,605" sap2010:WorkflowViewState.IdRef="If_9">
-                                      <If.Then>
-                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,279" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_7">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:String">[str_supplierID]</OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:String">[currentDataRow("ID").ToString]</InArgument>
-                                            </Assign.Value>
-                                          </Assign>
-                                          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_9">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:Boolean">[bool_activeFullBack]</OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                            </Assign.Value>
-                                          </Assign>
-                                        </Sequence>
-                                      </If.Then>
-                                      <If.Else>
-                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_8">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:Boolean">[bool_activeFullBack]</OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                            </Assign.Value>
-                                          </Assign>
-                                        </Sequence>
-                                      </If.Else>
-                                    </If>
-                                  </Sequence>
-                                </ActivityAction>
-                              </ui:ForEach.Body>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:ForEach>
-                            <If Condition="[bool_activeFullBack]" DisplayName="If  | Find Supplier ID in sage" sap:VirtualizedContainerService.HintSize="570,423" sap2010:WorkflowViewState.IdRef="If_10">
-                              <If.Then>
-                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_38">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sage_supplier_check - Invoke Workflow File (Applications\Sage_supplier_check.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Applications\Sage_supplier_check.xaml">
-                                    <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_Config">[in_dict_Config]</InArgument>
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="in_dict_invoiceInformation">[dict_invoceInformation]</InArgument>
-                                      <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="out_str_fournissuerId">[str_supplierID]</OutArgument>
-                                    </ui:InvokeWorkflowFile.Arguments>
-                                  </ui:InvokeWorkflowFile>
-                                </Sequence>
-                              </If.Then>
-                              <If.Else>
-                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_39">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </Sequence>
-                              </If.Else>
-                            </If>
-                            <If Condition="[str_supplierID is Nothing]" sap:VirtualizedContainerService.HintSize="570,1366" sap2010:WorkflowViewState.IdRef="If_5">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <If.Then>
-                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,514" sap2010:WorkflowViewState.IdRef="Sequence_29">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <umam:SetEmailCategoriesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SpecificCategoriesToRemove="{x:Null}" AuthScopesInvalid="False" CategoriesToAssign="[new System.String() {&quot;Pas de fournisseur&quot;}]" CategoriesToRemove="All" ConnectionId="32d1fecf-6d8e-4bf9-b216-a4d370a4d082" DisplayName="Set Email Categories" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382,286" sap2010:WorkflowViewState.IdRef="SetEmailCategoriesConnections_3" UseConnectionService="True" />
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_metaData - Invoke Workflow File (Applications\Add_metaData.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Applications\Add_metaData.xaml">
-                                    <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_file]</InArgument>
-                                      <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-                                    </ui:InvokeWorkflowFile.Arguments>
-                                  </ui:InvokeWorkflowFile>
-                                </Sequence>
-                              </If.Then>
-                              <If.Else>
-                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,691" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Save_InvoiceDataInSage - Invoke Workflow File (Applications\Save_InvoiceDataInSage.xaml)" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Applications\Save_InvoiceDataInSage.xaml">
-                                    <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="in_dict_invoiceInformation">[dict_invoceInformation]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in__str_supplierID">[str_supplierID]</InArgument>
-                                    </ui:InvokeWorkflowFile.Arguments>
-                                  </ui:InvokeWorkflowFile>
-                                  <umam:SetEmailCategoriesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SpecificCategoriesToRemove="{x:Null}" AuthScopesInvalid="False" CategoriesToAssign="[new System.String() {&quot;Enregister&quot;}]" CategoriesToRemove="All" ConnectionId="32d1fecf-6d8e-4bf9-b216-a4d370a4d082" DisplayName="Set Email Categories" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382,286" sap2010:WorkflowViewState.IdRef="SetEmailCategoriesConnections_5" UseConnectionService="True" />
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_metaData - Invoke Workflow File (Applications\Add_metaData.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Applications\Add_metaData.xaml">
-                                    <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_file]</InArgument>
-                                      <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
-                                    </ui:InvokeWorkflowFile.Arguments>
-                                  </ui:InvokeWorkflowFile>
-                                </Sequence>
-                              </If.Else>
-                            </If>
-                          </Sequence>
-                        </If.Then>
-                        <If.Else>
-                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Sequence>
-                        </If.Else>
-                      </If>
-                    </Sequence>
                   </Sequence>
-                </If.Else>
-              </If>
-            </Sequence>
-          </ActivityAction>
-        </ui:ForEach.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:ForEach>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+            <If Condition="[bool_activeFullBack]" DisplayName="If  | Find Supplier ID in sage" sap:VirtualizedContainerService.HintSize="568.8,56.8" sap2010:WorkflowViewState.IdRef="If_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,227.2" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sage_supplier_check - Invoke Workflow File (Applications\Sage_supplier_check.xaml)" sap:VirtualizedContainerService.HintSize="382.4,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Applications\Sage_supplier_check.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_Config">[in_dict_Config]</InArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="in_dict_invoiceInformation">[dict_invoceInformation]</InArgument>
+                      <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_str_fournissuerId">[str_supplierID]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[str_supplierID is Nothing]" sap:VirtualizedContainerService.HintSize="568.8,48" sap2010:WorkflowViewState.IdRef="If_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,531.2" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <umam:SetEmailCategoriesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SpecificCategoriesToRemove="{x:Null}" AuthScopesInvalid="False" CategoriesToAssign="[new System.String() {&quot;Pas de fournisseur&quot;}]" CategoriesToRemove="All" ConnectionId="32d1fecf-6d8e-4bf9-b216-a4d370a4d082" DisplayName="Set Email Categories" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382.4,303.2" sap2010:WorkflowViewState.IdRef="SetEmailCategoriesConnections_3" UseConnectionService="True" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_metaData - Invoke Workflow File (Applications\Add_metaData.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Applications\Add_metaData.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_file]</InArgument>
+                      <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,691" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Save_InvoiceDataInSage - Invoke Workflow File (Applications\Save_InvoiceDataInSage.xaml)" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Applications\Save_InvoiceDataInSage.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, s:String[])" x:Key="in_dict_invoiceInformation">[dict_invoceInformation]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in__str_supplierID">[str_supplierID]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <umam:SetEmailCategoriesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" SpecificCategoriesToRemove="{x:Null}" AuthScopesInvalid="False" CategoriesToAssign="[new System.String() {&quot;Enregister&quot;}]" CategoriesToRemove="All" ConnectionId="32d1fecf-6d8e-4bf9-b216-a4d370a4d082" DisplayName="Set Email Categories" Email="[in_o365m_mailItem]" sap:VirtualizedContainerService.HintSize="382,286" sap2010:WorkflowViewState.IdRef="SetEmailCategoriesConnections_5" UseConnectionService="True" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_metaData - Invoke Workflow File (Applications\Add_metaData.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Applications\Add_metaData.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_di_file">[di_file]</InArgument>
+                      <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailItem">[in_o365m_mailItem]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_33">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message | Reference" sap:VirtualizedContainerService.HintSize="534.4,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;## End Process Message item with Reference: &quot;]">
+    <ui:LogMessage DisplayName="Log Message | Reference" sap:VirtualizedContainerService.HintSize="669.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;## End Process Message item with Reference: &quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="534.4,48" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_17">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Seq | Find Direction " sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Seq | Basic" sap:VirtualizedContainerService.HintSize="688,260" sap2010:WorkflowViewState.IdRef="Sequence_12">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find_direction_basic - Invoke Workflow File (Applications\Find_direction_basic.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Applications\Find_direction_basic.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="umm:Office365Message" x:Key="in_o365m_mailMessage">[in_o365m_mailItem]</InArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="out_str_direction">[str_direction]</OutArgument>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_Config]</InArgument>
-                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_listAnnuaire">[dt_listAnnuaire]</InArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-              </ui:InvokeWorkflowFile>
-            </Sequence>
-            <Sequence DisplayName="Seq | Advanced" sap:VirtualizedContainerService.HintSize="688,1478" sap2010:WorkflowViewState.IdRef="Sequence_10">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[str_direction is Nothing]" sap:VirtualizedContainerService.HintSize="654,1386" sap2010:WorkflowViewState.IdRef="If_1">
-                <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="620,1136" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each currentO365AttachmentLocalItem" sap:VirtualizedContainerService.HintSize="586,1076" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[o365m_mailAttachements]">
-                      <ui:ForEach.Body>
-                        <ActivityAction x:TypeArguments="ummm:O365AttachmentLocalItem">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="ummm:O365AttachmentLocalItem" Name="currentO365AttachmentLocalItem" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,939" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_1">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:String">[str_localPath]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">[currentO365AttachmentLocalItem.LocalPath]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ai_document_classification - Invoke Workflow File (Applications\Ai_document_classification.xaml)" sap:VirtualizedContainerService.HintSize="518,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Applications\Ai_document_classification.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_bool_isInvoice">[bool_isInvoice]</OutArgument>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_config">[in_dict_Config]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_str_localPath">[str_localPath]</InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                            </ui:InvokeWorkflowFile>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ai_document_extraction - Invoke Workflow File (Applications\Ai_document_extraction.xaml)" sap:VirtualizedContainerService.HintSize="518,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Applications\Ai_document_extraction.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_str_localPath">[str_localPath]</InArgument>
-                                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_dict_invoiceInformation">[dict_invoceInformation]</OutArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                            </ui:InvokeWorkflowFile>
-                            <Sequence DisplayName="Seq | Matching" sap:VirtualizedContainerService.HintSize="518,411" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Seq | Extract Data" sap:VirtualizedContainerService.HintSize="484,328" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each currentDataRow" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[dt_listAnnuaire.Rows]">
-                                  <ui:ForEach.Body>
-                                    <ActivityAction x:TypeArguments="sd:DataRow">
-                                      <ActivityAction.Argument>
-                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentDataRow" />
-                                      </ActivityAction.Argument>
-                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <If Condition="[currentDataRow(&quot;Email&quot;).ToString.Equals(dict_invoceInformation(&quot;VendorAdress&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="If_2">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <If.Then>
-                                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </Sequence>
-                                          </If.Then>
-                                          <If.Else>
-                                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </Sequence>
-                                          </If.Else>
-                                        </If>
-                                      </Sequence>
-                                    </ActivityAction>
-                                  </ui:ForEach.Body>
-                                </ui:ForEach>
-                              </Sequence>
-                            </Sequence>
-                          </Sequence>
-                        </ActivityAction>
-                      </ui:ForEach.Body>
-                    </ui:ForEach>
-                  </Sequence>
-                </If.Then>
-                <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </Sequence>
-                </If.Else>
-              </If>
-            </Sequence>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ai_document_classification - Invoke Workflow File (Applications\Ai_document_classification.xaml)" sap:VirtualizedContainerService.HintSize="688,224" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Applications\Ai_document_classification.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_bool_isInvoice" />
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_config">[in_dict_Config]</InArgument>
-                <InArgument x:TypeArguments="ummm:O365AttachmentLocalItem[]" x:Key="in_o365m_mailAttachement">[o365m_mailAttachements]</InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
   </Sequence>
 </Activity>

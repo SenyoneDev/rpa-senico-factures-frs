@@ -178,14 +178,14 @@
       <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,1326" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="1743.2,850.84" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="876,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Invocie Validator&quot;]" />
-    <Sequence DisplayName="Seq| Action Validation" sap:VirtualizedContainerService.HintSize="876,909" sap2010:WorkflowViewState.IdRef="Sequence_20">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Invocie Validator&quot;]" />
+    <Sequence DisplayName="Seq| Action Validation" sap:VirtualizedContainerService.HintSize="449.6,538.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
       <Sequence.Variables>
         <Variable x:TypeArguments="uisad1:CreatedValidationAction(uisaseib:Invoices)" Name="dd_documentValidation" />
         <Variable x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" Name="dd_extractedData" />
@@ -195,27 +195,45 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uisad1:CreateValidationAction x:TypeArguments="uisaseib:Invoices" BucketId="{x:Null}" BucketName="{x:Null}" ContainsDocument="{x:Null}" ContainsTaxonomy="{x:Null}" OrchestratorFolderId="{x:Null}" OriginalFilePath="{x:Null}" ActionCatalogue="default_du_actions" ActionPriority="Medium" ActionTitle="Complete invoice Information" AutomaticExtractionResults="[in_idd_ExtractedData]" CreatedValidationAction="[dd_documentValidation]" DisplayMode="Classic" DisplayName="Create Validation Task" EnableRTLControls="False" FieldsValidationConfidence="[CInt(in_di_config(&quot;Document_confidence&quot;))]" sap:VirtualizedContainerService.HintSize="842,175" sap2010:WorkflowViewState.IdRef="CreateValidationAction`1_1" OrchestratorBucketName="du_storage_bucket" OrchestratorFolderName="fallou@senyone.sn's workspace" />
-      <Parallel sap:VirtualizedContainerService.HintSize="842,169" sap2010:WorkflowViewState.IdRef="Parallel_1">
-        <uisad1:WaitForValidationAction x:TypeArguments="uisaseib:Invoices" RemoveDataAfterProcessing="{x:Null}" WaitItemDataObject="{x:Null}" CreatedValidationAction="[dd_documentValidation]" DisplayName="Wait for Validation Task and Resume" sap:VirtualizedContainerService.HintSize="374,90" sap2010:WorkflowViewState.IdRef="WaitForValidationAction`1_1" ValidatedExtractionResults="[dd_extractedData]" />
-        <upad:ResumeAfterDelay StatusMessage="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Resume After Delay" sap:VirtualizedContainerService.HintSize="374,90" sap2010:WorkflowViewState.IdRef="ResumeAfterDelay_1" ResumeTime="[DateTime.Now.Add(TimeSpan.FromMinutes(1))]" />
-      </Parallel>
-      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="842,473" sap2010:WorkflowViewState.IdRef="If_2">
+      <uisad1:CreateValidationAction x:TypeArguments="uisaseib:Invoices" BucketId="{x:Null}" BucketName="{x:Null}" ContainsDocument="{x:Null}" ContainsTaxonomy="{x:Null}" OrchestratorFolderId="{x:Null}" OriginalFilePath="{x:Null}" ActionCatalogue="[in_di_config(&quot;ActionCenterCatalog&quot;).ToString]" ActionPriority="Medium" ActionTitle="Complete invoice Information" AutomaticExtractionResults="[in_idd_ExtractedData]" CreatedValidationAction="[dd_documentValidation]" DisplayMode="Classic" DisplayName="Create Validation Task" EnableRTLControls="False" FieldsValidationConfidence="[CInt(in_di_config(&quot;Document_confidence&quot;))]" sap:VirtualizedContainerService.HintSize="416,175.2" sap2010:WorkflowViewState.IdRef="CreateValidationAction`1_1" OrchestratorBucketName="[in_di_config(&quot;ActionCenterBucket&quot;).ToString]" OrchestratorFolderName="[in_di_config(&quot;ActionCenterFolder&quot;).ToString]" />
+      <uisad1:WaitForValidationAction x:TypeArguments="uisaseib:Invoices" RemoveDataAfterProcessing="{x:Null}" WaitItemDataObject="{x:Null}" CreatedValidationAction="[dd_documentValidation]" DisplayName="Wait for Validation Task and Resume" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="WaitForValidationAction`1_1" ValidatedExtractionResults="[dd_extractedData]" />
+      <ui:CommentOut sap2010:Annotation.AnnotationText="Resume after delay (if no answer)" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,100.8" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="501.6,220" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Parallel sap:VirtualizedContainerService.HintSize="468,160" sap2010:WorkflowViewState.IdRef="Parallel_1">
+              <upad:ResumeAfterDelay StatusMessage="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Resume After Delay" sap:VirtualizedContainerService.HintSize="374.4,90.4" sap2010:WorkflowViewState.IdRef="ResumeAfterDelay_1" ResumeTime="[DateTime.Now.Add(TimeSpan.FromMinutes(1))]" />
+            </Parallel>
+          </Sequence>
+        </ui:CommentOut.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,164.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="513,447" sap2010:WorkflowViewState.IdRef="Sequence_28">
                   <sap:WorkflowViewStateService.ViewState>
@@ -337,7 +355,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <ui:MultipleAssign DisplayName="Assign extracted data Value to a out Dictionary" sap:VirtualizedContainerService.HintSize="479,449" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+            <ui:MultipleAssign DisplayName="Assign extracted data Value to a out Dictionary" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
@@ -454,30 +472,35 @@
                   </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,287" sap2010:WorkflowViewState.IdRef="Sequence_23">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_23">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_6">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Boolean">[out_isValid]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-              </Assign.Value>
-            </Assign>
-            <Throw DisplayName="Throw | Not a invoice" Exception="[New BusinessRuleException(&quot;Action Validation Failed&quot;)]" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            <Throw DisplayName="Throw | SE" Exception="[New SystemException(&quot;Action Validation Failed&quot;)]" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Throw_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Throw>
           </Sequence>
         </If.Else>
       </If>
     </Sequence>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="876,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,117" sap2010:WorkflowViewState.IdRef="Sequence_21">
           <sap:WorkflowViewStateService.ViewState>
@@ -727,6 +750,13 @@ Environment.NewLine + in_di_config("MailValidatorSignature").ToString]</InArgume
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="876,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Invocie Validator&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Invocie Validator&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
   </Sequence>
 </Activity>
