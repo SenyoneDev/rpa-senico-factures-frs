@@ -103,7 +103,7 @@
       <AssemblyReference>Studio.Generated.TypedDataRow1</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CSV_Basic_Match" sap:VirtualizedContainerService.HintSize="1335.2,716" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CSV_Basic_Match" sap:VirtualizedContainerService.HintSize="1183.2,850.84" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_temp" />
     </Sequence.Variables>
@@ -112,7 +112,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[dt_temp]" Delimitator="Semicolon" DelimitatorForViewModel="Semicolon" DisplayName="Read CSV | Suppliers SENICO" FilePath="[in_str_csvFilePath]" sap:VirtualizedContainerService.HintSize="416,168.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1">
+    <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[dt_temp]" Delimitator="Semicolon" DelimitatorForViewModel="Semicolon" DisplayName="Read CSV | Annuaire x" FilePath="[in_str_csvFilePath]" sap:VirtualizedContainerService.HintSize="416,168.8" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

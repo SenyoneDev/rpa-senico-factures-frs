@@ -100,30 +100,6 @@
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
-    },
-    {
-      "Name": "in_di_folders",
-      "DisplayName": "in_di_folders",
-      "Category": null,
-      "Tooltip": null,
-      "Placeholder": null,
-      "Widget": null,
-      "IsRequired": false,
-      "IsPrincipal": true,
-      "ArgumentType": 0,
-      "DataSourceItems": null
-    },
-    {
-      "Name": "in_el_listEmail",
-      "DisplayName": "in_el_listEmail",
-      "Category": null,
-      "Tooltip": null,
-      "Placeholder": null,
-      "Widget": null,
-      "IsRequired": false,
-      "IsPrincipal": true,
-      "ArgumentType": 0,
-      "DataSourceItems": null
     }
   ]
 }

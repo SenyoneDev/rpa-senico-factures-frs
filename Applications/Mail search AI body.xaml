@@ -112,13 +112,13 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1726.4,1544.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap:VirtualizedContainerService.HintSize="947.2,1977.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Rechercher le mail de SENICO dans le mail à travers avec de l'IA :&#xA;1. de l'expéditeur, &#xA;2. ou l'adresse mail de la liste des destinataires " DisplayName="Search mail body with AI" sap:VirtualizedContainerService.HintSize="483.2,1521.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Rechercher le mail de SENICO dans le mail à travers avec de l'IA :&#xA;1. de l'expéditeur, &#xA;2. ou l'adresse mail de la liste des destinataires " DisplayName="Search mail body with AI" sap:VirtualizedContainerService.HintSize="580.8,1954.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_senderFullName" />
         <Variable x:TypeArguments="x:String" Name="str_senderFirstName" />
@@ -132,7 +132,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="LogM | Starting AI search" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Mail Search Body with AI | starting... reading mail body...&quot;]">
+      <ui:LogMessage DisplayName="LogM | Starting AI search" sap:VirtualizedContainerService.HintSize="547.2,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Mail Search Body with AI | starting... reading mail body...&quot;]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -140,14 +140,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <Sequence sap2010:Annotation.AnnotationText="Using UiPath GENAI - NER" DisplayName="GenAI UiPath" sap:VirtualizedContainerService.HintSize="449.6,670.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence sap2010:Annotation.AnnotationText="Using UiPath GENAI - NER" DisplayName="GenAI UiPath" sap:VirtualizedContainerService.HintSize="547.2,1135.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="LogM | Entities NER found" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;MailSearchBody | searching values in mail body using UiPath GenAI NER - starting...&quot;]">
+        <ui:LogMessage DisplayName="LogM | Entities NER found" sap:VirtualizedContainerService.HintSize="513.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;MailSearchBody | searching values in mail body using UiPath GenAI NER - starting...&quot;]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -155,7 +155,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:LogMessage>
-        <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACp1VXW/bOgz9K4KePS/Jvm6DdUDjtVt2u8ZIsnXAMAyKzSa6USRfSW7nBfnvo2Q5sbuuLYY8GCIp8pwjktnSMw4iN4mSlnEJmg63dAZMZyu2EFA76fDrt4iOZVHavWFLL9gG6JBa+GFpRN9yUwhWBaOPJY0LTKZ5YbmS6JqvwDuIVYRJJqqfQK6UJhJv5gSk5ZaDwWvzqnCpjNVcLvE8U9pOdO4g9n1SvsR8W5oqw0PuVPMN0xXdRXQK/5dcQ06HVpcQ1TTPVcZC6EjlLm5Po1W4S+W05fiNiODGEnW1h42McmJXwDXJD8HGcTVeVOes6SPnA0m1+A8y2yX5DEErvWEW/TnPXCLk9rrWI6o/bzyqK1YK+5mJElNtdw9oE9FEbQolETJa3+4Te+LN4ZLnS0D/ll5ymaubObfilhi1oytJqtU1z+Hv5UiUKDfyX6g6BSvfHG13t6x7KfcKLpkvXbVj33PP9J4gL11TsZ26E9Ct2TrdlzUU/3P07tG9iiM4Ke2dM9joXfsf38Lnt9tXQ6aWkv/ESVxUHubF6ZRsVA6CcOkNvD3a98+o4wUG+V8xYZDXFAw2noGGZ3NOSs3sn+nvWU1kwuQ1M3Vga3g/cPvd7a7bxN0nJ6GHpjW38LBdIQ5UPvGU2VU8lhaWiArdM9DXPIP4BIfj2ssUzy4bSePk9NXg6NXg7J+k7yB8TzQgl3hUylxAfLBE5K7IuLeYf0gGJ1+mZxf9YvwiOXue3hxNP/Uj8hm0werH/bjnfngfh7zUcCyhtJqJiKTlQvDMDYtagzyWpRD0YdEfqS7ue4Oy+uig9zds1bE0lskMUqZRW4sY3ZIIWDGbR+tHQErcaEojPDSXvEBVn4QP4zpfY1BQtArSN22AUPw6DI9YP+x7a4uPYFcK0bi1Zt2SdzSE69Ym08PvnrBsBchfrcvCT6gjsGvsI61uDOixhU2wh7WJNMLfYMqyNVtCm/Kg3+UcUNStRN6BPBmTQ/e0I9tZXvbioz33R/fxHVJNCqg712nqm+83/SazOdocPDw9ra+dM7kskZnfJ3j+yH6keJyhvnQ46PUwBzMjzLfGWU9WGO20C102x30wEipbe5V2vwCAvnU/VwgAAA==" ConnectionId="dab7dccd-7b4f-433a-8e8f-06e72972f8c1" DisplayName="Named Entity Recognition" sap:VirtualizedContainerService.HintSize="416,268" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="0382f08f-15b5-306a-8f82-cf3ac367436d">
+        <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACp1VXW/bOgz9K4KePS/Jvm6DdUDjtVt2u8ZIsnXAMAyKzSa6USRfSW7nBfnvo2Q5sbuuLYY8GCIp8pwjktnSMw4iN4mSlnEJmg63dAZMZyu2EFA76fDrt4iOZVHavWFLL9gG6JBa+GFpRN9yUwhWBaOPJY0LTKZ5YbmS6JqvwDuIVYRJJqqfQK6UJhJv5gSk5ZaDwWvzqnCpjNVcLvE8U9pOdO4g9n1SvsR8W5oqw0PuVPMN0xXdRXQK/5dcQ06HVpcQ1TTPVcZC6EjlLm5Po1W4S+W05fiNiODGEnW1h42McmJXwDXJD8HGcTVeVOes6SPnA0m1+A8y2yX5DEErvWEW/TnPXCLk9rrWI6o/bzyqK1YK+5mJElNtdw9oE9FEbQolETJa3+4Te+LN4ZLnS0D/ll5ymaubObfilhi1oytJqtU1z+Hv5UiUKDfyX6g6BSvfHG13t6x7KfcKLpkvXbVj33PP9J4gL11TsZ26E9Ct2TrdlzUU/3P07tG9iiM4Ke2dM9joXfsf38Lnt9tXQ6aWkv/ESVxUHubF6ZRsVA6CcOkNvD3a98+o4wUG+V8xYZDXFAw2noGGZ3NOSs3sn+nvWU1kwuQ1M3Vga3g/cPvd7a7bxN0nJ6GHpjW38LBdIQ5UPvGU2VU8lhaWiArdM9DXPIP4BIfj2ssUzy4bSePk9NXg6NXg7J+k7yB8TzQgl3hUylxAfLBE5K7IuLeYf0gGJ1+mZxf9YvwiOXue3hxNP/Uj8hm0werH/bjnfngfh7zUcCyhtJqJiKTlQvDMDYtagzyWpRD0YdEfqS7ue4Oy+uig9zds1bE0lskMUqZRW4sY3ZIIWDGbR+tHQErcaEojPDSXvEBVn4QP4zpfY1BQtArSN22AUPw6DI9YP+x7a4uPYFcK0bi1Zt2SdzSE69Ym08PvnrBsBchfrcvCT6gjsGvsI61uDOixhU2wh7WJNMLfYMqyNVtCm/Kg3+UcUNStRN6BPBmTQ/e0I9tZXvbioz33R/fxHVJNCqg712nqm+83/SazOdocPDw9ra+dM7kskZnfJ3j+yH6keJyhvnQ46PUwBzMjzLfGWU9WGO20C102x30wEipbe5V2vwCAvnU/VwgAAA==" ConnectionId="dab7dccd-7b4f-433a-8e8f-06e72972f8c1" DisplayName="Named Entity Recognition" sap:VirtualizedContainerService.HintSize="513.6,268" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="0382f08f-15b5-306a-8f82-cf3ac367436d">
           <isactr:ConnectorActivity.FieldObjects>
             <isactr:FieldObject Name="text" Type="FieldArgument">
               <isactr:FieldObject.Value>
@@ -185,60 +185,83 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </isactr:ConnectorActivity>
-        <ui:MultipleAssign DisplayName="MAssign | out values" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
-          <ui:MultipleAssign.AssignOperations>
-            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
-                <ui:AssignOperation.To>
-                  <OutArgument x:TypeArguments="x:String">[out_str_supplierName]</OutArgument>
-                </ui:AssignOperation.To>
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[NeR.entitiesOutputObject.Where(Function(e) e.type = "Supplier").Select(Function(e) e.text).FirstOrDefault()]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
-                <ui:AssignOperation.To>
-                  <OutArgument x:TypeArguments="s:String[]">[out_arr_mailList]</OutArgument>
-                </ui:AssignOperation.To>
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="s:String[]">[NeR.entitiesOutputObject.Where(Function(e) e.type = "Mails").Select(Function(e) e.text).ToArray()]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
-                <ui:AssignOperation.To>
-                  <OutArgument x:TypeArguments="x:String">[out_str_invoiceReceiptNum]</OutArgument>
-                </ui:AssignOperation.To>
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[NeR.entitiesOutputObject.Where(Function(e) e.type = "Receipt").Select(Function(e) e.text).FirstOrDefault()]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
-                <ui:AssignOperation.To>
-                  <OutArgument x:TypeArguments="x:String">[out_str_invoiceOrderNum]</OutArgument>
-                </ui:AssignOperation.To>
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[NeR.entitiesOutputObject.Where(Function(e) e.type = "Order").Select(Function(e) e.text).FirstOrDefault()]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-            </scg:List>
-          </ui:MultipleAssign.AssignOperations>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:MultipleAssign>
-        <ui:LogMessage DisplayName="LogM | Entities NER found" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;MailSearchBody | UiPath GenAI NER -&gt; values found : &quot; + Environment.NewLine + &#xA;&quot;Supplier : &quot; + out_str_supplierName  + Environment.NewLine + &#xA;&quot;Order : &quot;+ out_str_invoiceOrderNum  + Environment.NewLine + &#xA;&quot;Receipt : &quot; +out_str_invoiceReceiptNum  + Environment.NewLine + &#xA;&quot;Mails : &quot; + out_arr_mailList.ToString]">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:LogMessage>
+        <If Condition="[not isnothing(Ner) andalso not IsNothing(Ner.entitiesOutputObject)]" DisplayName="If NER is returning value" sap:VirtualizedContainerService.HintSize="513.6,687.2" sap2010:WorkflowViewState.IdRef="If_2">
+          <If.Then>
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,468" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssign DisplayName="MAssign | out values" sap:VirtualizedContainerService.HintSize="478.4,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_str_supplierName]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(Isnothing(NeR.entitiesOutputObject.Where(Function(e) e.type = "Supplier").Select(Function(e) e.text).FirstOrDefault()), "", 
+NeR.entitiesOutputObject.Where(Function(e) e.type = "Supplier").Select(Function(e) e.text).FirstOrDefault())]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="s:String[]">[out_arr_mailList]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="s:String[]">[NeR.entitiesOutputObject.Where(Function(e) e.type = "Mails").Select(Function(e) e.text).ToArray()]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_str_invoiceReceiptNum]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[If (Isnothing(NeR.entitiesOutputObject.Where(Function(e) e.type = "Receipt").Select(Function(e) e.text).FirstOrDefault()), "", 
+NeR.entitiesOutputObject.Where(Function(e) e.type = "Receipt").Select(Function(e) e.text).FirstOrDefault())]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_str_invoiceOrderNum]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(Isnothing(NeR.entitiesOutputObject.Where(Function(e) e.type = "Order").Select(Function(e) e.text).FirstOrDefault()),"",
+NeR.entitiesOutputObject.Where(Function(e) e.type = "Order").Select(Function(e) e.text).FirstOrDefault())]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:MultipleAssign>
+              <ui:LogMessage DisplayName="LogM | Entities NER found" sap:VirtualizedContainerService.HintSize="478.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;MailSearchBody | UiPath GenAI NER -&gt; values found : &quot; + Environment.NewLine + &#xA;&quot;Supplier : &quot; + out_str_supplierName  + Environment.NewLine + &#xA;&quot;Order : &quot;+ out_str_invoiceOrderNum  + Environment.NewLine + &#xA;&quot;Receipt : &quot; +out_str_invoiceReceiptNum  + Environment.NewLine + &#xA;&quot;Mails : &quot; + out_arr_mailList.ToString]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,89.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </If.Else>
+        </If>
       </Sequence>
-      <If Condition="[IsNothing(out_arr_mailList) AndAlso &#xA;IsNothing(out_str_invoiceOrderNum) AndAlso&#xA;IsNothing(out_str_invoiceReceiptNum) AndAlso&#xA;IsNothing(out_str_supplierName)]" DisplayName="If | Nothing &gt; Anthropic" sap:VirtualizedContainerService.HintSize="449.6,651.2" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[IsNothing(out_arr_mailList) AndAlso &#xA;IsNothing(out_str_invoiceOrderNum) AndAlso&#xA;IsNothing(out_str_invoiceReceiptNum) AndAlso&#xA;IsNothing(out_str_supplierName)]" DisplayName="If | Nothing &gt; Anthropic" sap:VirtualizedContainerService.HintSize="547.2,619.2" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
           <Sequence DisplayName="Then | Search with anthropic" sap:VirtualizedContainerService.HintSize="416,400" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
