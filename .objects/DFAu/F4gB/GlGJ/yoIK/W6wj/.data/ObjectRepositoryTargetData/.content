@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="8zhuCOB9wkqTba6CmqOK0A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="b40d2292-4f4a-499d-a4d0-238751fa1f8e" CvTextArea="569, 265, 147, 25" CvTextArgument="? Question" CvType="Text" DesignTimeRectangle="532, 235, 675, 81" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='s_alertbox_title' parentid='s_app_over' tag='DIV' aaname='Question' /&gt;" Guid="aa016014-fe55-4530-801c-1ff3ce48ab38" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="a6566b073fb8a1641e7d978bd453ebb4.png" xmlns="">0W4rlAiDtoECWHkmIrLXtzQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

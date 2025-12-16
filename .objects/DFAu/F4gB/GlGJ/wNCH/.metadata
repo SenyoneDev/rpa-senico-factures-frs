@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Totals",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "wNCHWRsFsEev2lxQYZK3bQ",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/wNCHWRsFsEev2lxQYZK3bQ",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/GlGJIQ8mxEaZttwBn2JBpw",
+  "Created": "2025-12-16T13:36:57.5227935Z",
+  "Updated": "2025-12-16T13:36:57.5227935Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

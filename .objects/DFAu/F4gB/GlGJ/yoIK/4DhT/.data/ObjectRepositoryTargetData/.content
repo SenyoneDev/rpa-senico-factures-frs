@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2Lz9LGz6FkmeFer5UXeVWQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="9d09b3b3-e24d-4a5d-9822-2093f5fbbe52" CvElementArea="351, 369, 31, 30" CvType="Icon" DesignTimeRectangle="351, 369, 30, 30" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='' idx='2' parentid='s_app_body' tag='A' /&gt;" Guid="0d80624a-3aff-44d5-a244-b5992b157f54" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAETSURBVFhH7dM/isJQEMfxXMDKE6Ta49h5AA8mCIsojzR2NoZtRETYzjIRzUaJImQ1we4nY5GwEyN55s/LQopvM2TgAy+j/QYh6pDGB6qqH2R1uimpgfAaCK8ESIDJ1xb60Eb7WcYBk8ROKRAqhJhtoA2sZCO3SgiVglEBMec7tNRCUhDVQjhig+7Kj59JDYQQl2j+wFQHoQjjoBch4rlYeFVC5PuHEOsMseXzEOb3EcLjc/myQ9YuPsYO+hEm/ilbxiE3Rgqi0yU8MPxEbXSXQXJHInkI9Wn/QXQW/Drkew9SMILKBxk5EPsn375RPgg1dgvB5IcUhMkO8a4wLR/TlMyfF7sZyg4puQbCayC8+kJUdwdDom4nikNFIwAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="9d09b3b3-e24d-4a5d-9822-2093f5fbbe52" CvTextArea="40, 373, 133, 21" CvTextArgument="Tout developper" CvType="Text" DesignTimeRectangle="15, 369, 163, 31" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Tout développer' parentid='s_app_body' tag='A' /&gt;" Guid="5b00ac21-3d8d-4a4d-b728-6c88933bdebc" SearchSteps="Selector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="21067ee42ed9b344e64df7c5b95b16d5.png" xmlns="">0hthWCtlE70WclU2s0U3xtQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

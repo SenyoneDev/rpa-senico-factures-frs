@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Maximize",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "4DhTsKjgpk-keN3o0nRVMg",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/4DhTsKjgpk-keN3o0nRVMg",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/yoIKmGgU2kay5DTYfh0QQw",
+  "Created": "2025-12-16T13:00:35.238146Z",
+  "Updated": "2025-12-16T13:00:35.238146Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

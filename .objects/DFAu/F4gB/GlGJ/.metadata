@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Sage Invoices",
+  "Type": "Screen",
+  "Id": "GlGJIQ8mxEaZttwBn2JBpw",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/GlGJIQ8mxEaZttwBn2JBpw",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/F4gB2hGMpk204COA9hKLkQ",
+  "Created": "2025-12-16T12:53:26.6419965Z",
+  "Updated": "2025-12-16T12:53:31.6405146Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.22.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Ecart taxes",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "QbOiiKVnVU63qloh4taRWQ",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/QbOiiKVnVU63qloh4taRWQ",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/wNCHWRsFsEev2lxQYZK3bQ",
+  "Created": "2025-12-16T13:37:08.1093134Z",
+  "Updated": "2025-12-16T13:37:39.452407Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

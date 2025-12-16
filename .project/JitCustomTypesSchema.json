@@ -1508,6 +1508,54 @@
         "hash": "WURZQ0EydURWdHVvSVJpeXlsS2RvRGlMeDdnNncxUGI5N05EQlIzRzg5TFNBaHpJNjdvb2d2NDU4eHN2R3l6YWsxWDFodEJ3Y1BETGlmVUtSckFrRFE9PQ",
         "assemblyName": "CE72972F8C1_v2_sub_g.vLphE2gLgxA1ZUtuQ4THvVi3"
       }
+    },
+    {
+      "providerName": "TypedDataTable",
+      "typedDataTableDto": {
+        "id": 2,
+        "idRef": "NExtractDataGeneric`1_1",
+        "hash": "NExtractDataGeneric`1_1|DataTable|E1dtnGGo0OluvRLONsQfY0UPTQr25EOkbyXhdt59rQ",
+        "dataType": "System.Data.DataTable, System.Data.Common",
+        "columns": [
+          {
+            "columnName": "Column-0",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Column-0 Url",
+            "dataType": "System.String, System.Private.CoreLib"
+          }
+        ]
+      },
+      "entityAssemblyKey": {
+        "name": "Studio.Generated.TypedDataTable2",
+        "hash": "NExtractDataGeneric`1_1|DataTable|FB7wOiFQ7WNoMjLHj9UzxUmyFcOSSbelmQYaDB2Kz4",
+        "assemblyName": "Studio.Generated.TypedDataTable2"
+      }
+    },
+    {
+      "providerName": "TypedDataTable",
+      "typedDataTableDto": {
+        "id": 3,
+        "idRef": "NExtractDataGeneric`1_1",
+        "hash": "NExtractDataGeneric`1_1|DataTable|tCbx4NkVEKSWzDX71tTipOUUDpbzevZ5ftymdOSs3s",
+        "dataType": "System.Data.DataTable, System.Data.Common",
+        "columns": [
+          {
+            "columnName": "ReceiptNumber",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "ReceiptURL",
+            "dataType": "System.String, System.Private.CoreLib"
+          }
+        ]
+      },
+      "entityAssemblyKey": {
+        "name": "Studio.Generated.TypedDataTable3",
+        "hash": "NExtractDataGeneric`1_1|DataTable|wrjv0jNuiTgza7i9xG23xIAaXlPNXOsLr7kkW9FLw8",
+        "assemblyName": "Studio.Generated.TypedDataTable3"
+      }
     }
   ]
 }

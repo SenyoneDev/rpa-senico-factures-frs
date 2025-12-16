@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="YElIQYL1K0iAu5z28Z0LrA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="2cad2150-b17d-4639-b4e9-a0adee5c7996" DesignTimeRectangle="774, 622, 165, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-26-120' tag='INPUT' type='text' class='s-field-input s-field-input-num' aaname='Total HT lignes' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a33fe569-db5f-48b8-b1cc-b48b0cc19dc4" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="2cad2150-b17d-4639-b4e9-a0adee5c7996" DesignTimeRectangle="773, 597, 165, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-26-120' tag='LABEL' type='' class='s-field-title s-anchored' aaname='Total HT lignes' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Total HT lignes' /&gt;" Guid="a9b326d6-0101-489b-896f-7cdba43ecf98" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="0e4e05dab903c83e2d6454718da6e50d.png" xmlns="">0RDoCmULf_EqBdngYuh68hg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

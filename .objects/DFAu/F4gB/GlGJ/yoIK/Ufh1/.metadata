@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Receipt line checkbox",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "Ufh1GVh-DEuewH4Je-5DqQ",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/Ufh1GVh-DEuewH4Je-5DqQ",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/yoIKmGgU2kay5DTYfh0QQw",
+  "Created": "2025-12-16T13:11:28.4111297Z",
+  "Updated": "2025-12-16T13:14:40.7256932Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

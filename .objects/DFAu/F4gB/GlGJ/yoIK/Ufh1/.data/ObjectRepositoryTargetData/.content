@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="MscgI1AfVUyS2uEGhUmehg" Reference="EhPK3qwwJUmaJOdGcl1hvg/Ufh1GVh-DEuewH4Je-5DqQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="4fac9188-200e-4804-9a5e-158cf47c0aed" CvElementArea="54, 221, 26, 26" CvType="CheckBox" DesignTimeRectangle="54, 221, 26, 26" ElementType="CheckBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl class='s-grid-table-body' idx='2' tag='TABLE' /&gt;&lt;webctrl tag='INPUT' rowName='{0}' matching:rowName='fuzzy' fuzzylevel:rowName='0.76' type='checkbox' /&gt;&quot;, str_matchedReceipt)]" Guid="c45c1e3d-f261-448e-a06e-49add8303f93" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="4fac9188-200e-4804-9a5e-158cf47c0aed" DesignTimeRectangle="87, 216, 354, 34" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl class='s-grid-table-body' idx='2' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tag='DIV' aaname='{0}' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&quot;, str_matchedReceipt)]" Guid="65025a73-47e8-4e47-b091-ca8818049daf" SearchSteps="Selector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="bc6ed0625d55bc20d38bbd73b54b6a3b.png" xmlns="">0x6geOofn-ECHhbMcBstI_g</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="str_matchedReceipt" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

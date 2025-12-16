@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Total Taxe",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "95cmrOtgHUy2dnJP5TAjMA",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/95cmrOtgHUy2dnJP5TAjMA",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/GlGJIQ8mxEaZttwBn2JBpw",
+  "Created": "2025-12-16T12:57:51.5602411Z",
+  "Updated": "2025-12-16T12:57:51.5602411Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.22.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

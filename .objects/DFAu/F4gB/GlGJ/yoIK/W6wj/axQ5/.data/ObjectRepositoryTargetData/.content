@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="jG0fp8Y7XUCNLI_yrf1J9Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="b40d2292-4f4a-499d-a4d0-238751fa1f8e" CvElementArea="972, 476, 92, 56" CvTextArea="1003, 496, 30, 15" CvTextArgument="Oui" CvType="Button" DesignTimeRectangle="977, 479, 85, 50" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='Oui' tag='A' /&gt;" Guid="56c64316-7495-4857-b917-5da28ba7e4a5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="b40d2292-4f4a-499d-a4d0-238751fa1f8e" CvTextArea="609, 265, 107, 23" CvTextArgument="Question" CvType="Text" DesignTimeRectangle="610, 265, 107, 23" ElementType="Text" Guid="4b299c01-bcfd-4e17-8841-c2d862a925a9" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="95db4f8e428e20bd5a886aee4a451996.png" xmlns="">01n69Vgnw2kizmgUDXuD8Ug</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

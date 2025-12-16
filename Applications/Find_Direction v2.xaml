@@ -158,7 +158,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Find_Direction_v2" sap:VirtualizedContainerService.HintSize="1183.2,510.504" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Find_Direction_v2" sap:VirtualizedContainerService.HintSize="1352,877.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="str_senderMail" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="int_searchStep" />
@@ -168,11 +168,7 @@
       <Variable x:TypeArguments="x:String" Name="str_invoiceReceipt" />
       <Variable x:TypeArguments="x:String" Name="str_supplierName" />
       <Variable x:TypeArguments="ummm:O365AttachmentLocalItem[]" Name="mail_attachements" />
-      <Variable x:TypeArguments="x:Int32" Name="int_matchStep">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="int_matchStep" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -191,8 +187,6 @@
           <av:Point x:Key="ShapeLocation">745,495</av:Point>
           <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">855.4,530.2 885.4,530.2 885.4,400.2 905,400.2</av:PointCollection>
-          <av:Point x:Key="AnnotationLocation">395,455</av:Point>
-          <av:Size x:Key="AnnotationSize">250,130</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence sap2010:Annotation.AnnotationText="Retrouver dans le corps du mail, un ou plusieurs éléments permettant d'identifier : &#xA;1. Le fournisseur&#xA;2. L'adresse mail du destinataire du mail à la SENICO&#xA;3. Une référence à un BdC ou réception" DisplayName="Search mail Body" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -333,7 +327,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowStep x:Name="__ReferenceID2">
+                    <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">1755,365</av:Point>
@@ -341,29 +335,29 @@
                           <av:PointCollection x:Key="ConnectorLocation">1865.4,400.2 1895.4,400.2 1895.4,400 1950,400</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Match Annuaire Mail" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Match Annuaire Mail" sap:VirtualizedContainerService.HintSize="550.4,1198.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:LogMessage DisplayName="LogM | Finding Mail match" sap:VirtualizedContainerService.HintSize="516.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;Match Annuaire mail | starting... &quot;]" />
-                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each arrMails" sap:VirtualizedContainerService.HintSize="516.8,1081.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arr_mailAdresses]">
+                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each arrMails" sap:VirtualizedContainerService.HintSize="516.8,964" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arr_mailAdresses]">
                           <ui:ForEach.Body>
                             <ActivityAction x:TypeArguments="x:String">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="483.2,944" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="483.2,826.4" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="LogM | Finding Mail match" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace" Message="[&quot;Match Annuaire mail | searching for &quot; + currentText +&quot; in the annuaire...&quot;]">
+                                <ui:LogMessage DisplayName="LogM | Finding Mail match" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace" Message="[&quot;Match Annuaire mail | searching for &quot; + currentText +&quot; in the annuaire...&quot;]">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -429,7 +423,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <FlowDecision.True>
-                            <FlowStep x:Name="__ReferenceID12">
+                            <FlowStep x:Name="__ReferenceID12" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">2125,365</av:Point>
@@ -538,7 +532,6 @@
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">1365,505</av:Point>
                               <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
-                              <av:Point x:Key="AnnotationLocation">1350,450</av:Point>
                               <av:PointCollection x:Key="ConnectorLocation">1475.4,540.2 1505.4,540.2 1505.4,540 1540,540</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -587,7 +580,7 @@
                                 <OutArgument x:TypeArguments="x:String">[out_str_Sage_POFound]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">[str_lookupValue]</InArgument>
+                                <InArgument x:TypeArguments="x:String">[str_invoicePO]</InArgument>
                               </Assign.Value>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -598,10 +591,7 @@
                             </Assign>
                           </Sequence>
                           <FlowStep.Next>
-                            <FlowDecision x:Name="__ReferenceID18" DisplayName="Sage Order ?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_9">
-                              <FlowDecision.Condition>
-                                <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="out_str_Sage_POFound &lt;&gt;&quot;&quot;" />
-                              </FlowDecision.Condition>
+                            <FlowDecision x:Name="__ReferenceID18" Condition="[out_str_Sage_POFound &lt;&gt;&quot;&quot;]" DisplayName="Sage Order ?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -695,10 +685,7 @@
                                         </Assign>
                                       </Sequence>
                                       <FlowStep.Next>
-                                        <FlowDecision x:Name="__ReferenceID19" DisplayName="Sage Receipt ?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
-                                          <FlowDecision.Condition>
-                                            <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="out_str_Sage_ReceiptFound&lt;&gt;&quot;&quot;" />
-                                          </FlowDecision.Condition>
+                                        <FlowDecision x:Name="__ReferenceID19" Condition="[out_str_Sage_ReceiptFound&lt;&gt;&quot;&quot;]" DisplayName="Sage Receipt ?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_10" True="{x:Reference __ReferenceID4}">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -708,9 +695,6 @@
                                               <av:PointCollection x:Key="FalseConnector">1570,690 1570,720 1260,720 1260,830</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <FlowDecision.True>
-                                            <x:Reference>__ReferenceID4</x:Reference>
-                                          </FlowDecision.True>
                                           <FlowDecision.False>
                                             <FlowDecision x:Name="__ReferenceID5" Condition="[str_supplierName&lt;&gt;&quot;&quot;]" DisplayName="Supplier ?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                                               <sap:WorkflowViewStateService.ViewState>
@@ -838,8 +822,6 @@
                                                           <av:Point x:Key="ShapeLocation">1545,825</av:Point>
                                                           <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
                                                           <av:PointCollection x:Key="ConnectorLocation">1655.4,860.2 1685.4,860.2 1685.4,540 1780,540</av:PointCollection>
-                                                          <av:Point x:Key="AnnotationLocation">1505,725</av:Point>
-                                                          <av:Size x:Key="AnnotationSize">150,70</av:Size>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <Sequence sap2010:Annotation.AnnotationText="Find the orders for this supplier that are most relevant to find the matching Direction" DisplayName="Find matching Orders" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="Sequence_26">
@@ -958,7 +940,7 @@
                   <av:PointCollection x:Key="Not FoundConnector">1140,400 1170,400 1170,270.2 1735,270.2</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <FlowStep x:Key="Not Found" x:Name="__ReferenceID16">
+              <FlowStep x:Key="Not Found" x:Name="__ReferenceID16" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">1735,235</av:Point>
@@ -996,8 +978,6 @@
                     <av:Point x:Key="ShapeLocation">745,645</av:Point>
                     <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">855.4,680.2 885.4,680.2 885.4,400.2 905,400.2</av:PointCollection>
-                    <av:Point x:Key="AnnotationLocation">425,645</av:Point>
-                    <av:Size x:Key="AnnotationSize">190,110</av:Size>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Sequence sap2010:Annotation.AnnotationText="Rechercher dans les pièces jointes de type facture : &#xA;* Le fournisseur&#xA;* L'adresse mail ou le destinataire à la SENICO&#xA;* Le BdC et/ou la réception" DisplayName="Search attachments" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -1155,8 +1135,6 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">775,275</av:Point>
           <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
-          <av:Point x:Key="AnnotationLocation">480,280</av:Point>
-          <av:Size x:Key="AnnotationSize">160,140</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">830.2,345.4 830.2,400.2 905,400.2</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>

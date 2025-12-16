@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Oui",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "axQ5maincUiY99pTCQkNyg",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/axQ5maincUiY99pTCQkNyg",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/W6wjsspYE0G3EGKAao3X-g",
+  "Created": "2025-12-16T13:32:35.8897263Z",
+  "Updated": "2025-12-16T13:32:50.4299952Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

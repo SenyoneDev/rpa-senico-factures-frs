@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="w9cuYMn1zky_2Fvu8Mos7A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1296, 768" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVDhPpZGxSgNBEIa/RoliI6QQSRpB0mkZxCLgC9gEG8FeS9uk9glsFGMrtuYNJKWFCAHNzF4QRUGwsVFi4OSW47zsZpHD4i/2m5mPnV3iOOY/8UDReCArPLKIsINhnwF1nphze6YKiFhD6aGMUeJckvMlQiUo4IYZlNd04BnhHMMxyjXKp60ZVsMCYSMdHqFUJ2pKlYhanvmCB8oo31YidBAaDFhhSMkdnCqwQDl1dk/yhXKBsuX1u8BCoZmKegjvE7KI9T8FbrhnGeUulZwEBfSZRehiOEp+JOMvzCPcWoHhLCwQDnPX/bArGK5Q3jIubAcFFhh2vb1/H7Ll9bvAwj4LKJsIByhtlD2GLLl9QUGReKBofgByX3aZ66j3iQAAAABJRU5ErkJggg==" Selector="&lt;html app='chrome.exe' title='*(X3V12 / SENICO)*' /&gt;" Version="V2">
+      <TargetApp.Arguments>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Arguments>
+      <TargetApp.Url>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Url>
+      <TargetApp.WorkingDirectory>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.WorkingDirectory>
+      <imageRef attrName="InformativeScreenshot" originalValue="356cb2a60b3374260113fb6c8c4433e1.jpg" xmlns="">0wC5wfkWyt0OmPzC1BGOSaQ</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="lxNpZ2K1BEeyieCgazAPFA" Reference="EhPK3qwwJUmaJOdGcl1hvg/SPO15D0JxEOiYAuXLLisLQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="b9bd6e46-b01d-403f-945f-67c05e53356f" CvElementArea="672, 822, 214, 36" CvType="InputBox" DesignTimeRectangle="677, 825, 207, 30" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-11-167' tag='INPUT' type='text' /&gt;" Guid="73e45f37-fe62-4b90-b71c-29cdbdc18612" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="b9bd6e46-b01d-403f-945f-67c05e53356f" CvTextArea="675, 797, 83, 17" CvTextArgument="HT calcule" CvType="Text" DesignTimeRectangle="676, 795, 207, 29" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='HT calculé' /&gt;" Guid="52a0d9aa-da53-4837-a2c2-0cd9f594a130" SearchSteps="Selector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="4412df904fef0b58446d1789630986a9.png" xmlns="">00Qfej3XQXEC66V1urU1LuQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

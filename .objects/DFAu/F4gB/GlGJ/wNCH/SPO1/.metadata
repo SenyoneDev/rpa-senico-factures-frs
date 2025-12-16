@@ -1,0 +1,13 @@
+﻿{
+  "Name": "HT calculé",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "SPO15D0JxEOiYAuXLLisLQ",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/SPO15D0JxEOiYAuXLLisLQ",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/wNCHWRsFsEev2lxQYZK3bQ",
+  "Created": "2025-12-16T13:37:01.1122878Z",
+  "Updated": "2025-12-16T13:37:01.1122878Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

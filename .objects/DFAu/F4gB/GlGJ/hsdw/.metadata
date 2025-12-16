@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Devise",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "hsdw8C13ZEKIRiKeGmI4Zw",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/hsdw8C13ZEKIRiKeGmI4Zw",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/GlGJIQ8mxEaZttwBn2JBpw",
+  "Created": "2025-12-16T12:56:31.3345603Z",
+  "Updated": "2025-12-16T12:56:31.3345603Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.22.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

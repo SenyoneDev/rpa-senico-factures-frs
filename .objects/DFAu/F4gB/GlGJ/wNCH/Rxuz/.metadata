@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Ecart HT",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "RxuzRRyNaU6YKmmfPA7JGw",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/RxuzRRyNaU6YKmmfPA7JGw",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/wNCHWRsFsEev2lxQYZK3bQ",
+  "Created": "2025-12-16T13:37:04.1656545Z",
+  "Updated": "2025-12-16T13:37:04.1656545Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
