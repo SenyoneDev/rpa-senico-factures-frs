@@ -126,14 +126,14 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Update metadatas for :&#xA;* Mail&#xA;* Sharepoitn" DisplayName="Update_metadatas" sap:VirtualizedContainerService.HintSize="1335.2,1512" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Update metadatas for :&#xA;* Mail&#xA;* Sharepoitn" DisplayName="Update_metadatas" sap:VirtualizedContainerService.HintSize="1166.4,1480" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Mail update category" sap:VirtualizedContainerService.HintSize="579.2,257.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Mail update category" sap:VirtualizedContainerService.HintSize="547.2,257.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,7 +141,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="LogM | Warn not done yet" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Update Metadata | Not yet done because can have many files for a single mail... !&quot;]" />
     </Sequence>
-    <Sequence DisplayName="Sharepoint update metadatas" sap:VirtualizedContainerService.HintSize="579.2,1171.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Sharepoint update metadatas" sap:VirtualizedContainerService.HintSize="547.2,1139.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable()]" Name="dt_temp_metadatas" />
         <Variable x:TypeArguments="sd:DataRow" Name="dr_temp_metadata" />
@@ -151,7 +151,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="LogM | update SP" sap:VirtualizedContainerService.HintSize="545.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Update Metadata | updating metadata for file : &quot; + in_di_file.Name + &quot;...&quot;]">
+      <ui:LogMessage DisplayName="LogM | update SP" sap:VirtualizedContainerService.HintSize="513.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Update Metadata | updating metadata for file : &quot; + in_di_file.Name + &quot;...&quot;]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -159,7 +159,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Add column for each key" DisplayName="FE | Dictionary key" sap:VirtualizedContainerService.HintSize="545.6,285.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_dict_metaDatas]">
+      <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Add column for each key" DisplayName="FE | Dictionary key" sap:VirtualizedContainerService.HintSize="513.6,269.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_dict_metaDatas]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:Object)">
             <ActivityAction.Argument>
@@ -190,7 +190,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <Assign DisplayName="Assign | new DR" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="Assign | new DR" sap:VirtualizedContainerService.HintSize="513.6,56.8" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataRow">[dr_temp_metadata]</OutArgument>
         </Assign.To>
@@ -204,7 +204,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Add the values to the DR" DisplayName="For Each currentPair" sap:VirtualizedContainerService.HintSize="545.6,378.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[in_dict_metaDatas]">
+      <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Add the values to the DR" DisplayName="For Each currentPair" sap:VirtualizedContainerService.HintSize="513.6,362.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[in_dict_metaDatas]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:Object)">
             <ActivityAction.Argument>
@@ -248,7 +248,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <ui:CommentOut sap2010:Annotation.AnnotationText="Add DR to DT (no need?)" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="545.6,88" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut sap2010:Annotation.AnnotationText="Add DR to DT (no need?)" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="513.6,88" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,139.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
@@ -275,7 +275,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <umaf:UpdateFileFolderMetadataConnections x:TypeArguments="sd:DataRow" AllColumns="{x:Array Type=umsm:Office365SharepointListColumnSlim}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" SharepointLibraryItemFriendlyName="{x:Null}" SharepointListId="{x:Null}" SharepointSiteUrl="{x:Null}" AuthScopesInvalid="False" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" DataRow="[dr_temp_metadata]" DisplayName="Update File or Folder Metadata" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="UpdateFileFolderMetadataConnections`1_1" Item="[in_di_file]" ItemSelectionMode="UseExisting" UseConnectionService="True" WorkingWithDocumentLibrary="False">
+      <umaf:UpdateFileFolderMetadataConnections x:TypeArguments="sd:DataRow" AllColumns="{x:Array Type=umsm:Office365SharepointListColumnSlim}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" SharepointLibraryItemFriendlyName="{x:Null}" SharepointListId="{x:Null}" SharepointSiteUrl="{x:Null}" AuthScopesInvalid="False" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" DataRow="[dr_temp_metadata]" DisplayName="Update File or Folder Metadata" sap:VirtualizedContainerService.HintSize="513.6,56.8" sap2010:WorkflowViewState.IdRef="UpdateFileFolderMetadataConnections`1_1" Item="[in_di_file]" ItemSelectionMode="UseExisting" UseConnectionService="True" WorkingWithDocumentLibrary="False">
         <umaf:UpdateFileFolderMetadataConnections.DriveItemArgument>
           <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" Item="[in_di_file]" ItemSelectionMode="UseExisting" ParentFullPathHint="">
             <umafm:DriveItemArgument.ItemIdBackup>
@@ -318,7 +318,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </umaf:UpdateFileFolderMetadataConnections>
-      <ui:LogMessage DisplayName="LogM | update SP done" sap:VirtualizedContainerService.HintSize="545.6,48" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Update Metadata | updated metadata for file : &quot; + in_di_file.Name + &quot; !&quot;]">
+      <ui:LogMessage DisplayName="LogM | update SP done" sap:VirtualizedContainerService.HintSize="513.6,48" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Update Metadata | updated metadata for file : &quot; + in_di_file.Name + &quot; !&quot;]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>

@@ -25,6 +25,7 @@
   "studioVersion": "22.10.2.0",
   "projectVersion": "1.0.30",
   "runtimeOptions": {
+    "exceptionHandlerWorkflow": "TestData\\GlobalHandler.xaml",
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,

@@ -143,7 +143,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Get the mail &#xA;* Get their attachments.&#xA;* Move the mail to the &quot;En cours&quot;.&#xA;* Get the mail conversation ID after it moved.&#xA;* Put all the metadata in UiPath" DisplayName="AR_Dispatcher" sap:VirtualizedContainerService.HintSize="1166.4,2078.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Get the mail &#xA;* Get their attachments.&#xA;* Move the mail to the &quot;En cours&quot;.&#xA;* Get the mail conversation ID after it moved.&#xA;* Put all the metadata in UiPath" DisplayName="AR_Dispatcher" sap:VirtualizedContainerService.HintSize="1166.4,1333.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="int_numberMailProcessed" />
       <Variable x:TypeArguments="scg:List(umm:Office365Message)" Name="li_emails" />
@@ -154,7 +154,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umam:GetEmailListConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" FreeTextFilter="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DisplayName="Get Email List" EmailList="[li_emails]" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="548.8,283.2" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" Importance="Any" IncludeSubfolders="False" ManualEntryFolder="[in_dict_config(&quot;MailBoxRPA&quot;).ToString]" MarkAsRead="False" MaxResults="100" OrderByDate="NewestFirst" SelectionMode="EnterPath" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
+    <umam:GetEmailListConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" FreeTextFilter="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DisplayName="Get Email List" EmailList="[li_emails]" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="452.8,56.8" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" Importance="Any" IncludeSubfolders="False" ManualEntryFolder="[in_dict_config(&quot;MailBoxRPA&quot;).ToString]" MarkAsRead="False" MaxResults="100" OrderByDate="NewestFirst" SelectionMode="EnterPath" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
       <umam:GetEmailListConnections.FilterSelectionBackup>
         <usau:BackupSlot x:TypeArguments="umame:FilterMode" StoredValue="ConditionBuilder">
           <usau:BackupSlot.BackupValues>
@@ -187,14 +187,20 @@
           </umamm:MailboxArgument.Backup>
         </umamm:MailboxArgument>
       </umam:GetEmailListConnections.MailboxArg>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </umam:GetEmailListConnections>
-    <ui:ForEach x:TypeArguments="umm:Office365Message" CurrentIndex="{x:Null}" DisplayName="For Each currentOffice365Message" sap:VirtualizedContainerService.HintSize="548.8,1696" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[li_emails]">
+    <ui:ForEach x:TypeArguments="umm:Office365Message" CurrentIndex="{x:Null}" DisplayName="For Each currentOffice365Message" sap:VirtualizedContainerService.HintSize="452.8,1177.6" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[li_emails]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="umm:Office365Message">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="umm:Office365Message" Name="currentOffice365Message" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="547.2,1574.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="451.2,1056" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="ummm:O365AttachmentLocalItem[]" Name="thisMail_attachments" />
               <Variable x:TypeArguments="umm:Office365Message" Name="thismail_Moved" />
@@ -204,7 +210,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="LogM | Mail being processed" sap:VirtualizedContainerService.HintSize="513.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;--------------------------------------------------------------&quot; + Environment.NewLine+&#xD;&#xA;&quot;Dispatcher | Processing mail subject : &quot; + currentOffice365Message.Subject]">
+            <ui:LogMessage DisplayName="LogM | Mail being processed" sap:VirtualizedContainerService.HintSize="417.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;--------------------------------------------------------------&quot; + Environment.NewLine+&#xA;&quot;Dispatcher | Processing mail subject : &quot; + currentOffice365Message.Subject]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -212,7 +218,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <If sap2010:Annotation.AnnotationText="Move to Review mailbox folder" Condition="[currentOffice365Message.AttachmentCount = 0]" DisplayName="If | No Attachments" sap:VirtualizedContainerService.HintSize="513.6,100.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap2010:Annotation.AnnotationText="Move to Review mailbox folder" Condition="[currentOffice365Message.AttachmentCount = 0]" DisplayName="If | No Attachments" sap:VirtualizedContainerService.HintSize="417.6,100.8" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -281,7 +287,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="deletefiles in download folder" DisplayName="For Each | Clean Temp folder" sap:VirtualizedContainerService.HintSize="513.6,100.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[directory.GetFiles(in_dict_config(&quot;PathDownloadAttachements&quot;).ToString)]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="deletefiles in download folder" DisplayName="For Each | Clean Temp folder" sap:VirtualizedContainerService.HintSize="417.6,100.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[directory.GetFiles(in_dict_config(&quot;PathDownloadAttachements&quot;).ToString)]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
@@ -312,7 +318,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
-            <umam:DownloadEmailAttachments ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FilterByFileNames="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Fail" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DestinationPath="[in_dict_config(&quot;PathDownloadAttachements&quot;).ToString]" DisplayName="Download Email Attachments" Email="[currentOffice365Message]" ExcludeInlineAttachments="False" sap:VirtualizedContainerService.HintSize="513.6,236.8" sap2010:WorkflowViewState.IdRef="DownloadEmailAttachments_1" NewResult="[thisMail_attachments]" SearchMode="UseSimple" UseConnectionService="True">
+            <umam:DownloadEmailAttachments ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FilterByFileNames="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Fail" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DestinationPath="[in_dict_config(&quot;PathDownloadAttachements&quot;).ToString]" DisplayName="Download Email Attachments" Email="[currentOffice365Message]" ExcludeInlineAttachments="True" sap:VirtualizedContainerService.HintSize="417.6,236.8" sap2010:WorkflowViewState.IdRef="DownloadEmailAttachments_1" NewResult="[thisMail_attachments]" SearchMode="UseSimple" UseConnectionService="True">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -320,7 +326,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </umam:DownloadEmailAttachments>
-            <ui:LogMessage DisplayName="LogM | Num of attachments" sap:VirtualizedContainerService.HintSize="513.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Dispatcher | Number of files downloaded from mail : &quot; + thisMail_attachments.Count.ToString + &quot; - Moving mail to folder : &quot; + in_dict_config(&quot;MailBoxEncours&quot;).ToString]">
+            <ui:LogMessage DisplayName="LogM | Num of attachments" sap:VirtualizedContainerService.HintSize="417.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Dispatcher | Number of files downloaded from mail : &quot; + thisMail_attachments.Count.ToString + &quot; - Moving mail to folder : &quot; + in_dict_config(&quot;MailBoxEncours&quot;).ToString]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -328,7 +334,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <umam:MoveEmailConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID4}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID5}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DisplayName="Move Email &gt; en cours" Email="[currentOffice365Message]" sap:VirtualizedContainerService.HintSize="513.6,283.2" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_2" ManualEntryFolder="[in_dict_config(&quot;MailBoxEncours&quot;).ToString]" Result="[thismail_Moved]" SelectionMode="EnterPath" UseConnectionService="True" UseSharedMailbox="False">
+            <umam:MoveEmailConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID4}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID5}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DisplayName="Move Email &gt; en cours" Email="[currentOffice365Message]" sap:VirtualizedContainerService.HintSize="417.6,56.8" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_2" ManualEntryFolder="[in_dict_config(&quot;MailBoxEncours&quot;).ToString]" Result="[thismail_Moved]" SelectionMode="EnterPath" UseConnectionService="True" UseSharedMailbox="False">
               <umam:MoveEmailConnections.MailFolderArgument>
                 <umamm:MailFolderArgument BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolder="[in_dict_config(&quot;MailBoxEncours&quot;).ToString]" SelectionMode="EnterPath">
                   <umamm:MailFolderArgument.Backup>
@@ -356,18 +362,18 @@
               </umam:MoveEmailConnections.MailboxArg>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </umam:MoveEmailConnections>
-            <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each mail attachment" sap:VirtualizedContainerService.HintSize="513.6,679.2" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[thisMail_attachments]">
+            <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each mail attachment" sap:VirtualizedContainerService.HintSize="417.6,387.2" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[thisMail_attachments]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ummm:O365AttachmentLocalItem">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ummm:O365AttachmentLocalItem" Name="currentO365AttachmentLocalItem" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,557.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,265.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="dict_mailMetadata" />
                       <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="di_file" />
@@ -377,7 +383,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="upload to Sharepoint and put mailMetadata" DisplayName="Upload_sharePoint_attachements - Invoke Workflow File (Applications\Upload_sharePoint_attachements.xaml)" sap:VirtualizedContainerService.HintSize="478.4,207.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Applications\Upload_sharePoint_attachements.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="upload to Sharepoint and put mailMetadata" DisplayName="Upload_sharePoint_attachements - Invoke Workflow File (Applications\Upload_sharePoint_attachements.xaml)" sap:VirtualizedContainerService.HintSize="382.4,100.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Applications\Upload_sharePoint_attachements.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_di_config">[in_dict_config]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_str_direction" />
@@ -389,12 +395,12 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:InvokeWorkflowFile>
-                    <ui:MultipleAssign DisplayName="Multiple Assign | Add Mail infos" sap:VirtualizedContainerService.HintSize="478.4,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign DisplayName="Multiple Assign | Add Mail infos" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -433,12 +439,12 @@
                       </ui:MultipleAssign.AssignOperations>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:MultipleAssign>
-                    <ui:AddQueueItem TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="[in_dict_config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="478.4,48" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" ItemInformationCollection="[dict_mailMetadata]" Priority="Normal" QueueType="[in_dict_config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[currentO365AttachmentLocalItem.Name]">
+                    <ui:AddQueueItem TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="[in_dict_config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" ItemInformationCollection="[dict_mailMetadata]" Priority="Normal" QueueType="[in_dict_config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[currentO365AttachmentLocalItem.Name]">
                       <ui:AddQueueItem.ItemInformation>
                         <scg:Dictionary x:TypeArguments="x:String, InArgument" />
                       </ui:AddQueueItem.ItemInformation>

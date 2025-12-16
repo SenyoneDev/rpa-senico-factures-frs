@@ -145,13 +145,9 @@
       <AssemblyReference>Studio.Generated.TypedDataTable3</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Save_InvoiceDataInSage" sap:VirtualizedContainerService.HintSize="516.8,858.0400000000001" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Save_InvoiceDataInSage" sap:VirtualizedContainerService.HintSize="1166.4,2188.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="str_devise">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">AFN</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="AFN" Name="str_devise" />
       <Variable x:TypeArguments="x:String" Name="str_matchedReceipt" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -159,14 +155,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="LogM | Entering Invoice infos" sap:VirtualizedContainerService.HintSize="516.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## Start Sage save invoce &quot;]" />
-    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Sage UI Process" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="550.4,729.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_sageUi]" InteractionMode="DebuggerApi" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
+    <ui:LogMessage DisplayName="LogM | Entering Invoice infos" sap:VirtualizedContainerService.HintSize="518.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## Start Sage save invoce &quot;]" />
+    <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Sage UI Process" HealingAgentBehavior="[UiPath.UIAutomationNext.Enums.NHealingAgentBehavior.Disabled]" sap:VirtualizedContainerService.HintSize="518.4,1825.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_sageUi]" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do | Process Invoice" sap:VirtualizedContainerService.HintSize="516.8,615.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do | Process Invoice" sap:VirtualizedContainerService.HintSize="516.8,1695.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -284,22 +280,22 @@
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
             </Sequence>
-            <Sequence DisplayName="Input Invoice data" sap:VirtualizedContainerService.HintSize="483.2,56.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Input Invoice data" sap:VirtualizedContainerService.HintSize="483.2,1530.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="SENICO standard informations input" DisplayName="Preparing invoice | Standard informations" sap:VirtualizedContainerService.HintSize="449.6,88" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence sap2010:Annotation.AnnotationText="SENICO standard informations input" DisplayName="Preparing invoice | Standard informations" sap:VirtualizedContainerService.HintSize="449.6,228" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Site facturation'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,241.6" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="SENFI" Version="V5">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Site facturation'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="SENFI" Version="V5">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="1157703a-4121-4cdc-acb9-8296d21bf94d" ContentHash="mwColJRyd02-FZN7pU0APg" CvElementArea="438, 375, 174, 35" CvType="InputBox" DesignTimeRectangle="476, 378, 84, 30" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-4-65' tag='INPUT' /&gt;" Guid="b62c58eb-e144-4ffe-a3f1-85a728799573" InformativeScreenshot="cd263041487c55eaf4f6ebc3f4e5dfe1.png" Reference="EhPK3qwwJUmaJOdGcl1hvg/JUfP2xMHVUau2n96uw31AA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
                       <uix:TargetAnchorable.Anchors>
@@ -309,6 +305,22 @@
                       </uix:TargetAnchorable.Anchors>
                     </uix:TargetAnchorable>
                   </uix:NTypeInto.Target>
+                  <uix:NTypeInto.VerifyOptions>
+                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" ExpectedText="SENFI" Mode="Appears">
+                      <uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionTypeIntoOptions.Retry>
+                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    </uix:VerifyExecutionTypeIntoOptions>
+                  </uix:NTypeInto.VerifyOptions>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </uix:NTypeInto>
                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Type facture'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="FAF [k(tab)]" Version="V5">
                   <uix:NTypeInto.Target>
@@ -320,6 +332,16 @@
                       </uix:TargetAnchorable.Anchors>
                     </uix:TargetAnchorable>
                   </uix:NTypeInto.Target>
+                  <uix:NTypeInto.VerifyOptions>
+                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" ExpectedText="FAF" Mode="Appears">
+                      <uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionTypeIntoOptions.Retry>
+                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    </uix:VerifyExecutionTypeIntoOptions>
+                  </uix:NTypeInto.VerifyOptions>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -328,7 +350,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NTypeInto>
               </Sequence>
-              <Sequence sap2010:Annotation.AnnotationText="Supplier ID&#xA;Currency&#xA;Total HT" DisplayName="Invoice headers inputs" sap:VirtualizedContainerService.HintSize="449.6,628.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap2010:Annotation.AnnotationText="Supplier ID&#xA;Currency&#xA;Total HT" DisplayName="Invoice headers inputs" sap:VirtualizedContainerService.HintSize="449.6,998.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="in_str_currencyCode" />
                 </Sequence.Variables>
@@ -347,7 +369,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Fournisseur'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[string.Format(&quot;{0}[k(tab)]&quot;, in_str_supplierName)]" Version="V5">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Fournisseur'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,241.6" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[string.Format(&quot;{0}[k(tab)]&quot;, in_str_supplierName)]" Version="V5">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="584b472c-c80c-4fc9-8c11-b0012476d003" ContentHash="sIde0ZHUMUK6FcxDwVxQTw" CvElementArea="437, 472, 270, 37" CvType="InputBox" DesignTimeRectangle="438, 474, 268, 35" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-4-74' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='INPUT' type='text' idx='9' aaname='Fournisseu*' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="8e7d2c2f-2f6c-411a-8337-bec5265ba0a1" InformativeScreenshot="52a520cc41ef55804b36c9c6ff9af8a4.png" Reference="EhPK3qwwJUmaJOdGcl1hvg/nFUjh75GIUO-aBB3sxl1YA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
                       <uix:TargetAnchorable.Anchors>
@@ -359,12 +381,12 @@
                   </uix:NTypeInto.Target>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NTypeInto>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Numero Facture'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[string.Format(&quot;{0}[k(tab)]&quot;, in_str_invoiceNumber)]" Version="V5">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Numero Facture'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,241.6" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[string.Format(&quot;{0}[k(tab)]&quot;, in_str_invoiceNumber)]" Version="V5">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="65ea95e7-1866-4bf3-9f33-973bb548afdc" ContentHash="UvZfhwIhj06qcy_Qgn9rSg" CvElementArea="618, 741, 269, 35" CvType="InputBox" DesignTimeRectangle="620, 742, 265, 32" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='s-field-value-edit' parentid='layout-slot-4-87' tag='DIV' /&gt;" Guid="dee49e5c-b2fa-4295-a145-846303cab902" InformativeScreenshot="d3b3c1294bdeebabec69813059e6670f.png" IsResponsive="True" Reference="EhPK3qwwJUmaJOdGcl1hvg/JMaml4fvaUG-q7ImN0EELQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
                       <uix:TargetAnchorable.Anchors>
@@ -376,7 +398,7 @@
                   </uix:NTypeInto.Target>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -428,7 +450,7 @@
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="ec1307fc-3062-40ae-a547-99aa04889b90" ContentHash="nUHGaN_i-EaGlec6HN2Mcw" CvElementArea="1259, 847, 363, 38" CvType="InputBox" DesignTimeRectangle="1263, 852, 356, 30" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-4-113' tag='INPUT' type='text' /&gt;" Guid="e57c503c-f8fa-4628-b724-facd97b5e6c6" InformativeScreenshot="75324d18be616dfbcb85f229a3fff4f0.png" IsResponsive="True" Reference="EhPK3qwwJUmaJOdGcl1hvg/tmoCpFcrtEWGMbTYnwz8tg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                           <uix:Target CVScreenId="ec1307fc-3062-40ae-a547-99aa04889b90" CvTextArea="1260, 782, 127, 17" CvTextArgument="Commentaires" CvType="Text" DesignTimeRectangle="1262, 776, 125, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Commentaires' parentid='layout-slot-4-109' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='DIV' innertext='Commentaires' isleaf='1' parentclass='s-h2-title' /&gt;" Guid="9db8f2b0-f3e7-4a8a-b605-980eb1ac53f3" SearchSteps="Selector, CV" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
@@ -500,7 +522,7 @@
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -557,7 +579,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NExtractDataGeneric>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_sage_receipts]" DisplayName="FE | Receipts" sap:VirtualizedContainerService.HintSize="516.8,576.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_sage_receipts]" DisplayName="FE | Receipts" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd3:DataRow">
                           <ActivityAction.Argument>
@@ -758,17 +780,17 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
             </Sequence>
-            <Sequence DisplayName="Control totals" sap:VirtualizedContainerService.HintSize="483.2,441.6" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <Sequence DisplayName="Control totals" sap:VirtualizedContainerService.HintSize="483.2,48" sap2010:WorkflowViewState.IdRef="Sequence_29">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Get totals" sap:VirtualizedContainerService.HintSize="449.6,358.4" sap2010:WorkflowViewState.IdRef="Sequence_30">
+              <Sequence DisplayName="Get totals" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Sequence_30">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -883,6 +905,6 @@
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="LogM | Invoice entered" sap:VirtualizedContainerService.HintSize="516.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage save invoce &quot;]" />
+    <ui:LogMessage DisplayName="LogM | Invoice entered" sap:VirtualizedContainerService.HintSize="518.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage save invoce &quot;]" />
   </Sequence>
 </Activity>
