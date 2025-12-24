@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Question - OK",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "1jq7G5JvdUSFxSK0y-IoBA",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/1jq7G5JvdUSFxSK0y-IoBA",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/Rn8tvaf1g0iNTIB7W6488g",
+  "Created": "2025-12-24T14:57:35.2459075Z",
+  "Updated": "2025-12-24T14:58:24.6299731Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

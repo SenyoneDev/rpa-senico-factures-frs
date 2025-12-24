@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="UvZfhwIhj06qcy_Qgn9rSg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="ler297kVEkOsQZHssmexPw" Reference="EhPK3qwwJUmaJOdGcl1hvg/JMaml4fvaUG-q7ImN0EELQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="65ea95e7-1866-4bf3-9f33-973bb548afdc" CvElementArea="618, 741, 269, 35" CvType="InputBox" DesignTimeRectangle="620, 742, 265, 32" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='s-field-value-edit' parentid='layout-slot-4-87' tag='DIV' /&gt;" Guid="dee49e5c-b2fa-4295-a145-846303cab902" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="2c7896c7-1f36-4503-b73e-c3aeddc91794" CvElementArea="392, 792, 242, 31" CvType="InputBox" DesignTimeRectangle="394, 793, 238, 29" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='s-field-value-edit' matching:class='fuzzy' fuzzylevel:class='0.47' parentid='layout-slot-4-87' matching:parentid='fuzzy' fuzzylevel:parentid='0.43' tag='DIV' idx='35' /&gt;" Guid="1aacbea8-104c-4f74-b611-d2f91de89fea" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
       <TargetAnchorable.Anchors>
         <scg:List x:TypeArguments="ITarget" Capacity="4">
-          <Target CVScreenId="65ea95e7-1866-4bf3-9f33-973bb548afdc" CvTextArea="619, 715, 92, 17" CvTextArgument="No fact.fou" CvType="Text" DesignTimeRectangle="620, 712, 263, 29" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='layout-slot-4-87' tag='LABEL' /&gt;" Guid="08018b98-2ded-4eac-8050-ba2db71835e0" SearchSteps="Selector, CV" />
+          <Target CVScreenId="2c7896c7-1f36-4503-b73e-c3aeddc91794" CvTextArea="394, 769, 82, 15" CvTextArgument="No fact.fou" CvType="Text" DesignTimeRectangle="394, 766, 236, 27" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='No fact.fou' innertext='No fact.fou' /&gt;" Guid="0f37d372-d3ec-4485-b75c-ebbc88116119" SearchSteps="Selector, CV" />
         </scg:List>
       </TargetAnchorable.Anchors>
-      <imageRef attrName="InformativeScreenshot" originalValue="d3b3c1294bdeebabec69813059e6670f.png" xmlns="">0zTnQmiPePkiu4_xmJet0Mw</imageRef>
+      <imageRef attrName="InformativeScreenshot" originalValue="af5edf0ebe60c7f7da52ff31ed4cbf78.png" xmlns="">0ZMQuJR0Rf0qaTnBVz8NkKw</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">TypeInto</x:String>
   </ObjectRepositoryTargetData.Data>

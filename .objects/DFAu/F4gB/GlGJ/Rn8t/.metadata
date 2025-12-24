@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Question popup",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Rn8tvaf1g0iNTIB7W6488g",
+  "Reference": "EhPK3qwwJUmaJOdGcl1hvg/Rn8tvaf1g0iNTIB7W6488g",
+  "ParentRef": "EhPK3qwwJUmaJOdGcl1hvg/GlGJIQ8mxEaZttwBn2JBpw",
+  "Created": "2025-12-24T14:56:52.6818965Z",
+  "Updated": "2025-12-24T14:57:07.9264046Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.22.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

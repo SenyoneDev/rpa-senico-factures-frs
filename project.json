@@ -25,7 +25,6 @@
   "studioVersion": "22.10.2.0",
   "projectVersion": "1.0.30",
   "runtimeOptions": {
-    "exceptionHandlerWorkflow": "TestData\\GlobalHandler.xaml",
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,
@@ -54,7 +53,8 @@
       "ignoredFiles": [
         "UnitTesting/UT_InitAllApplications.xaml",
         "UnitTesting/UT_ProcessQI_BRE.xaml",
-        "UnitTesting/UT_ProcessQI_HP.xaml"
+        "UnitTesting/UT_ProcessQI_HP.xaml",
+        "GlobalHandler_old.xaml"
       ]
     },
     "fileInfoCollection": [],

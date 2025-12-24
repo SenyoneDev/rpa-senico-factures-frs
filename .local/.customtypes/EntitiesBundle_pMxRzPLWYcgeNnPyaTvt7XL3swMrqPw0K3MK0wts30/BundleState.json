@@ -1,0 +1,67 @@
+{
+  "assemblyStates": {
+    "CE72972F8C1_ner_Crea.0bTJC2AXRFN1pI5CF4Pw9RU1": {
+      "namespace": "UiPath.IntegrationService.Activities.SWEntities.CE72972F8C1_ner_Create.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.CE72972F8C1_ner_Create",
+        "hash": "TUJsa3JYd1lIVTkyOWovRGluT3h0ZDNlMitTU2phbUpEaXVUOHhKMWhhZ2JpMm1ieWoyYjF2TytDcldGY08vMFlDQ0QvVHBNKzlHL0hOb1RWcVZ0bUE9PQ",
+        "assemblyName": "CE72972F8C1_ner_Crea.0bTJC2AXRFN1pI5CF4Pw9RU1"
+      }
+    },
+    "CE72972F8C1_ecs_sub_.AwdWi1v2lKF1vLAf8mHqQW2": {
+      "namespace": "UiPath.IntegrationService.Activities.SWEntities.CE72972F8C1_ecs_sub_search_Create.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.CE72972F8C1_ecs_sub_search_Create",
+        "hash": "T2h6MXJMQzEzT2thZU1iV2hiQ0lONVZyTXJONTNGQlRaS2dFU0huTlFiUXZXK0lManVxSlVZNmxoNUxvdlFhRWN3anI5Y2xBU2djV2lpNkNRaDVvVmc9PQ",
+        "assemblyName": "CE72972F8C1_ecs_sub_.AwdWi1v2lKF1vLAf8mHqQW2"
+      }
+    },
+    "ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj": {
+      "namespace": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.Invoices.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.Invoices",
+        "hash": "LTEzMDI3MTAwNDg",
+        "assemblyName": "ExtendedExtractionRe.SytlV3xbmGB1GoNPE1LCpoj"
+      }
+    },
+    "CE72972F8C1_v2_sub_g.vLphE2gLgxA1ZUtuQ4THvVi3": {
+      "namespace": "UiPath.IntegrationService.Activities.SWEntities.CE72972F8C1_v2_sub_generateChatCompletion_Create.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.CE72972F8C1_v2_sub_generateChatCompletion_Create",
+        "hash": "WURZQ0EydURWdHVvSVJpeXlsS2RvRGlMeDdnNncxUGI5N05EQlIzRzg5TFNBaHpJNjdvb2d2NDU4eHN2R3l6YWsxWDFodEJ3Y1BETGlmVUtSckFrRFE9PQ",
+        "assemblyName": "CE72972F8C1_v2_sub_g.vLphE2gLgxA1ZUtuQ4THvVi3"
+      }
+    },
+    "Studio.Generated.TypedDataRow1": {
+      "namespace": "System.Data",
+      "providerName": "TypedDataTable",
+      "key": {
+        "name": "Studio.Generated.TypedDataRow1",
+        "hash": "UpdateFileFolderMetadataConnections\u00601_2|DataRow|KHMAX54zdGZhjuoss5XSxKdecONsctow6hcEUv1i6M",
+        "assemblyName": "Studio.Generated.TypedDataRow1"
+      }
+    },
+    "Studio.Generated.TypedDataTable2": {
+      "namespace": "System.Data",
+      "providerName": "TypedDataTable",
+      "key": {
+        "name": "Studio.Generated.TypedDataTable2",
+        "hash": "NExtractDataGeneric\u00601_1|DataTable|E1dtnGGo0OluvRLONsQfY0UPTQr25EOkbyXhdt59rQ",
+        "assemblyName": "Studio.Generated.TypedDataTable2"
+      }
+    },
+    "Studio.Generated.TypedDataTable3": {
+      "namespace": "System.Data",
+      "providerName": "TypedDataTable",
+      "key": {
+        "name": "Studio.Generated.TypedDataTable3",
+        "hash": "NExtractDataGeneric\u00601_1|DataTable|tCbx4NkVEKSWzDX71tTipOUUDpbzevZ5ftymdOSs3s",
+        "assemblyName": "Studio.Generated.TypedDataTable3"
+      }
+    }
+  }
+}

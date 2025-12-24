@@ -145,7 +145,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: Open and initialize application as needed.&#xA;&#xA;Pre Condition: N/A&#xA;Post Condtion: Applications opened" DisplayName="InitAllApplications" sap:VirtualizedContainerService.HintSize="1166.4,1350.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Open and initialize application as needed.&#xA;&#xA;Pre Condition: N/A&#xA;Post Condtion: Applications opened" DisplayName="InitAllApplications" sap:VirtualizedContainerService.HintSize="1047,1342" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_currentSequence" />
     </Sequence.Variables>
@@ -155,10 +155,10 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log App Initialization message" sap:VirtualizedContainerService.HintSize="571.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening Applications&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="571.2,911.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log App Initialization message" sap:VirtualizedContainerService.HintSize="522,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening Applications&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522,910" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="569.6,557.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="520,557" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_useNameSage" />
             <Variable x:TypeArguments="ss:SecureString" Name="str_passwordSecureSage" />
@@ -170,7 +170,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Test Outlook Mailbox" sap:VirtualizedContainerService.HintSize="536,56.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Test Outlook Mailbox" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -216,7 +216,7 @@
               </umam:GetEmailListConnections.MailboxArg>
             </umam:GetEmailListConnections>
           </Sequence>
-          <Sequence DisplayName="Test Sharepoint" sap:VirtualizedContainerService.HintSize="536,56.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Test Sharepoint" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <Sequence.Variables>
               <Variable x:TypeArguments="umfm:O365DriveRemoteItem[]" Name="out_di_Folder" />
             </Sequence.Variables>
@@ -248,44 +248,44 @@
               </umaf:GetFileFolderConnections.DriveItemArgument>
             </umaf:GetFileFolderConnections>
           </Sequence>
-          <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="536,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;InitAllApp | Sage OUT FOR TESTS...&quot;]" />
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="536,209.6" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,335" sap2010:WorkflowViewState.IdRef="CommentOut_2">
             <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,108" sap2010:WorkflowViewState.IdRef="Sequence_23">
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_24">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Test Sage Connexion" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;InitAllApp | Sage connection...&quot;]" />
-                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_dict_Config(&quot;SageUserCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential | SageUser" FolderPath="[in_dict_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="433.6,175.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[str_passwordSecureSage]" Username="[str_useNameSage]" />
-                  <Assign DisplayName="Assign | Secure to stringpass" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[str_passwordSage]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[System.Runtime.InteropServices.Marshal.PtrToStringBSTR(System.Runtime.InteropServices.Marshal.SecureStringToBSTR(str_passwordSecureSage))]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConnectToSage - Invoke Workflow File (SageFlow\ConnectToSage.xaml)" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SageFlow\ConnectToSage.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_str_userName">[str_useNameSage]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_str_password">[str_passwordSage]</InArgument>
-                      <InArgument x:TypeArguments="ui:UiElement" x:Key="out_ui_sageBrowser">[out_ui_sageUI]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_SageURL">[in_dict_Config("Sage_UI_HomepageURL").ToString]</InArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
-                  </ui:InvokeWorkflowFile>
-                </Sequence>
+                <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;InitAllApp | Sage OUT FOR TESTS...&quot;]" />
               </Sequence>
             </ui:CommentOut.Body>
           </ui:CommentOut>
+          <Sequence DisplayName="Test Sage Connexion" sap:VirtualizedContainerService.HintSize="486,48" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;InitAllApp | Sage connection...&quot;]" />
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_dict_Config(&quot;SageUserCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential | SageUser" FolderPath="[in_dict_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="433.6,175.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[str_passwordSecureSage]" Username="[str_useNameSage]" />
+            <Assign DisplayName="Assign | Secure to stringpass" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_passwordSage]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[System.Runtime.InteropServices.Marshal.PtrToStringBSTR(System.Runtime.InteropServices.Marshal.SecureStringToBSTR(str_passwordSecureSage))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConnectToSage - Invoke Workflow File (SageFlow\ConnectToSage.xaml)" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SageFlow\ConnectToSage.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_str_userName">[str_useNameSage]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_str_password">[str_passwordSage]</InArgument>
+                <InArgument x:TypeArguments="ui:UiElement" x:Key="out_ui_sageBrowser">[out_ui_sageUI]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SageURL">[in_dict_Config("Sage_UI_HomepageURL").ToString]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
@@ -300,12 +300,12 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Throw Exception="[New Exception(&quot;Erreur dans la séquence &quot; + str_currentSequence + &quot; : &quot; + exception.Message)]" sap:VirtualizedContainerService.HintSize="569.6,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            <Throw Exception="[New Exception(&quot;Erreur dans la séquence &quot; + str_currentSequence + &quot; : &quot; + exception.Message)]" sap:VirtualizedContainerService.HintSize="520,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="569.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="520,89" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -314,6 +314,6 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="571.2,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;End InitAllApplication&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="522,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;End InitAllApplication&quot;]" />
   </Sequence>
 </Activity>
