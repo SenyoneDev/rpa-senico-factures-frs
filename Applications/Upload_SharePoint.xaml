@@ -142,7 +142,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="2057.6,1356.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="1356,1449" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_urlSharePoint" />
     </Sequence.Variables>
@@ -151,8 +151,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="534.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start upload SharePoint&quot;]" />
-    <Sequence DisplayName="Seq | Upload SharePoint" sap:VirtualizedContainerService.HintSize="534.4,993.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start upload SharePoint&quot;]" />
+    <Sequence DisplayName="Seq | Upload SharePoint" sap:VirtualizedContainerService.HintSize="486,1085" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="di_annuaireFile" />
         <Variable x:TypeArguments="x:String" Name="str_fullName" />
@@ -170,15 +170,15 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[in_str_direction isNot Nothing]" DisplayName="If no direction" sap:VirtualizedContainerService.HintSize="500.8,500" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[in_str_direction isNot Nothing]" DisplayName="If no direction" sap:VirtualizedContainerService.HintSize="452,591" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
-          <Sequence DisplayName="Then | assign A determiner" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="Then | assign A determiner" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign | Direction URL" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign DisplayName="Assign | Direction URL" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_urlSharePoint]</OutArgument>
               </Assign.To>
@@ -189,13 +189,13 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else | assign direction" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <Sequence DisplayName="Else | assign direction" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_17">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign | En attente RPA" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign DisplayName="Assign | En attente RPA" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_urlSharePoint]</OutArgument>
               </Assign.To>
@@ -206,8 +206,8 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:PathExists Exists="{x:Null}" DisplayName="Get Local File or Folder" sap:VirtualizedContainerService.HintSize="500.8,173.6" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_str_filePath]" PathType="File" Resource="[rs_fileRessource]" />
-      <umaf:UploadFilesConnections AllResults="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" Metadata="{x:Null}" MultipleFilesToUpload="{x:Null}" SingleFileToUpload="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Replace" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" DisplayName="Upload Files" FilesInputMode="MultipleByBuilder" FirstResult="[out_di_file]" sap:VirtualizedContainerService.HintSize="500.8,228" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_2" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[str_urlSharePoint]" UseConnectionService="True">
+      <ui:PathExists Exists="{x:Null}" DisplayName="Get Local File or Folder" sap:VirtualizedContainerService.HintSize="452,174" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_str_filePath]" PathType="File" Resource="[rs_fileRessource]" />
+      <umaf:UploadFilesConnections AllResults="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" Metadata="{x:Null}" MultipleFilesToUpload="{x:Null}" SingleFileToUpload="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Replace" ConnectionId="f3099177-f598-4f84-aefa-2e914e706547" DisplayName="Upload Files" FilesInputMode="MultipleByBuilder" FirstResult="[out_di_file]" sap:VirtualizedContainerService.HintSize="452,228" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_2" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[str_urlSharePoint]" UseConnectionService="True">
         <umaf:UploadFilesConnections.DriveItemArgument>
           <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" ConnectionKey="607b4b9d-80f9-4443-a316-41286dad0a00" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[str_urlSharePoint]" ParentFullPathHint="">
             <umafm:DriveItemArgument.ItemIdBackup>
@@ -253,6 +253,6 @@
         </umaf:UploadFilesConnections.FilesList>
       </umaf:UploadFilesConnections>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="534.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End upload SharePoint&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End upload SharePoint&quot;]" />
   </Sequence>
 </Activity>

@@ -118,13 +118,13 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ConnectToSage" sap:VirtualizedContainerService.HintSize="750.4000000000001,1420" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ConnectToSage" sap:VirtualizedContainerService.HintSize="2004,1384.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="584,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="522,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
@@ -220,38 +220,38 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence DisplayName="Seq | Connect with into" sap:VirtualizedContainerService.HintSize="584,1174.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Seq | Connect with into" sap:VirtualizedContainerService.HintSize="522,1137.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Use Browser Chrome: Sage X3" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="550.4,1082.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Always]" OutUiElement="[out_ui_sageBrowser]" ScopeGuid="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Use Browser Chrome: Sage X3" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,1045.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" IsDisplayNameAuto="True" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" OutUiElement="[out_ui_sageBrowser]" ScopeGuid="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="516.8,876.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,851.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NCheckState DisplayName="Check App State 'A ?representation=home.…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="483.2,816.8" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V5">
+              <uix:NCheckState DisplayName="Check App State 'A ?representation=home.…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,791.2" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="95e1c509-f26c-4ef4-9805-a1199053cc49" Version="V5">
                 <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,226.8" sap2010:WorkflowViewState.IdRef="Sequence_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Connect to Sage Succesfully&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Connect to Sage Succesfully&quot;]" />
                   </Sequence>
                 </uix:NCheckState.IfExists>
                 <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,278.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,278.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -355,6 +355,6 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="584,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;end to connect&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="522,166.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;end to connect&quot;]" />
   </Sequence>
 </Activity>

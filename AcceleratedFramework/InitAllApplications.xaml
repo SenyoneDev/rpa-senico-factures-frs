@@ -145,7 +145,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: Open and initialize application as needed.&#xA;&#xA;Pre Condition: N/A&#xA;Post Condtion: Applications opened" DisplayName="InitAllApplications" sap:VirtualizedContainerService.HintSize="1047,1342" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Open and initialize application as needed.&#xA;&#xA;Pre Condition: N/A&#xA;Post Condtion: Applications opened" DisplayName="InitAllApplications" sap:VirtualizedContainerService.HintSize="1142,1946" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_currentSequence" />
     </Sequence.Variables>
@@ -155,10 +155,10 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log App Initialization message" sap:VirtualizedContainerService.HintSize="522,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening Applications&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522,910" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log App Initialization message" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening Applications&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="486,1505" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="520,557" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="484,1150" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_useNameSage" />
             <Variable x:TypeArguments="ss:SecureString" Name="str_passwordSecureSage" />
@@ -170,15 +170,15 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Test Outlook Mailbox" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Test Outlook Mailbox" sap:VirtualizedContainerService.HintSize="450,542" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;InitAllApp | Outlook Connection...&quot;]" />
-            <umam:GetEmailListConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" FreeTextFilter="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="7d5ebaf6-af33-4104-b151-242ccee04a9b" DisplayName="Get Email List" EmailList="[out_liMail]" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="416,274.4" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" Importance="Any" IncludeSubfolders="False" ManualEntryFolder="[in_dict_Config(&quot;MailBox&quot;).ToString]" MarkAsRead="False" MaxResults="[in_int_numOfMailsToRead]" OrderByDate="NewestFirst" SelectionMode="EnterPath" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="True">
+            <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;InitAllApp | Outlook Connection...&quot;]" />
+            <umam:GetEmailListConnections BrowserFolder="{x:Null}" BrowserFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" FreeTextFilter="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" ConnectionId="70db0dd5-5cf0-4d3e-9226-523f8be7cc0f" DisplayName="Get Email List" EmailList="[out_liMail]" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="416,275" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" Importance="Any" IncludeSubfolders="False" ManualEntryFolder="[in_dict_Config(&quot;MailBox&quot;).ToString]" MarkAsRead="False" MaxResults="[in_int_numOfMailsToRead]" OrderByDate="NewestFirst" SelectionMode="EnterPath" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="True">
               <umam:GetEmailListConnections.FilterSelectionBackup>
                 <usau:BackupSlot x:TypeArguments="umame:FilterMode" StoredValue="ConditionBuilder">
                   <usau:BackupSlot.BackupValues>
@@ -216,18 +216,18 @@
               </umam:GetEmailListConnections.MailboxArg>
             </umam:GetEmailListConnections>
           </Sequence>
-          <Sequence DisplayName="Test Sharepoint" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Test Sharepoint" sap:VirtualizedContainerService.HintSize="450,443" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <Sequence.Variables>
               <Variable x:TypeArguments="umfm:O365DriveRemoteItem[]" Name="out_di_Folder" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;InitAllApp | Sharepoint Connection...&quot;]" />
-            <umaf:GetFileFolderConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID2}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="2de8c29c-feae-4ec8-84f3-fae4012a1115" DisplayName="Get File or Folder" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="GetFileFolderConnections_1" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_dict_Config(&quot;SharepointParentFolderURL&quot;).ToString]" UseConnectionService="True">
+            <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;InitAllApp | Sharepoint Connection...&quot;]" />
+            <umaf:GetFileFolderConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID2}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="f3099177-f598-4f84-aefa-2e914e706547" DisplayName="Get File or Folder" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="GetFileFolderConnections_1" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_dict_Config(&quot;SharepointParentFolderURL&quot;).ToString]" UseConnectionService="True">
               <umaf:GetFileFolderConnections.DriveItemArgument>
                 <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_dict_Config(&quot;SharepointParentFolderURL&quot;).ToString]" ParentFullPathHint="">
                   <umafm:DriveItemArgument.ItemIdBackup>
@@ -248,19 +248,25 @@
               </umaf:GetFileFolderConnections.DriveItemArgument>
             </umaf:GetFileFolderConnections>
           </Sequence>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,335" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
             <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_24">
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_24">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;InitAllApp | Sage OUT FOR TESTS...&quot;]" />
+                <ui:LogMessage DisplayName="LogM | SAGE Connection" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;InitAllApp | Sage OUT FOR TESTS...&quot;]" />
               </Sequence>
             </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <Sequence DisplayName="Test Sage Connexion" sap:VirtualizedContainerService.HintSize="486,48" sap2010:WorkflowViewState.IdRef="Sequence_25">
+          <Sequence DisplayName="Test Sage Connexion" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_25">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -300,12 +306,12 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Throw Exception="[New Exception(&quot;Erreur dans la séquence &quot; + str_currentSequence + &quot; : &quot; + exception.Message)]" sap:VirtualizedContainerService.HintSize="520,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            <Throw Exception="[New Exception(&quot;Erreur dans la séquence &quot; + str_currentSequence + &quot; : &quot; + exception.Message)]" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="520,89" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="484,90" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -314,6 +320,6 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="522,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;End InitAllApplication&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;End InitAllApplication&quot;]" />
   </Sequence>
 </Activity>

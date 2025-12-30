@@ -1,0 +1,6 @@
+{
+  "Name": "Senico Automation",
+  "ProjectType": "Process",
+  "Description": "Automatisation de la senico",
+  "MainFile": "Main.xaml"
+}

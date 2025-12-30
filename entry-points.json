@@ -1,0 +1,669 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "Applications\\Add_metaData.xaml",
+      "uniqueId": "72c06172-58fb-4241-bb6e-9b2223f90c63",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "in_di_file": {
+            "$ref": "#/definitions/job-attachment"
+          },
+          "in_o365m_mailItem": {
+            "type": "object",
+            "properties": {
+              "From": {
+                "$ref": "#/$defs/mailAddress"
+              },
+              "Sender": {
+                "$ref": "#/$defs/mailAddress"
+              },
+              "ReplyTo": {
+                "$ref": "#/$defs/mailAddress"
+              },
+              "DeliveryNotificationOptions": {
+                "enum": [
+                  "None",
+                  "OnSuccess",
+                  "OnFailure",
+                  "Delay",
+                  "Never"
+                ]
+              },
+              "SubjectEncoding": {
+                "$ref": "#/$defs/encoding"
+              },
+              "Headers": {
+                "type": "array",
+                "readOnly": true
+              },
+              "HeadersEncoding": {
+                "$ref": "#/$defs/encoding"
+              },
+              "BodyEncoding": {
+                "$ref": "#/$defs/encoding"
+              },
+              "BodyTransferEncoding": {
+                "enum": [
+                  "QuotedPrintable",
+                  "Base64",
+                  "SevenBit",
+                  "EightBit",
+                  "Unknown"
+                ]
+              },
+              "IsBodyHtml": {
+                "type": "boolean"
+              },
+              "AlternateViews": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "ContentStream": {
+                      "$ref": "#/$defs/stream"
+                    },
+                    "ContentId": {
+                      "type": "string"
+                    },
+                    "ContentType": {
+                      "$ref": "#/$defs/contentType"
+                    },
+                    "TransferEncoding": {
+                      "enum": [
+                        "QuotedPrintable",
+                        "Base64",
+                        "SevenBit",
+                        "EightBit",
+                        "Unknown"
+                      ]
+                    },
+                    "LinkedResources": {
+                      "$ref": "#/$defs/linkedResourceCollection"
+                    },
+                    "BaseUri": {
+                      "$ref": "#/$defs/uri"
+                    }
+                  },
+                  "readOnly": true
+                },
+                "readOnly": true
+              },
+              "Body": {
+                "type": "string"
+              },
+              "BodyAsHtml": {
+                "type": "string"
+              },
+              "Subject": {
+                "type": "string"
+              },
+              "FromDisplayName": {
+                "$ref": "#/$defs/string"
+              },
+              "FromAddress": {
+                "$ref": "#/$defs/string"
+              },
+              "SenderDisplayName": {
+                "$ref": "#/$defs/string"
+              },
+              "SenderAddress": {
+                "$ref": "#/$defs/string"
+              },
+              "ReplyToList": {
+                "$ref": "#/$defs/mailAddressCollection"
+              },
+              "ReplyToAddressList": {
+                "$ref": "#/$defs/arrayOfString"
+              },
+              "To": {
+                "$ref": "#/$defs/mailAddressCollection"
+              },
+              "ToAddressList": {
+                "$ref": "#/$defs/arrayOfString"
+              },
+              "CC": {
+                "$ref": "#/$defs/mailAddressCollection"
+              },
+              "CCAddressList": {
+                "$ref": "#/$defs/arrayOfString"
+              },
+              "Bcc": {
+                "$ref": "#/$defs/mailAddressCollection"
+              },
+              "BccAddressList": {
+                "$ref": "#/$defs/arrayOfString"
+              },
+              "StandardAttachmentCount": {
+                "$ref": "#/$defs/integer"
+              },
+              "StandardAttachmentNames": {
+                "$ref": "#/$defs/arrayOfString"
+              },
+              "InlineAttachmentCount": {
+                "$ref": "#/$defs/integer"
+              },
+              "InlineAttachmentNames": {
+                "$ref": "#/$defs/arrayOfString"
+              },
+              "AttachmentCount": {
+                "$ref": "#/$defs/integer"
+              },
+              "AttachmentsNamesList": {
+                "$ref": "#/$defs/arrayOfString"
+              },
+              "AttachmentsInfoList": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "Filename": {
+                      "type": "string"
+                    },
+                    "MimeType": {
+                      "type": "string"
+                    },
+                    "Size": {
+                      "$ref": "#/$defs/nullableOfInt64"
+                    }
+                  },
+                  "readOnly": true
+                },
+                "readOnly": true
+              },
+              "MessageId": {
+                "type": "string"
+              },
+              "BodyPreview": {
+                "type": "string"
+              },
+              "Flag": {
+                "type": "object",
+                "properties": {
+                  "completedDateTime": {
+                    "$ref": "#/$defs/dateTimeTimeZone"
+                  },
+                  "dueDateTime": {
+                    "$ref": "#/$defs/dateTimeTimeZone"
+                  },
+                  "flagStatus": {
+                    "enum": [
+                      "NotFlagged",
+                      "Complete",
+                      "Flagged"
+                    ]
+                  },
+                  "startDateTime": {
+                    "$ref": "#/$defs/dateTimeTimeZone"
+                  },
+                  "AdditionalData": {
+                    "$ref": "#/$defs/iDictionaryOfStringAndObject"
+                  },
+                  "@odata.type": {
+                    "type": "string"
+                  }
+                }
+              },
+              "Importance": {
+                "type": "object"
+              },
+              "IsRead": {
+                "type": "boolean"
+              },
+              "LastModifiedDateTime": {
+                "$ref": "#/$defs/nullableOfDateTime"
+              },
+              "ParentFolderId": {
+                "type": "string"
+              },
+              "ReceivedDateTime": {
+                "$ref": "#/$defs/nullableOfDateTime"
+              },
+              "SentDateTime": {
+                "$ref": "#/$defs/nullableOfDateTime"
+              },
+              "WebLink": {
+                "type": "string"
+              },
+              "Priority": {
+                "enum": [
+                  "Normal",
+                  "Low",
+                  "High"
+                ]
+              },
+              "Categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "InternetMessageId": {
+                "type": "string"
+              },
+              "ConversationId": {
+                "type": "string"
+              },
+              "Attachments": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "ContentStream": {
+                      "$ref": "#/$defs/stream"
+                    },
+                    "ContentId": {
+                      "type": "string"
+                    },
+                    "ContentType": {
+                      "$ref": "#/$defs/contentType"
+                    },
+                    "TransferEncoding": {
+                      "enum": [
+                        "QuotedPrintable",
+                        "Base64",
+                        "SevenBit",
+                        "EightBit",
+                        "Unknown"
+                      ]
+                    },
+                    "Name": {
+                      "type": "string"
+                    },
+                    "NameEncoding": {
+                      "$ref": "#/$defs/encoding"
+                    },
+                    "ContentDisposition": {
+                      "$ref": "#/$defs/contentDisposition"
+                    }
+                  },
+                  "readOnly": true
+                },
+                "readOnly": true,
+                "deprecated": true
+              }
+            },
+            "$defs": {
+              "mailAddress": {
+                "type": "object",
+                "properties": {
+                  "DisplayName": {
+                    "$ref": "#/$defs/string"
+                  },
+                  "User": {
+                    "$ref": "#/$defs/string"
+                  },
+                  "Host": {
+                    "$ref": "#/$defs/string"
+                  },
+                  "Address": {
+                    "$ref": "#/$defs/string"
+                  }
+                },
+                "deprecated": true
+              },
+              "string": {
+                "type": "string",
+                "readOnly": true
+              },
+              "encoding": {
+                "type": "object",
+                "properties": {
+                  "BodyName": {
+                    "$ref": "#/$defs/string"
+                  },
+                  "EncodingName": {
+                    "$ref": "#/$defs/string"
+                  },
+                  "HeaderName": {
+                    "$ref": "#/$defs/string"
+                  },
+                  "WebName": {
+                    "$ref": "#/$defs/string"
+                  },
+                  "WindowsCodePage": {
+                    "$ref": "#/$defs/integer"
+                  },
+                  "IsBrowserDisplay": {
+                    "$ref": "#/$defs/boolean"
+                  },
+                  "IsBrowserSave": {
+                    "$ref": "#/$defs/boolean"
+                  },
+                  "IsMailNewsDisplay": {
+                    "$ref": "#/$defs/boolean"
+                  },
+                  "IsMailNewsSave": {
+                    "$ref": "#/$defs/boolean"
+                  },
+                  "IsSingleByte": {
+                    "$ref": "#/$defs/boolean"
+                  },
+                  "EncoderFallback": {
+                    "type": "object",
+                    "properties": {
+                      "MaxCharCount": {
+                        "$ref": "#/$defs/integer"
+                      }
+                    }
+                  },
+                  "DecoderFallback": {
+                    "type": "object",
+                    "properties": {
+                      "MaxCharCount": {
+                        "$ref": "#/$defs/integer"
+                      }
+                    }
+                  },
+                  "IsReadOnly": {
+                    "type": "boolean"
+                  },
+                  "CodePage": {
+                    "$ref": "#/$defs/integer"
+                  }
+                }
+              },
+              "integer": {
+                "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647,
+                "readOnly": true
+              },
+              "integer1": {
+                "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647
+              },
+              "boolean": {
+                "type": "boolean",
+                "readOnly": true
+              },
+              "stream": {
+                "type": "object",
+                "properties": {
+                  "CanRead": {
+                    "$ref": "#/$defs/boolean"
+                  },
+                  "CanWrite": {
+                    "$ref": "#/$defs/boolean"
+                  },
+                  "CanSeek": {
+                    "$ref": "#/$defs/boolean"
+                  },
+                  "CanTimeout": {
+                    "$ref": "#/$defs/boolean"
+                  },
+                  "Length": {
+                    "$ref": "#/$defs/integer2"
+                  },
+                  "Position": {
+                    "$ref": "#/$defs/integer3"
+                  },
+                  "ReadTimeout": {
+                    "$ref": "#/$defs/integer1"
+                  },
+                  "WriteTimeout": {
+                    "$ref": "#/$defs/integer1"
+                  }
+                },
+                "readOnly": true
+              },
+              "integer2": {
+                "type": "integer",
+                "minimum": -9223372036854775808,
+                "maximum": 9223372036854775807,
+                "readOnly": true
+              },
+              "integer3": {
+                "type": "integer",
+                "minimum": -9223372036854775808,
+                "maximum": 9223372036854775807
+              },
+              "contentType": {
+                "type": "object",
+                "properties": {
+                  "Boundary": {
+                    "type": "string"
+                  },
+                  "CharSet": {
+                    "type": "string"
+                  },
+                  "MediaType": {
+                    "type": "string"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Parameters": {
+                    "$ref": "#/$defs/stringDictionary"
+                  }
+                }
+              },
+              "stringDictionary": {
+                "type": "array",
+                "readOnly": true
+              },
+              "linkedResourceCollection": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "ContentStream": {
+                      "$ref": "#/$defs/stream"
+                    },
+                    "ContentId": {
+                      "type": "string"
+                    },
+                    "ContentType": {
+                      "$ref": "#/$defs/contentType"
+                    },
+                    "TransferEncoding": {
+                      "enum": [
+                        "QuotedPrintable",
+                        "Base64",
+                        "SevenBit",
+                        "EightBit",
+                        "Unknown"
+                      ]
+                    },
+                    "ContentLink": {
+                      "$ref": "#/$defs/uri"
+                    }
+                  },
+                  "readOnly": true
+                },
+                "readOnly": true
+              },
+              "uri": {
+                "type": "string",
+                "format": "uri"
+              },
+              "mailAddressCollection": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "DisplayName": {
+                      "$ref": "#/$defs/string"
+                    },
+                    "User": {
+                      "$ref": "#/$defs/string"
+                    },
+                    "Host": {
+                      "$ref": "#/$defs/string"
+                    },
+                    "Address": {
+                      "$ref": "#/$defs/string"
+                    }
+                  },
+                  "readOnly": true
+                },
+                "readOnly": true
+              },
+              "arrayOfString": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/string"
+                },
+                "readOnly": true
+              },
+              "nullableOfInt64": {
+                "type": "integer",
+                "minimum": -9223372036854775808,
+                "maximum": 9223372036854775807
+              },
+              "dateTimeTimeZone": {
+                "type": "object",
+                "properties": {
+                  "dateTime": {
+                    "type": "string"
+                  },
+                  "timeZone": {
+                    "type": "string"
+                  },
+                  "AdditionalData": {
+                    "$ref": "#/$defs/iDictionaryOfStringAndObject"
+                  },
+                  "@odata.type": {
+                    "type": "string"
+                  }
+                }
+              },
+              "iDictionaryOfStringAndObject": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "nullableOfDateTime": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "dateTime": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "contentDisposition": {
+                "type": "object",
+                "properties": {
+                  "DispositionType": {
+                    "type": "string"
+                  },
+                  "Parameters": {
+                    "$ref": "#/$defs/stringDictionary"
+                  },
+                  "FileName": {
+                    "type": "string"
+                  },
+                  "CreationDate": {
+                    "$ref": "#/$defs/dateTime"
+                  },
+                  "ModificationDate": {
+                    "$ref": "#/$defs/dateTime"
+                  },
+                  "Inline": {
+                    "type": "boolean"
+                  },
+                  "ReadDate": {
+                    "$ref": "#/$defs/dateTime"
+                  },
+                  "Size": {
+                    "$ref": "#/$defs/integer3"
+                  }
+                },
+                "readOnly": true
+              }
+            }
+          }
+        },
+        "required": [],
+        "definitions": {
+          "job-attachment": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "type": "string",
+                "description": "Orchestrator attachment key"
+              },
+              "FullName": {
+                "type": "string",
+                "description": "File name"
+              },
+              "MimeType": {
+                "type": "string",
+                "description": "The MIME type of the content, such as \u0022application/json\u0022 or \u0022image/png"
+              },
+              "Metadata": {
+                "type": "object",
+                "description": "Dictionary\u003Cstring, string\u003E of metadata",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "ID"
+            ],
+            "x-uipath-resource-kind": "JobAttachment"
+          }
+        }
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "out_dict_MetaData": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "c2037f92-759f-4437-b537-a6f896012db0",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "in_str_OrchestratorQueueName": {
+            "type": "string"
+          },
+          "in_str_SEEmailReciever": {
+            "type": "string"
+          },
+          "in_str_BREMailReciever": {
+            "type": "string"
+          },
+          "in_str_SREmailReciever": {
+            "type": "string"
+          },
+          "in_bool_TestMode": {
+            "type": "boolean"
+          },
+          "in_bool_DevMode": {
+            "type": "boolean"
+          },
+          "in_int_MaxTransactionsProcessed": {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647
+          },
+          "in_str_ConfigPath": {
+            "type": "string"
+          },
+          "in_bool_validateInvoiceTask": {
+            "type": "boolean"
+          },
+          "in_bool_sendCR": {
+            "type": "boolean"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}
