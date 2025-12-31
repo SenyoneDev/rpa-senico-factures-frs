@@ -195,7 +195,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID10}" sap2010:Annotation.AnnotationText="&#xA;Mark with x the used disaptcher style:&#xA;Dispatcher integrated in Performer  []&#xA;Separate Dispatcher - Performer  [x] " DisplayName="Main" sap:VirtualizedContainerService.HintSize="1190.4,512.8185360135726" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID10}" sap2010:Annotation.AnnotationText="&#xA;Mark with x the used disaptcher style:&#xA;Dispatcher integrated in Performer  []&#xA;Separate Dispatcher - Performer  [x] " DisplayName="Main" sap:VirtualizedContainerService.HintSize="716.8000000000001,877.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -513,9 +513,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID12" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried.&#xA;&#xA;All the BusinessRule Exception and System exceptions are counted, If the system exception reaches the threshold defined in Config, the process will be aborted" DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="596.8,2601.6" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID12" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried.&#xA;&#xA;All the BusinessRule Exception and System exceptions are counted, If the system exception reaches the threshold defined in Config, the process will be aborted" DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="660.8,4139.2" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <TryCatch DisplayName="Try Catch | Process" sap:VirtualizedContainerService.HintSize="616,3610.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch DisplayName="Try Catch | Process" sap:VirtualizedContainerService.HintSize="616,3588" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1744,7 +1744,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:InvokeWorkflowFile>
-                                <Throw DisplayName="Throw BRE | Gaps" Exception="[New BusinessRuleException(&quot;Exception règle de gestion  : &quot; + dict_Config(&quot;StatusRPA_OK_Gaps&quot;).ToString + &quot; - Ecarts constatés : &quot; + &#xD;&#xA;&quot;Ecart Hors Taxe : &quot; + str_ecartHT + &quot; - &quot; +&#xD;&#xA;&quot;Ecart TVA : &quot; +  str_ecartTAX + &quot; - &quot; +&#xD;&#xA;&quot;Ecart TTC : &quot; + str_ecartTTC )]" sap:VirtualizedContainerService.HintSize="478.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_11">
+                                <Throw DisplayName="Throw BRE | Gaps" Exception="[New BusinessRuleException(&quot;Exception règle de gestion  : &quot; + dict_Config(&quot;StatusRPA_OK_Gaps&quot;).ToString + &quot; - Ecarts constatés : &quot; + &#xA;&quot;Ecart Hors Taxe : &quot; + str_ecartHT + &quot; - &quot; +&#xA;&quot;Ecart TVA : &quot; +  str_ecartTAX + &quot; - &quot; +&#xA;&quot;Ecart TTC : &quot; + str_ecartTTC )]" sap:VirtualizedContainerService.HintSize="478.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_11">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1912,7 +1912,7 @@
                     </Catch>
                   </TryCatch.Catches>
                   <TryCatch.Finally>
-                    <TryCatch DisplayName="SetTransactionStatus" sap:VirtualizedContainerService.HintSize="614.4,780.8" sap2010:WorkflowViewState.IdRef="TryCatch_26">
+                    <TryCatch DisplayName="SetTransactionStatus" sap:VirtualizedContainerService.HintSize="614.4,758.4" sap2010:WorkflowViewState.IdRef="TryCatch_26">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1920,13 +1920,13 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <TryCatch.Try>
-                        <Sequence sap:VirtualizedContainerService.HintSize="416,384.8" sap2010:WorkflowViewState.IdRef="Sequence_182">
+                        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="416,384.8" sap2010:WorkflowViewState.IdRef="Sequence_182">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If sap2010:Annotation.AnnotationText="Exception and still &quot;En cours&quot;" Condition="[dict_metaDatas(&quot;Statut&quot;).ToString = dict_Config(&quot;StatusRPA_InProcess&quot;).ToString AndAlso&#xD;&#xA;(not isnothing(exc_BusinessRuleException) OrElse not IsNothing(exc_SystemException))]" DisplayName="If | metadata update" sap:VirtualizedContainerService.HintSize="382.4,100.8" sap2010:WorkflowViewState.IdRef="If_38">
+                          <If sap2010:Annotation.AnnotationText="Exception and still &quot;En cours&quot;" Condition="[dict_metaDatas(&quot;Statut&quot;).ToString = dict_Config(&quot;StatusRPA_InProcess&quot;).ToString AndAlso&#xA;(not isnothing(exc_BusinessRuleException) OrElse not IsNothing(exc_SystemException))]" DisplayName="If | metadata update" sap:VirtualizedContainerService.HintSize="382.4,100.8" sap2010:WorkflowViewState.IdRef="If_38">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2555,7 +2555,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID11" sap2010:Annotation.AnnotationText="End process and close all applications used.&#xA; Send Status Report, update Orchestrator Status" DisplayName="End Process" sap:VirtualizedContainerService.HintSize="149.6,170.4" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID11" sap2010:Annotation.AnnotationText="End process and close all applications used.&#xA; Send Status Report, update Orchestrator Status" DisplayName="End Process" sap:VirtualizedContainerService.HintSize="150.4,170.4" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
                                 <Sequence DisplayName="End Proces State" sap:VirtualizedContainerService.HintSize="450,342" sap2010:WorkflowViewState.IdRef="Sequence_107">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -2808,7 +2808,7 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">98,225.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">149.6,170.4</av:Size>
+                                  <av:Size x:Key="ShapeSize">150.4,170.4</av:Size>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   <x:Double x:Key="StateContainerWidth">138</x:Double>
                                   <x:Double x:Key="StateContainerHeight">31.000000000000114</x:Double>
