@@ -1,0 +1,17 @@
+
+################################################################################
+# Added by UiPath Studio
+# Prevent caching and local artifacts from being committed
+################################################################################
+.local
+
+# Ignore logs and generated contents
+Data/Input/*
+Data/Downloads/*
+Data/Input/Logs/*
+Data/Input/StatusReports/*
+Data/Input/ExceptionScreenshots/*
+
+################################################################################
+# End of UiPath Studio common ignores
+################################################################################

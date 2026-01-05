@@ -192,13 +192,7 @@
     {
       "Path": "Applications/Save_InvoiceDataInSage.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "str_devise&Sequence_1",
-        "str_matchedReceipt&Sequence_1",
-        "in_str_currencyCode&Sequence_14",
-        "_textValue&Sequence_14",
-        "dt_sage_receipts&Sequence_18"
-      ],
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
         "in_sageUi",
         "in_str_invoiceNumber",
@@ -233,11 +227,7 @@
     {
       "Path": "SageFlow/SagePopup.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "str_popupMsg&Sequence_1",
-        "str_errMsg&Sequence_2",
-        "str_errMsgTitle&Sequence_2"
-      ],
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -268,6 +258,14 @@
     },
     {
       "Path": "Applications/Add_metaData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcceleratedFramework/GetTransactionData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": null,

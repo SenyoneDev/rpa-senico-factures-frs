@@ -116,7 +116,7 @@
       <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendReportEmail" sap:VirtualizedContainerService.HintSize="1364,3236" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendReportEmail" sap:VirtualizedContainerService.HintSize="976.8000000000001,2280.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="qi_TransactionItems" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="int_totalProcessedWithDiscrepancy" />
@@ -134,7 +134,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="522,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SendReportEmail | Start Report Email...&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="522,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SendReportEmail | Start Report Email...&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -142,15 +142,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Sequence DisplayName="Sequence | Get Queue Items" sap:VirtualizedContainerService.HintSize="522,1134" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence | Get Queue Items" sap:VirtualizedContainerService.HintSize="522,56.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetQueueItems Duration="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_dict_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" From="[DateTime.Today]" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="Failed, Successful, Abandoned" QueueName="[in_dict_Config(&quot;OrchestratorQueueName&quot;).ToString]" Result="[qi_TransactionItems]" To="[DateTime.Today.AddDays(1).AddSeconds(-1)]" />
-      <Assign DisplayName="Assign | Processed Mail Number" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <ui:GetQueueItems Duration="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="[in_dict_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" From="[DateTime.Today]" sap:VirtualizedContainerService.HintSize="416,176.4" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="Failed, Successful, Abandoned" QueueName="[in_dict_Config(&quot;OrchestratorQueueName&quot;).ToString]" Result="[qi_TransactionItems]" To="[DateTime.Today.AddDays(1).AddSeconds(-1)]" />
+      <Assign DisplayName="Assign | Processed Mail Number" sap:VirtualizedContainerService.HintSize="416,175.6" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[int_processedMailNumber]</OutArgument>
         </Assign.To>
@@ -158,7 +158,7 @@
           <InArgument x:TypeArguments="x:Int32">[qi_TransactionItems.DistinctBy(function(qi_TransactionItem) qi_TransactionItem.SpecificContent("Mail_messageID").ToString).Count()]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Assign | Total Processed Files" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign DisplayName="Assign | Total Processed Files" sap:VirtualizedContainerService.HintSize="416,175.6" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[int_totalProcessedFiles]</OutArgument>
         </Assign.To>
@@ -166,7 +166,7 @@
           <InArgument x:TypeArguments="x:Int32">[qi_TransactionItems.DistinctBy(function(qi_TransactionItem) qi_TransactionItem.SpecificContent("ID_Traitement_RPA").ToString).Count()]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Assign | Total Processed Files with Success" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign DisplayName="Assign | Total Processed Files with Success" sap:VirtualizedContainerService.HintSize="416,175.6" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[int_totalProcessedWithSuccess]</OutArgument>
         </Assign.To>
@@ -174,7 +174,7 @@
           <InArgument x:TypeArguments="x:Int32">[qi_TransactionItems.DistinctBy(Function(qi_TransactionItem) qi_TransactionItem.SpecificContent("ID_Traitement_RPA").ToString).Count(Function(qi_TransactionItem) qi_TransactionItem.Status.Equals("Success"))]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Assign | Total Processed Files with Failure" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign DisplayName="Assign | Total Processed Files with Failure" sap:VirtualizedContainerService.HintSize="416,175.6" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[int_totalProcessedWithFailure]</OutArgument>
         </Assign.To>
@@ -182,7 +182,7 @@
           <InArgument x:TypeArguments="x:Int32">[qi_TransactionItems.DistinctBy(Function(qi_TransactionItem) qi_TransactionItem.SpecificContent("ID_Traitement_RPA").ToString).Count(Function(qi_TransactionItem) qi_TransactionItem.Status.Equals("Failed") And Not qi_TransactionItem.ProcessingException.Reason.Contains("Saisie avec ecarts"))]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Assign | Total Processed Files with Discrepancy" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign DisplayName="Assign | Total Processed Files with Discrepancy" sap:VirtualizedContainerService.HintSize="416,166.8" sap2010:WorkflowViewState.IdRef="Assign_12">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[int_totalProcessedWithDiscrepancy]</OutArgument>
         </Assign.To>
@@ -191,7 +191,7 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <Sequence DisplayName="Sequence | Send Report by Email" sap:VirtualizedContainerService.HintSize="522,1974" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Sequence | Send Report by Email" sap:VirtualizedContainerService.HintSize="522,2095.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="st:StringBuilder" Default="[New StringBuilder(&quot;&quot;)]" Name="errorDetailRows" />
       </Sequence.Variables>
@@ -201,7 +201,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign | Receiver Email List" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign DisplayName="Assign | Receiver Email List" sap:VirtualizedContainerService.HintSize="488,56.8" sap2010:WorkflowViewState.IdRef="Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:List(x:String)">[arr_toEmailList]</OutArgument>
         </Assign.To>
@@ -215,7 +215,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign DisplayName="Assign | Receiver CC Email List" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign DisplayName="Assign | Receiver CC Email List" sap:VirtualizedContainerService.HintSize="488,56.8" sap2010:WorkflowViewState.IdRef="Assign_6">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:List(x:String)">[arr_ccEmailList]</OutArgument>
         </Assign.To>
@@ -229,7 +229,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign DisplayName="Assign | Receiver CC Email List" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign DisplayName="Assign | Receiver CC Email List" sap:VirtualizedContainerService.HintSize="488,56.8" sap2010:WorkflowViewState.IdRef="Assign_7">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:List(x:String)">[arr_bccEmailList]</OutArgument>
         </Assign.To>
@@ -243,21 +243,21 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign DisplayName="Assign | Email Body" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign DisplayName="Assign | Email Body" sap:VirtualizedContainerService.HintSize="488,175.6" sap2010:WorkflowViewState.IdRef="Assign_8">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_HtmlMailContent]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[String.Format(in_dict_Config("CR_Mail_CustomMessage").ToString, DateTime.Now.Date.ToString("dd/MM/yyyy"), int_processedMailNumber, int_totalProcessedFiles, int_totalProcessedWithSuccess, int_totalProcessedWithFailure, int_totalProcessedWithFailure, int_totalProcessedWithFailure, int_totalProcessedWithDiscrepancy)]</InArgument>
+          <InArgument x:TypeArguments="x:String">[String.Format(in_dict_Config("CR_Mail_CustomMessage").ToString, DateTime.Now.Date.ToString("dd/MM/yyyy"), int_processedMailNumber, int_totalProcessedFiles, int_totalProcessedWithSuccess, int_totalProcessedWithFailure, int_totalProcessedWithDiscrepancy)]</InArgument>
         </Assign.Value>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <If Condition="[int_totalProcessedWithFailure + int_totalProcessedWithDiscrepancy &gt; 0]" DisplayName="If | Failed Or Discrepancy QItems exist" sap:VirtualizedContainerService.HintSize="488,1123" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[int_totalProcessedWithFailure + int_totalProcessedWithDiscrepancy &gt; 0]" DisplayName="If | Failed Or Discrepancy QItems exist" sap:VirtualizedContainerService.HintSize="488,1126.4" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -265,13 +265,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then | Add Error Details Table" sap:VirtualizedContainerService.HintSize="486,758" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Then | Add Error Details Table" sap:VirtualizedContainerService.HintSize="486,760.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign | Error Details Template" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign DisplayName="Assign | Error Details Template" sap:VirtualizedContainerService.HintSize="452,175.6" sap2010:WorkflowViewState.IdRef="Assign_9">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_HtmlMailContent]</OutArgument>
               </Assign.To>
@@ -279,19 +279,19 @@
                 <InArgument x:TypeArguments="x:String">[str_HtmlMailContent.Replace("%ErrorsDetails%",in_dict_Config("CR_Mail_ErrorDetails").ToString)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each | Queue Items" sap:VirtualizedContainerService.HintSize="452,357" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[qi_TransactionItems]">
+            <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each | Queue Items" sap:VirtualizedContainerService.HintSize="452,358" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[qi_TransactionItems]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:QueueItem">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="currentQueueItem" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,226.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign sap:VirtualizedContainerService.HintSize="416,166.8" sap2010:WorkflowViewState.IdRef="Assign_10">
                       <Assign.To>
                         <OutArgument x:TypeArguments="st:StringBuilder">[errorDetailRows]</OutArgument>
                       </Assign.To>
@@ -303,7 +303,7 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <Assign sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign sap:VirtualizedContainerService.HintSize="452,166.8" sap2010:WorkflowViewState.IdRef="Assign_11">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_HtmlMailContent]</OutArgument>
               </Assign.To>
@@ -314,13 +314,13 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else | No Error Details Table" sap:VirtualizedContainerService.HintSize="486,226" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Else | No Error Details Table" sap:VirtualizedContainerService.HintSize="486,226.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign | Error Details Template" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="Assign_13">
+            <Assign DisplayName="Assign | Error Details Template" sap:VirtualizedContainerService.HintSize="452,166.8" sap2010:WorkflowViewState.IdRef="Assign_13">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_HtmlMailContent]</OutArgument>
               </Assign.To>
